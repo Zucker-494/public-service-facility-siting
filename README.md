@@ -42,15 +42,19 @@ The included processed spatial data support the principal sequential experiment:
 python src/20_sequential_investment_experiment.py --max-sites 40 --benchmark-sample-check 20
 ```
 
-Regenerate the service-specific sequential figures (nine PNGs), decision-evidence figures (four PNGs), and existing-facility location figures (two PNGs):
+Regenerate the project figures using the following scripts:
 
 ```bash
-python src/23_service_specific_budget_figures.py
-python src/19_decision_evidence_figures.py
+python src/02_validate_and_figures.py
+python src/09_publication_qa_figures.py
 python src/15_osm_inference_figures.py
+python src/19_decision_evidence_figures.py
+python src/23_service_specific_budget_figures.py
+python src/25_walkability_figures.py
+python src/draw_decision_comparison.py
 ```
 
-These scripts write the 15 figures to `outputs/figures/all_figures_png/`. The remaining 12 figures and their supporting analysis outputs are included in the repository. Run the computational checks using:
+These scripts generate the 27 project figures in outputs/figures/all_figures_png/ using the repository's analytical outputs. Run the computational checks using:
 
 ```bash
 python -m pytest -q tests
