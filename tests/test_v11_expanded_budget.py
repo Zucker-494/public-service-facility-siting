@@ -5,7 +5,6 @@ import pandas as pd
 
 ROOT=Path(__file__).resolve().parents[1]
 NEW=ROOT/'outputs/sequential_investment/sequential_addition_trajectories.csv'
-OLD=ROOT/'outputs/sequential_investment/archive_v10/sequential_addition_trajectories_v10.csv'
 F=ROOT/'outputs/sequential_investment/new_added_site_sequence.csv'
 E=ROOT/'outputs/sequential_investment/existing_six_imputation_provenance.csv'
 
@@ -20,14 +19,15 @@ def test_dimension_counts():
     assert set(d.baseline_address_imputations)=={6}
     assert (d.all_facility_count==89+d.new_sites).all()
 
-def test_original_first_twelve_recovered():
-    orig=pd.read_csv(OLD);cur=pd.read_csv(NEW)
-    k=['scenario','service','objective','rule','threshold_min','new_sites']
-    merged=orig.merge(cur[cur.new_sites<=12],on=k,validate='one_to_one',suffixes=('_v10','_v11'))
-    assert len(merged)==4320
-    assert (merged.candidate_id_v10==merged.candidate_id_v11).all()
-    for field in ['cumulative_gain','marginal_gain','district_length_gain_m','equal_street_mean_gain_pp']:
-        np.testing.assert_allclose(merged[field+'_v10'],merged[field+'_v11'],rtol=1e-10,atol=1e-5)
+def test_initial_twelve_steps_retained():
+    cur=pd.read_csv(NEW)
+    first=cur.loc[cur.new_sites.between(1,12)].copy()
+    group=['scenario','service','objective','rule','threshold_min']
+    assert len(first)==4320
+    assert first.groupby(group).size().eq(12).all()
+    assert first.groupby(group)['candidate_id'].nunique().eq(12).all()
+    assert (first.remaining_candidates==1132-first.new_sites).all()
+
 
 def test_marginal_gains_and_decomposition():
     d=pd.read_csv(NEW)

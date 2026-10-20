@@ -30,7 +30,6 @@ def roman(s):
 def save(fig,path):
     path.parent.mkdir(parents=True,exist_ok=True)
     fig.savefig(path.with_suffix('.png'),dpi=260,bbox_inches='tight',facecolor='white')
-    fig.savefig(path.with_suffix('.pdf'),bbox_inches='tight',facecolor='white')
     plt.close(fig)
 
 
@@ -105,16 +104,34 @@ def figure_incremental_regret(a,figdir):
             if r==2:ax.set_xlabel('Walking-time threshold (minutes)')
             if service=='elderly_care':
                 ax.text(10,-5.5,'Identical priority street\nΔ regret = 0',ha='center',fontsize=9,color='.42')
-    fig.suptitle('Network-density rule relative to population/area-density rules',fontsize=14)
-    fig.text(.5,-.025,'Δ = regret(network density) − regret(population or area density). Negative = lower loss with network density.\nFive deterministic location scenarios shown as dots; diamonds = medians; bars = min–max. No confidence intervals.',
+    fig.suptitle('Road-length supply rule relative to population/area supply rules',fontsize=14)
+    fig.text(.5,-.025,'Δ = regret(road-length rule) − regret(population/area rule). Negative = lower loss with road-length rule.\nFive location scenarios: dots; diamonds: medians; bars: minimum–maximum.',
              ha='center',va='top',fontsize=9)
     save(fig,figdir/'02_incremental_decision_regret')
     return p
 
 
 def figure_objective_switch(root,figdir):
-    df=pd.read_csv(root/'manuscript/objective_changes_five_scenarios.csv')
-    assert len(df)==45 and int(df.changed.sum())==40
+    source=root/'outputs/osm_inference/inferred_89_candidate_gains_5_scenarios_240m.csv'
+    gains=pd.read_csv(source)
+    required={'site_scenario','candidate_id','service','threshold_min','subdistrict',
+              'district_gain_m','gain_equal_street_mean_pp'}
+    assert required.issubset(gains.columns), sorted(required-set(gains.columns))
+    records=[]
+    for (scenario,service,threshold), group in gains.groupby(
+            ['site_scenario','service','threshold_min'],sort=True):
+        # Stable tie-breaking: the first sorted candidate ID with the maximum gain.
+        group=group.sort_values('candidate_id')
+        a=group.loc[group['district_gain_m'].idxmax()]
+        b=group.loc[group['gain_equal_street_mean_pp'].idxmax()]
+        records.append(dict(scenario=scenario,service=service,threshold_min=threshold,
+                            best_district_street=a.subdistrict,
+                            best_equal_street=b.subdistrict,
+                            changed=a.subdistrict!=b.subdistrict))
+    df=pd.DataFrame(records)
+    assert len(df)==45,(len(df),source)
+    # Reconstruct directly from retained candidate-level values; no extra input CSV needed.
+    (root/'outputs/figures').mkdir(parents=True,exist_ok=True)
     fig,axes=plt.subplots(3,3,figsize=(13.0,8.5),sharex=True,sharey=True,layout='constrained')
     fig.set_facecolor('white')
     for r,service in enumerate(SERVICE):
@@ -136,7 +153,7 @@ def figure_objective_switch(root,figdir):
             for spine in ax.spines.values():spine.set_alpha(.17)
             if r==0:ax.set_title(f'{t}-minute',fontsize=11)
             if c==0:ax.set_ylabel(SLABEL[service],fontsize=11,labelpad=9)
-    fig.suptitle('Planning objective changes the optimal street in 40 of 45 scenarios',fontsize=14)
+    fig.suptitle(f'Planning objective changes the selected street in {int(df.changed.sum())} of {len(df)} scenarios',fontsize=14)
     fig.text(.5,-.025,'Counts indicate the number of deterministic missing-site scenarios selecting each street.\nSame network and candidate set; only the planning objective differs.',ha='center',va='top',fontsize=9)
     save(fig,figdir/'03_objective_sensitivity_optimal_street')
 
@@ -179,7 +196,7 @@ def main():
     ap.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1])
     args=ap.parse_args()
     root=args.root
-    figdir=root/'outputs/figures/decision_evidence_v091'
+    figdir=root/'outputs/figures/all_figures_png'
     figdir.mkdir(parents=True,exist_ok=True)
     data=load(root)
     choices=figure_choices(data,figdir)

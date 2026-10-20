@@ -15,7 +15,8 @@ from matplotlib.lines import Line2D
 
 ROOT=Path(__file__).resolve().parents[1]
 TABLE=ROOT/'outputs/sequential_investment/sequential_addition_trajectories.csv'
-OUT=ROOT/'outputs/figures/sequential_v11';OUT.mkdir(parents=True,exist_ok=True)
+OUT=ROOT/'outputs/figures/all_figures_png';OUT.mkdir(parents=True,exist_ok=True)
+FIGDATA=ROOT/'outputs/figures/sequential_v11';FIGDATA.mkdir(parents=True,exist_ok=True)
 RES=ROOT/'outputs/sequential_investment';RES.mkdir(parents=True,exist_ok=True)
 
 d=pd.read_csv(TABLE)
@@ -50,7 +51,7 @@ agg=d.groupby(idx,as_index=False).agg(n_scenarios=('scenario','nunique'),
     gain_min=('cumulative_gain','min'),gain_median=('cumulative_gain','median'),gain_max=('cumulative_gain','max'),
     diff_min=('signed_shortfall_vs_greedy','min'),diff_median=('signed_shortfall_vs_greedy','median'),diff_max=('signed_shortfall_vs_greedy','max'),
     marginal_min=('marginal_gain','min'),marginal_median=('marginal_gain','median'),marginal_max=('marginal_gain','max'))
-agg.to_csv(OUT/'figure_data_all_services_all_thresholds.csv',index=False)
+agg.to_csv(FIGDATA/'figure_data_all_services_all_thresholds.csv',index=False)
 
 for svc in services:
     for mode in ('gain','difference'):
@@ -92,7 +93,7 @@ for svc in services:
         fig.get_layout_engine().set(w_pad=.13,h_pad=.11)
         # No numeric CI interpretation for min/max ranges across five deterministic site scenarios.
         p=OUT/f'{svc}_{"01_cumulative_gain" if mode=="gain" else "02_difference_to_greedy"}'
-        for ext in ('png','pdf','svg'):fig.savefig(str(p)+'.'+ext,bbox_inches='tight')
+        fig.savefig(str(p)+'.png',bbox_inches='tight')
         plt.close(fig)
 
 # Supplemental single-service threshold sensitivity 5/10/15, with domain-specific y scales.
@@ -120,7 +121,7 @@ for svc in services:
     fig.legend(handles=[Line2D([0],[0],color=style[k][0],ls=style[k][1],lw=style[k][2],label=labels[k]) for k in keys],
       loc='outside lower center',ncol=4,frameon=False)
     f=OUT/f'{svc}_03_walking_thresholds'
-    for ext in ('png','pdf','svg'):fig.savefig(str(f)+'.'+ext,bbox_inches='tight')
+    fig.savefig(str(f)+'.png',bbox_inches='tight')
     plt.close(fig)
 
 # Transparent marginal-benefit summaries; incremental values are NOT smoothed.

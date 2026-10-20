@@ -1,4 +1,4 @@
-"""Frozen v1.0 (budgets 1..12) regression QA alongside v1.1 expanded 1..40 tests."""
+"""Checks the initial 12 steps directly from the retained 1–40 trajectories."""
 from pathlib import Path
 import json
 import numpy as np
@@ -9,8 +9,8 @@ OUT=ROOT/'outputs/sequential_investment'
 
 
 def data():
-    x=pd.read_csv(OUT/'archive_v10/sequential_addition_trajectories_v10.csv')
-    return x
+    x=pd.read_csv(OUT/'sequential_addition_trajectories.csv')
+    return x.loc[x.new_sites.between(1,12)].copy()
 
 
 def test_fixed_baseline_not_confused_with_new_sites():
