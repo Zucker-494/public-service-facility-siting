@@ -1,91 +1,91 @@
-scenario,service,threshold_min,objective,facilities_per_100km_network,facilities_per_10k,facilities_per_km2,distinct_proxy_street_sets,proxies_disagree
-INFERRED_89_01,culture,5,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_01,culture,5,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_01,culture,10,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_01,culture,10,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_01,culture,15,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_01,culture,15,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_01,elderly_care,5,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_01,elderly_care,5,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_01,elderly_care,10,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_01,elderly_care,10,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_01,elderly_care,15,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_01,elderly_care,15,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_01,healthcare,5,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_01,healthcare,5,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_01,healthcare,10,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_01,healthcare,10,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_01,healthcare,15,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_01,healthcare,15,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_04,culture,5,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_04,culture,5,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_04,culture,10,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_04,culture,10,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_04,culture,15,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_04,culture,15,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_04,elderly_care,5,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_04,elderly_care,5,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_04,elderly_care,10,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_04,elderly_care,10,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_04,elderly_care,15,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_04,elderly_care,15,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_04,healthcare,5,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_04,healthcare,5,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_04,healthcare,10,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_04,healthcare,10,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_04,healthcare,15,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_04,healthcare,15,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_08,culture,5,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_08,culture,5,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_08,culture,10,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_08,culture,10,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_08,culture,15,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_08,culture,15,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_08,elderly_care,5,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_08,elderly_care,5,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_08,elderly_care,10,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_08,elderly_care,10,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_08,elderly_care,15,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_08,elderly_care,15,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_08,healthcare,5,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_08,healthcare,5,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_08,healthcare,10,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_08,healthcare,10,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_08,healthcare,15,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_08,healthcare,15,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_12,culture,5,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_12,culture,5,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_12,culture,10,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_12,culture,10,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_12,culture,15,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_12,culture,15,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_12,elderly_care,5,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_12,elderly_care,5,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_12,elderly_care,10,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_12,elderly_care,10,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_12,elderly_care,15,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_12,elderly_care,15,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_12,healthcare,5,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_12,healthcare,5,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_12,healthcare,10,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_12,healthcare,10,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_12,healthcare,15,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_12,healthcare,15,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_15,culture,5,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_15,culture,5,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_15,culture,10,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_15,culture,10,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_15,culture,15,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_15,culture,15,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_15,elderly_care,5,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_15,elderly_care,5,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_15,elderly_care,10,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_15,elderly_care,10,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_15,elderly_care,15,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_15,elderly_care,15,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False
-INFERRED_89_15,healthcare,5,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_15,healthcare,5,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_15,healthcare,10,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_15,healthcare,10,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_15,healthcare,15,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True
-INFERRED_89_15,healthcare,15,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True
+﻿scenario,service,threshold_min,objective,facilities_per_100km_network,facilities_per_10k,facilities_per_km2,distinct_proxy_street_sets,proxies_disagree,facilities_per_100km_network_en,facilities_per_10k_en,facilities_per_km2_en
+INFERRED_89_01,culture,5,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_01,culture,5,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_01,culture,10,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_01,culture,10,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_01,culture,15,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_01,culture,15,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_01,elderly_care,5,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_01,elderly_care,5,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_01,elderly_care,10,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_01,elderly_care,10,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_01,elderly_care,15,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_01,elderly_care,15,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_01,healthcare,5,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_01,healthcare,5,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_01,healthcare,10,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_01,healthcare,10,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_01,healthcare,15,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_01,healthcare,15,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_04,culture,5,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_04,culture,5,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_04,culture,10,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_04,culture,10,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_04,culture,15,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_04,culture,15,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_04,elderly_care,5,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_04,elderly_care,5,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_04,elderly_care,10,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_04,elderly_care,10,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_04,elderly_care,15,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_04,elderly_care,15,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_04,healthcare,5,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_04,healthcare,5,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_04,healthcare,10,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_04,healthcare,10,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_04,healthcare,15,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_04,healthcare,15,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_08,culture,5,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_08,culture,5,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_08,culture,10,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_08,culture,10,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_08,culture,15,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_08,culture,15,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_08,elderly_care,5,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_08,elderly_care,5,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_08,elderly_care,10,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_08,elderly_care,10,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_08,elderly_care,15,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_08,elderly_care,15,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_08,healthcare,5,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_08,healthcare,5,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_08,healthcare,10,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_08,healthcare,10,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_08,healthcare,15,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_08,healthcare,15,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_12,culture,5,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_12,culture,5,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_12,culture,10,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_12,culture,10,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_12,culture,15,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_12,culture,15,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_12,elderly_care,5,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_12,elderly_care,5,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_12,elderly_care,10,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_12,elderly_care,10,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_12,elderly_care,15,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_12,elderly_care,15,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_12,healthcare,5,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_12,healthcare,5,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_12,healthcare,10,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_12,healthcare,10,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_12,healthcare,15,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_12,healthcare,15,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_15,culture,5,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_15,culture,5,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_15,culture,10,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_15,culture,10,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_15,culture,15,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_15,culture,15,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_15,elderly_care,5,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_15,elderly_care,5,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_15,elderly_care,10,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_15,elderly_care,10,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_15,elderly_care,15,district_gain_m,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_15,elderly_care,15,gain_equal_street_mean_pp,新江湾城街道,新江湾城街道,新江湾城街道,1,False,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict,Xinjiangwancheng Subdistrict
+INFERRED_89_15,healthcare,5,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_15,healthcare,5,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_15,healthcare,10,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_15,healthcare,10,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_15,healthcare,15,district_gain_m,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict
+INFERRED_89_15,healthcare,15,gain_equal_street_mean_pp,新江湾城街道,殷行街道,殷行街道,2,True,Xinjiangwancheng Subdistrict,Yinhang Subdistrict,Yinhang Subdistrict

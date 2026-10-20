@@ -1,82 +1,82 @@
-grid_m,service,threshold_min,proxy,oracle_street_length,oracle_street_equal,oracle_street_changed,normalized_regret_length,normalized_regret_equal,normalized_regret_difference_equal_minus_length
-180,culture,5,facilities_per_10k,殷行街道,延吉新村街道,True,0.8145351558031264,0.5648079793648417,-0.24972717643828468
-180,culture,5,facilities_per_km2,殷行街道,延吉新村街道,True,0.8145351558031264,0.5648079793648417,-0.24972717643828468
-180,culture,5,facilities_per_100km_network,殷行街道,延吉新村街道,True,0.8145351558031264,0.5648079793648417,-0.24972717643828468
-180,culture,10,facilities_per_10k,殷行街道,延吉新村街道,True,0.7676908414013326,0.5139143719857345,-0.25377646941559806
-180,culture,10,facilities_per_km2,殷行街道,延吉新村街道,True,0.7676908414013326,0.5139143719857345,-0.25377646941559806
-180,culture,10,facilities_per_100km_network,殷行街道,延吉新村街道,True,0.7676908414013326,0.5139143719857345,-0.25377646941559806
-180,culture,15,facilities_per_10k,长海路街道,延吉新村街道,True,0.7519478070999464,0.4432830822788308,-0.30866472482111557
-180,culture,15,facilities_per_km2,长海路街道,延吉新村街道,True,0.7519478070999464,0.4432830822788308,-0.30866472482111557
-180,culture,15,facilities_per_100km_network,长海路街道,延吉新村街道,True,0.7519478070999464,0.4432830822788308,-0.30866472482111557
-180,elderly_care,5,facilities_per_10k,殷行街道,控江路街道,True,0.7497685701931173,0.8702388165458578,0.1204702463527405
-180,elderly_care,5,facilities_per_km2,殷行街道,控江路街道,True,0.7497685701931173,0.8702388165458578,0.1204702463527405
-180,elderly_care,5,facilities_per_100km_network,殷行街道,控江路街道,True,0.7497685701931173,0.8702388165458578,0.1204702463527405
-180,elderly_care,10,facilities_per_10k,长海路街道,控江路街道,True,0.6684559690926024,0.8244751933009932,0.15601922420839076
-180,elderly_care,10,facilities_per_km2,长海路街道,控江路街道,True,0.6684559690926024,0.8244751933009932,0.15601922420839076
-180,elderly_care,10,facilities_per_100km_network,长海路街道,控江路街道,True,0.6684559690926024,0.8244751933009932,0.15601922420839076
-180,elderly_care,15,facilities_per_10k,长海路街道,长海路街道,False,0.6269633189495121,0.6743956986347882,0.04743237968527614
-180,elderly_care,15,facilities_per_km2,长海路街道,长海路街道,False,0.6269633189495121,0.6743956986347882,0.04743237968527614
-180,elderly_care,15,facilities_per_100km_network,长海路街道,长海路街道,False,0.6269633189495121,0.6743956986347882,0.04743237968527614
-180,healthcare,5,facilities_per_10k,殷行街道,延吉新村街道,True,0.7586521704509117,0.8494037363563599,0.0907515659054482
-180,healthcare,5,facilities_per_km2,殷行街道,延吉新村街道,True,0.7586521704509117,0.8494037363563599,0.0907515659054482
-180,healthcare,5,facilities_per_100km_network,殷行街道,延吉新村街道,True,0.7500256367600304,0.8653306955644889,0.11530505880445852
-180,healthcare,10,facilities_per_10k,殷行街道,控江路街道,True,0.7272783015147709,0.8195539600760142,0.09227565856124331
-180,healthcare,10,facilities_per_km2,殷行街道,控江路街道,True,0.7272783015147709,0.8195539600760142,0.09227565856124331
-180,healthcare,10,facilities_per_100km_network,殷行街道,控江路街道,True,0.7260541334144474,0.8410721890149194,0.11501805560047207
-180,healthcare,15,facilities_per_10k,长海路街道,长白新村街道,True,0.691547454782909,0.7820014665495524,0.09045401176664336
-180,healthcare,15,facilities_per_km2,长海路街道,长白新村街道,True,0.691547454782909,0.7820014665495524,0.09045401176664336
-180,healthcare,15,facilities_per_100km_network,长海路街道,长白新村街道,True,0.6573964908544511,0.7842982243141283,0.12690173345967726
-240,culture,5,facilities_per_10k,殷行街道,延吉新村街道,True,0.7845987131685261,0.5696675111218982,-0.21493120204662797
-240,culture,5,facilities_per_km2,殷行街道,延吉新村街道,True,0.7845987131685261,0.5696675111218982,-0.21493120204662797
-240,culture,5,facilities_per_100km_network,殷行街道,延吉新村街道,True,0.7845987131685261,0.5696675111218982,-0.21493120204662797
-240,culture,10,facilities_per_10k,殷行街道,延吉新村街道,True,0.7633892980130392,0.48154759282502113,-0.2818417051880181
-240,culture,10,facilities_per_km2,殷行街道,延吉新村街道,True,0.7633892980130392,0.48154759282502113,-0.2818417051880181
-240,culture,10,facilities_per_100km_network,殷行街道,延吉新村街道,True,0.7633892980130392,0.48154759282502113,-0.2818417051880181
-240,culture,15,facilities_per_10k,长海路街道,延吉新村街道,True,0.7587920893059127,0.4257040686520001,-0.3330880206539126
-240,culture,15,facilities_per_km2,长海路街道,延吉新村街道,True,0.7587920893059127,0.4257040686520001,-0.3330880206539126
-240,culture,15,facilities_per_100km_network,长海路街道,延吉新村街道,True,0.7587920893059127,0.4257040686520001,-0.3330880206539126
-240,elderly_care,5,facilities_per_10k,殷行街道,控江路街道,True,0.7029941559356131,0.8661854451381336,0.16319128920252046
-240,elderly_care,5,facilities_per_km2,殷行街道,控江路街道,True,0.7029941559356131,0.8661854451381336,0.16319128920252046
-240,elderly_care,5,facilities_per_100km_network,殷行街道,控江路街道,True,0.7029941559356131,0.8661854451381336,0.16319128920252046
-240,elderly_care,10,facilities_per_10k,长海路街道,控江路街道,True,0.6641459706632643,0.8172271508331475,0.15308118016988315
-240,elderly_care,10,facilities_per_km2,长海路街道,控江路街道,True,0.6641459706632643,0.8172271508331475,0.15308118016988315
-240,elderly_care,10,facilities_per_100km_network,长海路街道,控江路街道,True,0.6641459706632643,0.8172271508331475,0.15308118016988315
-240,elderly_care,15,facilities_per_10k,长海路街道,长海路街道,False,0.6246792327934525,0.6725627031049989,0.04788347031154638
-240,elderly_care,15,facilities_per_km2,长海路街道,长海路街道,False,0.6246792327934525,0.6725627031049989,0.04788347031154638
-240,elderly_care,15,facilities_per_100km_network,长海路街道,长海路街道,False,0.6246792327934525,0.6725627031049989,0.04788347031154638
-240,healthcare,5,facilities_per_10k,殷行街道,延吉新村街道,True,0.7249848258874269,0.8507052845527999,0.12572045866537307
-240,healthcare,5,facilities_per_km2,殷行街道,延吉新村街道,True,0.7249848258874269,0.8507052845527999,0.12572045866537307
-240,healthcare,5,facilities_per_100km_network,殷行街道,延吉新村街道,True,0.7042801209239228,0.8615577032578806,0.15727758233395783
-240,healthcare,10,facilities_per_10k,殷行街道,控江路街道,True,0.7347453702494295,0.8223021407225083,0.08755677047307875
-240,healthcare,10,facilities_per_km2,殷行街道,控江路街道,True,0.7347453702494295,0.8223021407225083,0.08755677047307875
-240,healthcare,10,facilities_per_100km_network,殷行街道,控江路街道,True,0.7271307226390474,0.839952316158414,0.1128215935193666
-240,healthcare,15,facilities_per_10k,长海路街道,长白新村街道,True,0.6962195924500972,0.7858170337507681,0.08959744130067082
-240,healthcare,15,facilities_per_km2,长海路街道,长白新村街道,True,0.6962195924500972,0.7858170337507681,0.08959744130067082
-240,healthcare,15,facilities_per_100km_network,长海路街道,长白新村街道,True,0.6574707589453095,0.7851575821273452,0.12768682318203572
-320,culture,5,facilities_per_10k,殷行街道,江浦路街道,True,0.774935368103393,0.5300815173105315,-0.24485385079286148
-320,culture,5,facilities_per_km2,殷行街道,江浦路街道,True,0.774935368103393,0.5300815173105315,-0.24485385079286148
-320,culture,5,facilities_per_100km_network,殷行街道,江浦路街道,True,0.774935368103393,0.5300815173105315,-0.24485385079286148
-320,culture,10,facilities_per_10k,殷行街道,延吉新村街道,True,0.7648046077821272,0.5038800299152119,-0.26092457786691536
-320,culture,10,facilities_per_km2,殷行街道,延吉新村街道,True,0.7648046077821272,0.5038800299152119,-0.26092457786691536
-320,culture,10,facilities_per_100km_network,殷行街道,延吉新村街道,True,0.7648046077821272,0.5038800299152119,-0.26092457786691536
-320,culture,15,facilities_per_10k,长海路街道,延吉新村街道,True,0.7602297390471733,0.44116758696773367,-0.3190621520794396
-320,culture,15,facilities_per_km2,长海路街道,延吉新村街道,True,0.7602297390471733,0.44116758696773367,-0.3190621520794396
-320,culture,15,facilities_per_100km_network,长海路街道,延吉新村街道,True,0.7602297390471733,0.44116758696773367,-0.3190621520794396
-320,elderly_care,5,facilities_per_10k,殷行街道,控江路街道,True,0.6859504061804911,0.8671693120472937,0.18121890586680267
-320,elderly_care,5,facilities_per_km2,殷行街道,控江路街道,True,0.6859504061804911,0.8671693120472937,0.18121890586680267
-320,elderly_care,5,facilities_per_100km_network,殷行街道,控江路街道,True,0.6859504061804911,0.8671693120472937,0.18121890586680267
-320,elderly_care,10,facilities_per_10k,殷行街道,大桥街道,True,0.6548898687393933,0.8220316303324655,0.16714176159307226
-320,elderly_care,10,facilities_per_km2,殷行街道,大桥街道,True,0.6548898687393933,0.8220316303324655,0.16714176159307226
-320,elderly_care,10,facilities_per_100km_network,殷行街道,大桥街道,True,0.6548898687393933,0.8220316303324655,0.16714176159307226
-320,elderly_care,15,facilities_per_10k,长海路街道,长海路街道,False,0.617985507368848,0.6593719101356227,0.04138640276677463
-320,elderly_care,15,facilities_per_km2,长海路街道,长海路街道,False,0.617985507368848,0.6593719101356227,0.04138640276677463
-320,elderly_care,15,facilities_per_100km_network,长海路街道,长海路街道,False,0.617985507368848,0.6593719101356227,0.04138640276677463
-320,healthcare,5,facilities_per_10k,殷行街道,长白新村街道,True,0.7121352584545013,0.8354011647002059,0.12326590624570455
-320,healthcare,5,facilities_per_km2,殷行街道,长白新村街道,True,0.7121352584545013,0.8354011647002059,0.12326590624570455
-320,healthcare,5,facilities_per_100km_network,殷行街道,长白新村街道,True,0.6965297418864793,0.8493325009843943,0.15280275909791496
-320,healthcare,10,facilities_per_10k,殷行街道,大桥街道,True,0.7246666152673455,0.8024987967998601,0.07783218153251459
-320,healthcare,10,facilities_per_km2,殷行街道,大桥街道,True,0.7246666152673455,0.8024987967998601,0.07783218153251459
-320,healthcare,10,facilities_per_100km_network,殷行街道,大桥街道,True,0.7247920871950774,0.825437840744165,0.10064575354908767
-320,healthcare,15,facilities_per_10k,殷行街道,长白新村街道,True,0.6560651957601713,0.7781130328064854,0.12204783704631406
-320,healthcare,15,facilities_per_km2,殷行街道,长白新村街道,True,0.6560651957601713,0.7781130328064854,0.12204783704631406
-320,healthcare,15,facilities_per_100km_network,殷行街道,长白新村街道,True,0.6136044299973704,0.776051036282314,0.16244660628494356
+﻿grid_m,service,threshold_min,proxy,oracle_street_length,oracle_street_equal,oracle_street_changed,normalized_regret_length,normalized_regret_equal,normalized_regret_difference_equal_minus_length,oracle_street_length_en,oracle_street_equal_en
+180,culture,5,facilities_per_10k,殷行街道,延吉新村街道,True,0.8145351558031264,0.5648079793648417,-0.24972717643828468,Yinhang Subdistrict,Yanji Xincun Subdistrict
+180,culture,5,facilities_per_km2,殷行街道,延吉新村街道,True,0.8145351558031264,0.5648079793648417,-0.24972717643828468,Yinhang Subdistrict,Yanji Xincun Subdistrict
+180,culture,5,facilities_per_100km_network,殷行街道,延吉新村街道,True,0.8145351558031264,0.5648079793648417,-0.24972717643828468,Yinhang Subdistrict,Yanji Xincun Subdistrict
+180,culture,10,facilities_per_10k,殷行街道,延吉新村街道,True,0.7676908414013326,0.5139143719857345,-0.25377646941559806,Yinhang Subdistrict,Yanji Xincun Subdistrict
+180,culture,10,facilities_per_km2,殷行街道,延吉新村街道,True,0.7676908414013326,0.5139143719857345,-0.25377646941559806,Yinhang Subdistrict,Yanji Xincun Subdistrict
+180,culture,10,facilities_per_100km_network,殷行街道,延吉新村街道,True,0.7676908414013326,0.5139143719857345,-0.25377646941559806,Yinhang Subdistrict,Yanji Xincun Subdistrict
+180,culture,15,facilities_per_10k,长海路街道,延吉新村街道,True,0.7519478070999464,0.4432830822788308,-0.30866472482111557,Changhai Road Subdistrict,Yanji Xincun Subdistrict
+180,culture,15,facilities_per_km2,长海路街道,延吉新村街道,True,0.7519478070999464,0.4432830822788308,-0.30866472482111557,Changhai Road Subdistrict,Yanji Xincun Subdistrict
+180,culture,15,facilities_per_100km_network,长海路街道,延吉新村街道,True,0.7519478070999464,0.4432830822788308,-0.30866472482111557,Changhai Road Subdistrict,Yanji Xincun Subdistrict
+180,elderly_care,5,facilities_per_10k,殷行街道,控江路街道,True,0.7497685701931173,0.8702388165458578,0.1204702463527405,Yinhang Subdistrict,Kongjiang Road Subdistrict
+180,elderly_care,5,facilities_per_km2,殷行街道,控江路街道,True,0.7497685701931173,0.8702388165458578,0.1204702463527405,Yinhang Subdistrict,Kongjiang Road Subdistrict
+180,elderly_care,5,facilities_per_100km_network,殷行街道,控江路街道,True,0.7497685701931173,0.8702388165458578,0.1204702463527405,Yinhang Subdistrict,Kongjiang Road Subdistrict
+180,elderly_care,10,facilities_per_10k,长海路街道,控江路街道,True,0.6684559690926024,0.8244751933009932,0.15601922420839076,Changhai Road Subdistrict,Kongjiang Road Subdistrict
+180,elderly_care,10,facilities_per_km2,长海路街道,控江路街道,True,0.6684559690926024,0.8244751933009932,0.15601922420839076,Changhai Road Subdistrict,Kongjiang Road Subdistrict
+180,elderly_care,10,facilities_per_100km_network,长海路街道,控江路街道,True,0.6684559690926024,0.8244751933009932,0.15601922420839076,Changhai Road Subdistrict,Kongjiang Road Subdistrict
+180,elderly_care,15,facilities_per_10k,长海路街道,长海路街道,False,0.6269633189495121,0.6743956986347882,0.04743237968527614,Changhai Road Subdistrict,Changhai Road Subdistrict
+180,elderly_care,15,facilities_per_km2,长海路街道,长海路街道,False,0.6269633189495121,0.6743956986347882,0.04743237968527614,Changhai Road Subdistrict,Changhai Road Subdistrict
+180,elderly_care,15,facilities_per_100km_network,长海路街道,长海路街道,False,0.6269633189495121,0.6743956986347882,0.04743237968527614,Changhai Road Subdistrict,Changhai Road Subdistrict
+180,healthcare,5,facilities_per_10k,殷行街道,延吉新村街道,True,0.7586521704509117,0.8494037363563599,0.0907515659054482,Yinhang Subdistrict,Yanji Xincun Subdistrict
+180,healthcare,5,facilities_per_km2,殷行街道,延吉新村街道,True,0.7586521704509117,0.8494037363563599,0.0907515659054482,Yinhang Subdistrict,Yanji Xincun Subdistrict
+180,healthcare,5,facilities_per_100km_network,殷行街道,延吉新村街道,True,0.7500256367600304,0.8653306955644889,0.11530505880445852,Yinhang Subdistrict,Yanji Xincun Subdistrict
+180,healthcare,10,facilities_per_10k,殷行街道,控江路街道,True,0.7272783015147709,0.8195539600760142,0.09227565856124331,Yinhang Subdistrict,Kongjiang Road Subdistrict
+180,healthcare,10,facilities_per_km2,殷行街道,控江路街道,True,0.7272783015147709,0.8195539600760142,0.09227565856124331,Yinhang Subdistrict,Kongjiang Road Subdistrict
+180,healthcare,10,facilities_per_100km_network,殷行街道,控江路街道,True,0.7260541334144474,0.8410721890149194,0.11501805560047207,Yinhang Subdistrict,Kongjiang Road Subdistrict
+180,healthcare,15,facilities_per_10k,长海路街道,长白新村街道,True,0.691547454782909,0.7820014665495524,0.09045401176664336,Changhai Road Subdistrict,Changbai Xincun Subdistrict
+180,healthcare,15,facilities_per_km2,长海路街道,长白新村街道,True,0.691547454782909,0.7820014665495524,0.09045401176664336,Changhai Road Subdistrict,Changbai Xincun Subdistrict
+180,healthcare,15,facilities_per_100km_network,长海路街道,长白新村街道,True,0.6573964908544511,0.7842982243141283,0.12690173345967726,Changhai Road Subdistrict,Changbai Xincun Subdistrict
+240,culture,5,facilities_per_10k,殷行街道,延吉新村街道,True,0.7845987131685261,0.5696675111218982,-0.21493120204662797,Yinhang Subdistrict,Yanji Xincun Subdistrict
+240,culture,5,facilities_per_km2,殷行街道,延吉新村街道,True,0.7845987131685261,0.5696675111218982,-0.21493120204662797,Yinhang Subdistrict,Yanji Xincun Subdistrict
+240,culture,5,facilities_per_100km_network,殷行街道,延吉新村街道,True,0.7845987131685261,0.5696675111218982,-0.21493120204662797,Yinhang Subdistrict,Yanji Xincun Subdistrict
+240,culture,10,facilities_per_10k,殷行街道,延吉新村街道,True,0.7633892980130392,0.48154759282502113,-0.2818417051880181,Yinhang Subdistrict,Yanji Xincun Subdistrict
+240,culture,10,facilities_per_km2,殷行街道,延吉新村街道,True,0.7633892980130392,0.48154759282502113,-0.2818417051880181,Yinhang Subdistrict,Yanji Xincun Subdistrict
+240,culture,10,facilities_per_100km_network,殷行街道,延吉新村街道,True,0.7633892980130392,0.48154759282502113,-0.2818417051880181,Yinhang Subdistrict,Yanji Xincun Subdistrict
+240,culture,15,facilities_per_10k,长海路街道,延吉新村街道,True,0.7587920893059127,0.4257040686520001,-0.3330880206539126,Changhai Road Subdistrict,Yanji Xincun Subdistrict
+240,culture,15,facilities_per_km2,长海路街道,延吉新村街道,True,0.7587920893059127,0.4257040686520001,-0.3330880206539126,Changhai Road Subdistrict,Yanji Xincun Subdistrict
+240,culture,15,facilities_per_100km_network,长海路街道,延吉新村街道,True,0.7587920893059127,0.4257040686520001,-0.3330880206539126,Changhai Road Subdistrict,Yanji Xincun Subdistrict
+240,elderly_care,5,facilities_per_10k,殷行街道,控江路街道,True,0.7029941559356131,0.8661854451381336,0.16319128920252046,Yinhang Subdistrict,Kongjiang Road Subdistrict
+240,elderly_care,5,facilities_per_km2,殷行街道,控江路街道,True,0.7029941559356131,0.8661854451381336,0.16319128920252046,Yinhang Subdistrict,Kongjiang Road Subdistrict
+240,elderly_care,5,facilities_per_100km_network,殷行街道,控江路街道,True,0.7029941559356131,0.8661854451381336,0.16319128920252046,Yinhang Subdistrict,Kongjiang Road Subdistrict
+240,elderly_care,10,facilities_per_10k,长海路街道,控江路街道,True,0.6641459706632643,0.8172271508331475,0.15308118016988315,Changhai Road Subdistrict,Kongjiang Road Subdistrict
+240,elderly_care,10,facilities_per_km2,长海路街道,控江路街道,True,0.6641459706632643,0.8172271508331475,0.15308118016988315,Changhai Road Subdistrict,Kongjiang Road Subdistrict
+240,elderly_care,10,facilities_per_100km_network,长海路街道,控江路街道,True,0.6641459706632643,0.8172271508331475,0.15308118016988315,Changhai Road Subdistrict,Kongjiang Road Subdistrict
+240,elderly_care,15,facilities_per_10k,长海路街道,长海路街道,False,0.6246792327934525,0.6725627031049989,0.04788347031154638,Changhai Road Subdistrict,Changhai Road Subdistrict
+240,elderly_care,15,facilities_per_km2,长海路街道,长海路街道,False,0.6246792327934525,0.6725627031049989,0.04788347031154638,Changhai Road Subdistrict,Changhai Road Subdistrict
+240,elderly_care,15,facilities_per_100km_network,长海路街道,长海路街道,False,0.6246792327934525,0.6725627031049989,0.04788347031154638,Changhai Road Subdistrict,Changhai Road Subdistrict
+240,healthcare,5,facilities_per_10k,殷行街道,延吉新村街道,True,0.7249848258874269,0.8507052845527999,0.12572045866537307,Yinhang Subdistrict,Yanji Xincun Subdistrict
+240,healthcare,5,facilities_per_km2,殷行街道,延吉新村街道,True,0.7249848258874269,0.8507052845527999,0.12572045866537307,Yinhang Subdistrict,Yanji Xincun Subdistrict
+240,healthcare,5,facilities_per_100km_network,殷行街道,延吉新村街道,True,0.7042801209239228,0.8615577032578806,0.15727758233395783,Yinhang Subdistrict,Yanji Xincun Subdistrict
+240,healthcare,10,facilities_per_10k,殷行街道,控江路街道,True,0.7347453702494295,0.8223021407225083,0.08755677047307875,Yinhang Subdistrict,Kongjiang Road Subdistrict
+240,healthcare,10,facilities_per_km2,殷行街道,控江路街道,True,0.7347453702494295,0.8223021407225083,0.08755677047307875,Yinhang Subdistrict,Kongjiang Road Subdistrict
+240,healthcare,10,facilities_per_100km_network,殷行街道,控江路街道,True,0.7271307226390474,0.839952316158414,0.1128215935193666,Yinhang Subdistrict,Kongjiang Road Subdistrict
+240,healthcare,15,facilities_per_10k,长海路街道,长白新村街道,True,0.6962195924500972,0.7858170337507681,0.08959744130067082,Changhai Road Subdistrict,Changbai Xincun Subdistrict
+240,healthcare,15,facilities_per_km2,长海路街道,长白新村街道,True,0.6962195924500972,0.7858170337507681,0.08959744130067082,Changhai Road Subdistrict,Changbai Xincun Subdistrict
+240,healthcare,15,facilities_per_100km_network,长海路街道,长白新村街道,True,0.6574707589453095,0.7851575821273452,0.12768682318203572,Changhai Road Subdistrict,Changbai Xincun Subdistrict
+320,culture,5,facilities_per_10k,殷行街道,江浦路街道,True,0.774935368103393,0.5300815173105315,-0.24485385079286148,Yinhang Subdistrict,Jiangpu Road Subdistrict
+320,culture,5,facilities_per_km2,殷行街道,江浦路街道,True,0.774935368103393,0.5300815173105315,-0.24485385079286148,Yinhang Subdistrict,Jiangpu Road Subdistrict
+320,culture,5,facilities_per_100km_network,殷行街道,江浦路街道,True,0.774935368103393,0.5300815173105315,-0.24485385079286148,Yinhang Subdistrict,Jiangpu Road Subdistrict
+320,culture,10,facilities_per_10k,殷行街道,延吉新村街道,True,0.7648046077821272,0.5038800299152119,-0.26092457786691536,Yinhang Subdistrict,Yanji Xincun Subdistrict
+320,culture,10,facilities_per_km2,殷行街道,延吉新村街道,True,0.7648046077821272,0.5038800299152119,-0.26092457786691536,Yinhang Subdistrict,Yanji Xincun Subdistrict
+320,culture,10,facilities_per_100km_network,殷行街道,延吉新村街道,True,0.7648046077821272,0.5038800299152119,-0.26092457786691536,Yinhang Subdistrict,Yanji Xincun Subdistrict
+320,culture,15,facilities_per_10k,长海路街道,延吉新村街道,True,0.7602297390471733,0.44116758696773367,-0.3190621520794396,Changhai Road Subdistrict,Yanji Xincun Subdistrict
+320,culture,15,facilities_per_km2,长海路街道,延吉新村街道,True,0.7602297390471733,0.44116758696773367,-0.3190621520794396,Changhai Road Subdistrict,Yanji Xincun Subdistrict
+320,culture,15,facilities_per_100km_network,长海路街道,延吉新村街道,True,0.7602297390471733,0.44116758696773367,-0.3190621520794396,Changhai Road Subdistrict,Yanji Xincun Subdistrict
+320,elderly_care,5,facilities_per_10k,殷行街道,控江路街道,True,0.6859504061804911,0.8671693120472937,0.18121890586680267,Yinhang Subdistrict,Kongjiang Road Subdistrict
+320,elderly_care,5,facilities_per_km2,殷行街道,控江路街道,True,0.6859504061804911,0.8671693120472937,0.18121890586680267,Yinhang Subdistrict,Kongjiang Road Subdistrict
+320,elderly_care,5,facilities_per_100km_network,殷行街道,控江路街道,True,0.6859504061804911,0.8671693120472937,0.18121890586680267,Yinhang Subdistrict,Kongjiang Road Subdistrict
+320,elderly_care,10,facilities_per_10k,殷行街道,大桥街道,True,0.6548898687393933,0.8220316303324655,0.16714176159307226,Yinhang Subdistrict,Daqiao Subdistrict
+320,elderly_care,10,facilities_per_km2,殷行街道,大桥街道,True,0.6548898687393933,0.8220316303324655,0.16714176159307226,Yinhang Subdistrict,Daqiao Subdistrict
+320,elderly_care,10,facilities_per_100km_network,殷行街道,大桥街道,True,0.6548898687393933,0.8220316303324655,0.16714176159307226,Yinhang Subdistrict,Daqiao Subdistrict
+320,elderly_care,15,facilities_per_10k,长海路街道,长海路街道,False,0.617985507368848,0.6593719101356227,0.04138640276677463,Changhai Road Subdistrict,Changhai Road Subdistrict
+320,elderly_care,15,facilities_per_km2,长海路街道,长海路街道,False,0.617985507368848,0.6593719101356227,0.04138640276677463,Changhai Road Subdistrict,Changhai Road Subdistrict
+320,elderly_care,15,facilities_per_100km_network,长海路街道,长海路街道,False,0.617985507368848,0.6593719101356227,0.04138640276677463,Changhai Road Subdistrict,Changhai Road Subdistrict
+320,healthcare,5,facilities_per_10k,殷行街道,长白新村街道,True,0.7121352584545013,0.8354011647002059,0.12326590624570455,Yinhang Subdistrict,Changbai Xincun Subdistrict
+320,healthcare,5,facilities_per_km2,殷行街道,长白新村街道,True,0.7121352584545013,0.8354011647002059,0.12326590624570455,Yinhang Subdistrict,Changbai Xincun Subdistrict
+320,healthcare,5,facilities_per_100km_network,殷行街道,长白新村街道,True,0.6965297418864793,0.8493325009843943,0.15280275909791496,Yinhang Subdistrict,Changbai Xincun Subdistrict
+320,healthcare,10,facilities_per_10k,殷行街道,大桥街道,True,0.7246666152673455,0.8024987967998601,0.07783218153251459,Yinhang Subdistrict,Daqiao Subdistrict
+320,healthcare,10,facilities_per_km2,殷行街道,大桥街道,True,0.7246666152673455,0.8024987967998601,0.07783218153251459,Yinhang Subdistrict,Daqiao Subdistrict
+320,healthcare,10,facilities_per_100km_network,殷行街道,大桥街道,True,0.7247920871950774,0.825437840744165,0.10064575354908767,Yinhang Subdistrict,Daqiao Subdistrict
+320,healthcare,15,facilities_per_10k,殷行街道,长白新村街道,True,0.6560651957601713,0.7781130328064854,0.12204783704631406,Yinhang Subdistrict,Changbai Xincun Subdistrict
+320,healthcare,15,facilities_per_km2,殷行街道,长白新村街道,True,0.6560651957601713,0.7781130328064854,0.12204783704631406,Yinhang Subdistrict,Changbai Xincun Subdistrict
+320,healthcare,15,facilities_per_100km_network,殷行街道,长白新村街道,True,0.6136044299973704,0.776051036282314,0.16244660628494356,Yinhang Subdistrict,Changbai Xincun Subdistrict

@@ -1,31 +1,31 @@
-scenario,existing_facility_name,service,imputed_osm_node_id,is_new_added_site
-INFERRED_89_01,上海信养养老服务有限公司杨浦信澜养老院分公司,elderly_care,12219374707,False
-INFERRED_89_01,上海市杨浦人和养老院,elderly_care,2354317870,False
-INFERRED_89_01,上海市杨浦区长海路街道敬老院,elderly_care,301863541,False
-INFERRED_89_01,上海杨浦区汇晨长白老年福利院,elderly_care,1659113518,False
-INFERRED_89_01,大桥街道社区文化活动中心,culture,1883127534,False
-INFERRED_89_01,延吉新村街道社区文化活动中心,culture,1883181539,False
-INFERRED_89_04,上海信养养老服务有限公司杨浦信澜养老院分公司,elderly_care,2355402936,False
-INFERRED_89_04,上海市杨浦人和养老院,elderly_care,2355593164,False
-INFERRED_89_04,上海市杨浦区长海路街道敬老院,elderly_care,9883484927,False
-INFERRED_89_04,上海杨浦区汇晨长白老年福利院,elderly_care,1659113468,False
-INFERRED_89_04,大桥街道社区文化活动中心,culture,9805785176,False
-INFERRED_89_04,延吉新村街道社区文化活动中心,culture,1883148954,False
-INFERRED_89_08,上海信养养老服务有限公司杨浦信澜养老院分公司,elderly_care,2355585922,False
-INFERRED_89_08,上海市杨浦人和养老院,elderly_care,1765010683,False
-INFERRED_89_08,上海市杨浦区长海路街道敬老院,elderly_care,1526088028,False
-INFERRED_89_08,上海杨浦区汇晨长白老年福利院,elderly_care,1588679062,False
-INFERRED_89_08,大桥街道社区文化活动中心,culture,474838189,False
-INFERRED_89_08,延吉新村街道社区文化活动中心,culture,474813568,False
-INFERRED_89_12,上海信养养老服务有限公司杨浦信澜养老院分公司,elderly_care,353084863,False
-INFERRED_89_12,上海市杨浦人和养老院,elderly_care,8311196055,False
-INFERRED_89_12,上海市杨浦区长海路街道敬老院,elderly_care,1526088163,False
-INFERRED_89_12,上海杨浦区汇晨长白老年福利院,elderly_care,1657901201,False
-INFERRED_89_12,大桥街道社区文化活动中心,culture,1883127534,False
-INFERRED_89_12,延吉新村街道社区文化活动中心,culture,1494719228,False
-INFERRED_89_15,上海信养养老服务有限公司杨浦信澜养老院分公司,elderly_care,1876870994,False
-INFERRED_89_15,上海市杨浦人和养老院,elderly_care,1670903683,False
-INFERRED_89_15,上海市杨浦区长海路街道敬老院,elderly_care,1526118316,False
-INFERRED_89_15,上海杨浦区汇晨长白老年福利院,elderly_care,1675927066,False
-INFERRED_89_15,大桥街道社区文化活动中心,culture,9805785176,False
-INFERRED_89_15,延吉新村街道社区文化活动中心,culture,474813211,False
+﻿scenario,existing_facility_name,service,imputed_osm_node_id,is_new_added_site,existing_facility_name_en
+INFERRED_89_01,上海信养养老服务有限公司杨浦信澜养老院分公司,elderly_care,12219374707,False,Shang Hai Xin Yang Yang Lao Fu Wu You Xian Gong Si Yang Pu Xin Lan Yang Lao Yuan Fen Gong Si
+INFERRED_89_01,上海市杨浦人和养老院,elderly_care,2354317870,False,Shang Hai Shi Yang Pu Ren He Yang Lao Yuan
+INFERRED_89_01,上海市杨浦区长海路街道敬老院,elderly_care,301863541,False,Shang Hai Shi Yang Pu Qu Changhai Road SubdistrictJing Lao Yuan
+INFERRED_89_01,上海杨浦区汇晨长白老年福利院,elderly_care,1659113518,False,Shang Hai Yang Pu Qu Hui Chen Chang Bai Lao Nian Fu Li Yuan
+INFERRED_89_01,大桥街道社区文化活动中心,culture,1883127534,False,Daqiao SubdistrictShe Qu Wen Hua Huo Dong Zhong Xin
+INFERRED_89_01,延吉新村街道社区文化活动中心,culture,1883181539,False,Yanji Xincun SubdistrictShe Qu Wen Hua Huo Dong Zhong Xin
+INFERRED_89_04,上海信养养老服务有限公司杨浦信澜养老院分公司,elderly_care,2355402936,False,Shang Hai Xin Yang Yang Lao Fu Wu You Xian Gong Si Yang Pu Xin Lan Yang Lao Yuan Fen Gong Si
+INFERRED_89_04,上海市杨浦人和养老院,elderly_care,2355593164,False,Shang Hai Shi Yang Pu Ren He Yang Lao Yuan
+INFERRED_89_04,上海市杨浦区长海路街道敬老院,elderly_care,9883484927,False,Shang Hai Shi Yang Pu Qu Changhai Road SubdistrictJing Lao Yuan
+INFERRED_89_04,上海杨浦区汇晨长白老年福利院,elderly_care,1659113468,False,Shang Hai Yang Pu Qu Hui Chen Chang Bai Lao Nian Fu Li Yuan
+INFERRED_89_04,大桥街道社区文化活动中心,culture,9805785176,False,Daqiao SubdistrictShe Qu Wen Hua Huo Dong Zhong Xin
+INFERRED_89_04,延吉新村街道社区文化活动中心,culture,1883148954,False,Yanji Xincun SubdistrictShe Qu Wen Hua Huo Dong Zhong Xin
+INFERRED_89_08,上海信养养老服务有限公司杨浦信澜养老院分公司,elderly_care,2355585922,False,Shang Hai Xin Yang Yang Lao Fu Wu You Xian Gong Si Yang Pu Xin Lan Yang Lao Yuan Fen Gong Si
+INFERRED_89_08,上海市杨浦人和养老院,elderly_care,1765010683,False,Shang Hai Shi Yang Pu Ren He Yang Lao Yuan
+INFERRED_89_08,上海市杨浦区长海路街道敬老院,elderly_care,1526088028,False,Shang Hai Shi Yang Pu Qu Changhai Road SubdistrictJing Lao Yuan
+INFERRED_89_08,上海杨浦区汇晨长白老年福利院,elderly_care,1588679062,False,Shang Hai Yang Pu Qu Hui Chen Chang Bai Lao Nian Fu Li Yuan
+INFERRED_89_08,大桥街道社区文化活动中心,culture,474838189,False,Daqiao SubdistrictShe Qu Wen Hua Huo Dong Zhong Xin
+INFERRED_89_08,延吉新村街道社区文化活动中心,culture,474813568,False,Yanji Xincun SubdistrictShe Qu Wen Hua Huo Dong Zhong Xin
+INFERRED_89_12,上海信养养老服务有限公司杨浦信澜养老院分公司,elderly_care,353084863,False,Shang Hai Xin Yang Yang Lao Fu Wu You Xian Gong Si Yang Pu Xin Lan Yang Lao Yuan Fen Gong Si
+INFERRED_89_12,上海市杨浦人和养老院,elderly_care,8311196055,False,Shang Hai Shi Yang Pu Ren He Yang Lao Yuan
+INFERRED_89_12,上海市杨浦区长海路街道敬老院,elderly_care,1526088163,False,Shang Hai Shi Yang Pu Qu Changhai Road SubdistrictJing Lao Yuan
+INFERRED_89_12,上海杨浦区汇晨长白老年福利院,elderly_care,1657901201,False,Shang Hai Yang Pu Qu Hui Chen Chang Bai Lao Nian Fu Li Yuan
+INFERRED_89_12,大桥街道社区文化活动中心,culture,1883127534,False,Daqiao SubdistrictShe Qu Wen Hua Huo Dong Zhong Xin
+INFERRED_89_12,延吉新村街道社区文化活动中心,culture,1494719228,False,Yanji Xincun SubdistrictShe Qu Wen Hua Huo Dong Zhong Xin
+INFERRED_89_15,上海信养养老服务有限公司杨浦信澜养老院分公司,elderly_care,1876870994,False,Shang Hai Xin Yang Yang Lao Fu Wu You Xian Gong Si Yang Pu Xin Lan Yang Lao Yuan Fen Gong Si
+INFERRED_89_15,上海市杨浦人和养老院,elderly_care,1670903683,False,Shang Hai Shi Yang Pu Ren He Yang Lao Yuan
+INFERRED_89_15,上海市杨浦区长海路街道敬老院,elderly_care,1526118316,False,Shang Hai Shi Yang Pu Qu Changhai Road SubdistrictJing Lao Yuan
+INFERRED_89_15,上海杨浦区汇晨长白老年福利院,elderly_care,1675927066,False,Shang Hai Yang Pu Qu Hui Chen Chang Bai Lao Nian Fu Li Yuan
+INFERRED_89_15,大桥街道社区文化活动中心,culture,9805785176,False,Daqiao SubdistrictShe Qu Wen Hua Huo Dong Zhong Xin
+INFERRED_89_15,延吉新村街道社区文化活动中心,culture,474813211,False,Yanji Xincun SubdistrictShe Qu Wen Hua Huo Dong Zhong Xin

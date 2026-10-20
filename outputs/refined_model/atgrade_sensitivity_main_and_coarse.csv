@@ -1,55 +1,55 @@
-grid_m,service,threshold_min,proxy,baseline_oracle_street,baseline_regret_fraction,connected_oracle_street,connected_regret_fraction,regret_difference_connected_minus_baseline,oracle_street_changed
-240,culture,5,facilities_per_10k,殷行街道,0.7845987131685261,殷行街道,0.7845987131685261,0.0,False
-240,culture,5,facilities_per_km2,殷行街道,0.7845987131685261,殷行街道,0.7845987131685261,0.0,False
-240,culture,5,facilities_per_100km_network,殷行街道,0.7845987131685261,殷行街道,0.7845987131685261,0.0,False
-240,culture,10,facilities_per_10k,殷行街道,0.7633892980130392,殷行街道,0.7633892980130392,0.0,False
-240,culture,10,facilities_per_km2,殷行街道,0.7633892980130392,殷行街道,0.7633892980130392,0.0,False
-240,culture,10,facilities_per_100km_network,殷行街道,0.7633892980130392,殷行街道,0.7633892980130392,0.0,False
-240,culture,15,facilities_per_10k,长海路街道,0.7587920893059127,长海路街道,0.7587920893059127,0.0,False
-240,culture,15,facilities_per_km2,长海路街道,0.7587920893059127,长海路街道,0.7587920893059127,0.0,False
-240,culture,15,facilities_per_100km_network,长海路街道,0.7587920893059127,长海路街道,0.7587920893059127,0.0,False
-240,elderly_care,5,facilities_per_10k,殷行街道,0.7029941559356131,殷行街道,0.701309464831807,-0.0016846911038060908,False
-240,elderly_care,5,facilities_per_km2,殷行街道,0.7029941559356131,殷行街道,0.701309464831807,-0.0016846911038060908,False
-240,elderly_care,5,facilities_per_100km_network,殷行街道,0.7029941559356131,殷行街道,0.701309464831807,-0.0016846911038060908,False
-240,elderly_care,10,facilities_per_10k,长海路街道,0.6641459706632643,长海路街道,0.6623672021191259,-0.0017787685441383871,False
-240,elderly_care,10,facilities_per_km2,长海路街道,0.6641459706632643,长海路街道,0.6623672021191259,-0.0017787685441383871,False
-240,elderly_care,10,facilities_per_100km_network,长海路街道,0.6641459706632643,长海路街道,0.6623672021191259,-0.0017787685441383871,False
-240,elderly_care,15,facilities_per_10k,长海路街道,0.6246792327934525,长海路街道,0.6229560675946368,-0.001723165198815657,False
-240,elderly_care,15,facilities_per_km2,长海路街道,0.6246792327934525,长海路街道,0.6229560675946368,-0.001723165198815657,False
-240,elderly_care,15,facilities_per_100km_network,长海路街道,0.6246792327934525,长海路街道,0.6229560675946368,-0.001723165198815657,False
-240,healthcare,5,facilities_per_10k,殷行街道,0.7249848258874269,殷行街道,0.7249848258874269,0.0,False
-240,healthcare,5,facilities_per_km2,殷行街道,0.7249848258874269,殷行街道,0.7249848258874269,0.0,False
-240,healthcare,5,facilities_per_100km_network,殷行街道,0.7042801209239228,殷行街道,0.7025954298201168,-0.0016846911038059798,False
-240,healthcare,10,facilities_per_10k,殷行街道,0.7347453702494295,殷行街道,0.7347453702494295,0.0,False
-240,healthcare,10,facilities_per_km2,殷行街道,0.7347453702494295,殷行街道,0.7347453702494295,0.0,False
-240,healthcare,10,facilities_per_100km_network,殷行街道,0.7271307226390474,殷行街道,0.7257806678052899,-0.001350054833757497,False
-240,healthcare,15,facilities_per_10k,长海路街道,0.6962195924500972,长海路街道,0.6962195924500972,0.0,False
-240,healthcare,15,facilities_per_km2,长海路街道,0.6962195924500972,长海路街道,0.6962195924500972,0.0,False
-240,healthcare,15,facilities_per_100km_network,长海路街道,0.6574707589453095,长海路街道,0.6561983880422024,-0.0012723709031070563,False
-320,culture,5,facilities_per_10k,殷行街道,0.774935368103393,殷行街道,0.774935368103393,0.0,False
-320,culture,5,facilities_per_km2,殷行街道,0.774935368103393,殷行街道,0.774935368103393,0.0,False
-320,culture,5,facilities_per_100km_network,殷行街道,0.774935368103393,殷行街道,0.774935368103393,0.0,False
-320,culture,10,facilities_per_10k,殷行街道,0.7648046077821272,殷行街道,0.7648046077821272,0.0,False
-320,culture,10,facilities_per_km2,殷行街道,0.7648046077821272,殷行街道,0.7648046077821272,0.0,False
-320,culture,10,facilities_per_100km_network,殷行街道,0.7648046077821272,殷行街道,0.7648046077821272,0.0,False
-320,culture,15,facilities_per_10k,长海路街道,0.7602297390471733,长海路街道,0.7602297390471733,0.0,False
-320,culture,15,facilities_per_km2,长海路街道,0.7602297390471733,长海路街道,0.7602297390471733,0.0,False
-320,culture,15,facilities_per_100km_network,长海路街道,0.7602297390471733,长海路街道,0.7602297390471733,0.0,False
-320,elderly_care,5,facilities_per_10k,殷行街道,0.6859504061804911,殷行街道,0.6852641117870389,-0.0006862943934521359,False
-320,elderly_care,5,facilities_per_km2,殷行街道,0.6859504061804911,殷行街道,0.6852641117870389,-0.0006862943934521359,False
-320,elderly_care,5,facilities_per_100km_network,殷行街道,0.6859504061804911,殷行街道,0.6852641117870389,-0.0006862943934521359,False
-320,elderly_care,10,facilities_per_10k,殷行街道,0.6548898687393933,殷行街道,0.6529442332292519,-0.0019456355101413747,False
-320,elderly_care,10,facilities_per_km2,殷行街道,0.6548898687393933,殷行街道,0.6529442332292519,-0.0019456355101413747,False
-320,elderly_care,10,facilities_per_100km_network,殷行街道,0.6548898687393933,殷行街道,0.6529442332292519,-0.0019456355101413747,False
-320,elderly_care,15,facilities_per_10k,长海路街道,0.617985507368848,长海路街道,0.6163690452025785,-0.0016164621662695389,False
-320,elderly_care,15,facilities_per_km2,长海路街道,0.617985507368848,长海路街道,0.6163690452025785,-0.0016164621662695389,False
-320,elderly_care,15,facilities_per_100km_network,长海路街道,0.617985507368848,长海路街道,0.6163690452025785,-0.0016164621662695389,False
-320,healthcare,5,facilities_per_10k,殷行街道,0.7121352584545013,殷行街道,0.7121352584545013,0.0,False
-320,healthcare,5,facilities_per_km2,殷行街道,0.7121352584545013,殷行街道,0.7121352584545013,0.0,False
-320,healthcare,5,facilities_per_100km_network,殷行街道,0.6965297418864793,殷行街道,0.6958677248107129,-0.0006620170757664079,False
-320,healthcare,10,facilities_per_10k,殷行街道,0.7246666152673455,殷行街道,0.7246666152673455,0.0,False
-320,healthcare,10,facilities_per_km2,殷行街道,0.7246666152673455,殷行街道,0.7246666152673455,0.0,False
-320,healthcare,10,facilities_per_100km_network,殷行街道,0.7247920871950774,殷行街道,0.7233886962180816,-0.001403390976995822,False
-320,healthcare,15,facilities_per_10k,殷行街道,0.6560651957601713,殷行街道,0.6560651957601713,0.0,False
-320,healthcare,15,facilities_per_km2,殷行街道,0.6560651957601713,殷行街道,0.6560651957601713,0.0,False
-320,healthcare,15,facilities_per_100km_network,殷行街道,0.6136044299973704,殷行街道,0.6123613573396917,-0.0012430726576787565,False
+﻿grid_m,service,threshold_min,proxy,baseline_oracle_street,baseline_regret_fraction,connected_oracle_street,connected_regret_fraction,regret_difference_connected_minus_baseline,oracle_street_changed,baseline_oracle_street_en,connected_oracle_street_en
+240,culture,5,facilities_per_10k,殷行街道,0.7845987131685261,殷行街道,0.7845987131685261,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+240,culture,5,facilities_per_km2,殷行街道,0.7845987131685261,殷行街道,0.7845987131685261,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+240,culture,5,facilities_per_100km_network,殷行街道,0.7845987131685261,殷行街道,0.7845987131685261,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+240,culture,10,facilities_per_10k,殷行街道,0.7633892980130392,殷行街道,0.7633892980130392,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+240,culture,10,facilities_per_km2,殷行街道,0.7633892980130392,殷行街道,0.7633892980130392,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+240,culture,10,facilities_per_100km_network,殷行街道,0.7633892980130392,殷行街道,0.7633892980130392,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+240,culture,15,facilities_per_10k,长海路街道,0.7587920893059127,长海路街道,0.7587920893059127,0.0,False,Changhai Road Subdistrict,Changhai Road Subdistrict
+240,culture,15,facilities_per_km2,长海路街道,0.7587920893059127,长海路街道,0.7587920893059127,0.0,False,Changhai Road Subdistrict,Changhai Road Subdistrict
+240,culture,15,facilities_per_100km_network,长海路街道,0.7587920893059127,长海路街道,0.7587920893059127,0.0,False,Changhai Road Subdistrict,Changhai Road Subdistrict
+240,elderly_care,5,facilities_per_10k,殷行街道,0.7029941559356131,殷行街道,0.701309464831807,-0.0016846911038060908,False,Yinhang Subdistrict,Yinhang Subdistrict
+240,elderly_care,5,facilities_per_km2,殷行街道,0.7029941559356131,殷行街道,0.701309464831807,-0.0016846911038060908,False,Yinhang Subdistrict,Yinhang Subdistrict
+240,elderly_care,5,facilities_per_100km_network,殷行街道,0.7029941559356131,殷行街道,0.701309464831807,-0.0016846911038060908,False,Yinhang Subdistrict,Yinhang Subdistrict
+240,elderly_care,10,facilities_per_10k,长海路街道,0.6641459706632643,长海路街道,0.6623672021191259,-0.0017787685441383871,False,Changhai Road Subdistrict,Changhai Road Subdistrict
+240,elderly_care,10,facilities_per_km2,长海路街道,0.6641459706632643,长海路街道,0.6623672021191259,-0.0017787685441383871,False,Changhai Road Subdistrict,Changhai Road Subdistrict
+240,elderly_care,10,facilities_per_100km_network,长海路街道,0.6641459706632643,长海路街道,0.6623672021191259,-0.0017787685441383871,False,Changhai Road Subdistrict,Changhai Road Subdistrict
+240,elderly_care,15,facilities_per_10k,长海路街道,0.6246792327934525,长海路街道,0.6229560675946368,-0.001723165198815657,False,Changhai Road Subdistrict,Changhai Road Subdistrict
+240,elderly_care,15,facilities_per_km2,长海路街道,0.6246792327934525,长海路街道,0.6229560675946368,-0.001723165198815657,False,Changhai Road Subdistrict,Changhai Road Subdistrict
+240,elderly_care,15,facilities_per_100km_network,长海路街道,0.6246792327934525,长海路街道,0.6229560675946368,-0.001723165198815657,False,Changhai Road Subdistrict,Changhai Road Subdistrict
+240,healthcare,5,facilities_per_10k,殷行街道,0.7249848258874269,殷行街道,0.7249848258874269,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+240,healthcare,5,facilities_per_km2,殷行街道,0.7249848258874269,殷行街道,0.7249848258874269,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+240,healthcare,5,facilities_per_100km_network,殷行街道,0.7042801209239228,殷行街道,0.7025954298201168,-0.0016846911038059798,False,Yinhang Subdistrict,Yinhang Subdistrict
+240,healthcare,10,facilities_per_10k,殷行街道,0.7347453702494295,殷行街道,0.7347453702494295,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+240,healthcare,10,facilities_per_km2,殷行街道,0.7347453702494295,殷行街道,0.7347453702494295,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+240,healthcare,10,facilities_per_100km_network,殷行街道,0.7271307226390474,殷行街道,0.7257806678052899,-0.001350054833757497,False,Yinhang Subdistrict,Yinhang Subdistrict
+240,healthcare,15,facilities_per_10k,长海路街道,0.6962195924500972,长海路街道,0.6962195924500972,0.0,False,Changhai Road Subdistrict,Changhai Road Subdistrict
+240,healthcare,15,facilities_per_km2,长海路街道,0.6962195924500972,长海路街道,0.6962195924500972,0.0,False,Changhai Road Subdistrict,Changhai Road Subdistrict
+240,healthcare,15,facilities_per_100km_network,长海路街道,0.6574707589453095,长海路街道,0.6561983880422024,-0.0012723709031070563,False,Changhai Road Subdistrict,Changhai Road Subdistrict
+320,culture,5,facilities_per_10k,殷行街道,0.774935368103393,殷行街道,0.774935368103393,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+320,culture,5,facilities_per_km2,殷行街道,0.774935368103393,殷行街道,0.774935368103393,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+320,culture,5,facilities_per_100km_network,殷行街道,0.774935368103393,殷行街道,0.774935368103393,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+320,culture,10,facilities_per_10k,殷行街道,0.7648046077821272,殷行街道,0.7648046077821272,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+320,culture,10,facilities_per_km2,殷行街道,0.7648046077821272,殷行街道,0.7648046077821272,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+320,culture,10,facilities_per_100km_network,殷行街道,0.7648046077821272,殷行街道,0.7648046077821272,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+320,culture,15,facilities_per_10k,长海路街道,0.7602297390471733,长海路街道,0.7602297390471733,0.0,False,Changhai Road Subdistrict,Changhai Road Subdistrict
+320,culture,15,facilities_per_km2,长海路街道,0.7602297390471733,长海路街道,0.7602297390471733,0.0,False,Changhai Road Subdistrict,Changhai Road Subdistrict
+320,culture,15,facilities_per_100km_network,长海路街道,0.7602297390471733,长海路街道,0.7602297390471733,0.0,False,Changhai Road Subdistrict,Changhai Road Subdistrict
+320,elderly_care,5,facilities_per_10k,殷行街道,0.6859504061804911,殷行街道,0.6852641117870389,-0.0006862943934521359,False,Yinhang Subdistrict,Yinhang Subdistrict
+320,elderly_care,5,facilities_per_km2,殷行街道,0.6859504061804911,殷行街道,0.6852641117870389,-0.0006862943934521359,False,Yinhang Subdistrict,Yinhang Subdistrict
+320,elderly_care,5,facilities_per_100km_network,殷行街道,0.6859504061804911,殷行街道,0.6852641117870389,-0.0006862943934521359,False,Yinhang Subdistrict,Yinhang Subdistrict
+320,elderly_care,10,facilities_per_10k,殷行街道,0.6548898687393933,殷行街道,0.6529442332292519,-0.0019456355101413747,False,Yinhang Subdistrict,Yinhang Subdistrict
+320,elderly_care,10,facilities_per_km2,殷行街道,0.6548898687393933,殷行街道,0.6529442332292519,-0.0019456355101413747,False,Yinhang Subdistrict,Yinhang Subdistrict
+320,elderly_care,10,facilities_per_100km_network,殷行街道,0.6548898687393933,殷行街道,0.6529442332292519,-0.0019456355101413747,False,Yinhang Subdistrict,Yinhang Subdistrict
+320,elderly_care,15,facilities_per_10k,长海路街道,0.617985507368848,长海路街道,0.6163690452025785,-0.0016164621662695389,False,Changhai Road Subdistrict,Changhai Road Subdistrict
+320,elderly_care,15,facilities_per_km2,长海路街道,0.617985507368848,长海路街道,0.6163690452025785,-0.0016164621662695389,False,Changhai Road Subdistrict,Changhai Road Subdistrict
+320,elderly_care,15,facilities_per_100km_network,长海路街道,0.617985507368848,长海路街道,0.6163690452025785,-0.0016164621662695389,False,Changhai Road Subdistrict,Changhai Road Subdistrict
+320,healthcare,5,facilities_per_10k,殷行街道,0.7121352584545013,殷行街道,0.7121352584545013,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+320,healthcare,5,facilities_per_km2,殷行街道,0.7121352584545013,殷行街道,0.7121352584545013,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+320,healthcare,5,facilities_per_100km_network,殷行街道,0.6965297418864793,殷行街道,0.6958677248107129,-0.0006620170757664079,False,Yinhang Subdistrict,Yinhang Subdistrict
+320,healthcare,10,facilities_per_10k,殷行街道,0.7246666152673455,殷行街道,0.7246666152673455,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+320,healthcare,10,facilities_per_km2,殷行街道,0.7246666152673455,殷行街道,0.7246666152673455,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+320,healthcare,10,facilities_per_100km_network,殷行街道,0.7247920871950774,殷行街道,0.7233886962180816,-0.001403390976995822,False,Yinhang Subdistrict,Yinhang Subdistrict
+320,healthcare,15,facilities_per_10k,殷行街道,0.6560651957601713,殷行街道,0.6560651957601713,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+320,healthcare,15,facilities_per_km2,殷行街道,0.6560651957601713,殷行街道,0.6560651957601713,0.0,False,Yinhang Subdistrict,Yinhang Subdistrict
+320,healthcare,15,facilities_per_100km_network,殷行街道,0.6136044299973704,殷行街道,0.6123613573396917,-0.0012430726576787565,False,Yinhang Subdistrict,Yinhang Subdistrict

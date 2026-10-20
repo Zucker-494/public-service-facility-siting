@@ -98,6 +98,11 @@ for svc in services:
 # Supplemental single-service threshold sensitivity 5/10/15, with domain-specific y scales.
 for svc in services:
     fig,axes=plt.subplots(1,3,figsize=(14.5,4.8),sharey=True,layout='constrained')
+    # With shared y-axis, fixing only the lower bound inside the plotting loop can
+    # retain a stale upper bound and clip later (10/15-minute) trajectories.
+    # Set the common axis range from ALL underlying source values in all panels.
+    ymax=float(agg[(agg.service==svc)&(agg.objective=='district_gain_m')]['gain_max'].max()/1000)
+    assert np.isfinite(ymax) and ymax>0
     for j,t in enumerate([5,10,15]):
         a=axes[j]
         for rule in keys:
@@ -107,7 +112,7 @@ for svc in services:
             color,ls,lw,marker=style[rule]
             a.plot(xx,yy,color=color,linestyle=ls,lw=lw,marker=marker,markevery=max(1,max_budget//8),markersize=3)
         a.set_title(f'{t}-minute walking threshold')
-        a.set_xlim(0,max_budget);a.set_ylim(bottom=0)
+        a.set_xlim(0,max_budget);a.set_ylim(0,ymax*1.08)
         a.set_xticks(np.arange(0,max_budget+1,10));a.set_xlabel('New facilities added')
         a.grid(axis='y',alpha=.2)
     axes[0].set_ylabel('Additional covered network (km)')
