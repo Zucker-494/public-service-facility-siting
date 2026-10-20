@@ -1,0 +1,37 @@
+{
+  "n_compared_policy_cells": 81,
+  "oracle_street_changed_all_grids": 72,
+  "main_grid_oracle_street_changed": 24,
+  "max_abs_regret_fraction_difference": 0.3330880206539126,
+  "equal_street_objective": "Mean of the 12 subdistrict network-coverage improvements in percentage points; every street receives equal evaluation weight.",
+  "target_street_objective": "Within the site-selected street, local network-coverage percentage-point improvement; ignores spillover to other streets."
+}
+objective                                                absolute_network_length  equal_street_percentage_point_gain  target_street_percentage_point_gain
+service      threshold_min proxy                                                                                                                         
+culture      5             facilities_per_100km_network                    0.785                               0.570                                0.665
+                           facilities_per_10k                              0.785                               0.570                                0.665
+                           facilities_per_km2                              0.785                               0.570                                0.665
+             10            facilities_per_100km_network                    0.763                               0.482                                0.596
+                           facilities_per_10k                              0.763                               0.482                                0.596
+                           facilities_per_km2                              0.763                               0.482                                0.596
+             15            facilities_per_100km_network                    0.759                               0.426                                0.513
+                           facilities_per_10k                              0.759                               0.426                                0.513
+                           facilities_per_km2                              0.759                               0.426                                0.513
+elderly_care 5             facilities_per_100km_network                    0.703                               0.866                                0.883
+                           facilities_per_10k                              0.703                               0.866                                0.883
+                           facilities_per_km2                              0.703                               0.866                                0.883
+             10            facilities_per_100km_network                    0.664                               0.817                                0.818
+                           facilities_per_10k                              0.664                               0.817                                0.818
+                           facilities_per_km2                              0.664                               0.817                                0.818
+             15            facilities_per_100km_network                    0.625                               0.673                                0.680
+                           facilities_per_10k                              0.625                               0.673                                0.680
+                           facilities_per_km2                              0.625                               0.673                                0.680
+healthcare   5             facilities_per_100km_network                    0.704                               0.862                                0.880
+                           facilities_per_10k                              0.725                               0.851                                0.865
+                           facilities_per_km2                              0.725                               0.851                                0.865
+             10            facilities_per_100km_network                    0.727                               0.840                                0.849
+                           facilities_per_10k                              0.735                               0.822                                0.819
+                           facilities_per_km2                              0.735                               0.822                                0.819
+             15            facilities_per_100km_network                    0.657                               0.785                                0.807
+                           facilities_per_10k                              0.696                               0.786                                0.798
+                           facilities_per_km2                              0.696                               0.786                                0.798

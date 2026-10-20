@@ -1,0 +1,27 @@
+{
+  "grids": [
+    180,
+    240,
+    320
+  ],
+  "decisions_per_grid": 27,
+  "main_policy_regret_range": [
+    0.624679,
+    0.784599
+  ],
+  "chosen_street_distinct_per_service": {
+    "culture": 1,
+    "elderly_care": 1,
+    "healthcare": 2
+  },
+  "tie_cells_by_service": {
+    "culture": 9,
+    "elderly_care": 0,
+    "healthcare": 0
+  },
+  "proxy_worse_than_random_street_main_grid": 3,
+  "main_regret_street_share_median": 0.30189096382292435,
+  "ranking_top3_efficiency_median": 0.9149715830200096,
+  "inferential_warning": "All 27 policy outcomes are finite deterministic comparisons conditional on shared data; no invented independent sample size or p-values. 180/320m checks are alternative spatial discretizations, not sampling replications.",
+  "source_limitation": "Only 83 previously accepted geocoded points have validated inherited coordinates, not a survey-certified complete 89-site inventory."
+}

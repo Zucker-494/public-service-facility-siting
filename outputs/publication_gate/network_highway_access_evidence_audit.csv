@@ -1,0 +1,17 @@
+highway,edge_count,edge_length_m,share_in_midpoint_district_length,default_routing_status,independent_pedestrian_permission_verified
+service,7703,215580.8410438904,0.2699503569475498,included_by_v0_7_whitelist,False
+residential,2940,138576.62478157482,0.1735256674165989,included_by_v0_7_whitelist,False
+footway,6530,116824.77947990032,0.14628800392562363,included_by_v0_7_whitelist,False
+primary,2017,104133.18318812677,0.13039558541288138,included_by_v0_7_whitelist,False
+tertiary,1948,95052.41123958878,0.11902464160824128,included_by_v0_7_whitelist,False
+secondary,1573,80994.16875568853,0.10142090855753179,included_by_v0_7_whitelist,False
+living_street,448,11785.189369637992,0.014757415647991356,included_by_v0_7_whitelist,False
+path,1027,11200.001319025694,0.014024643095572985,included_by_v0_7_whitelist,False
+pedestrian,735,11129.700556469497,0.013936612471637036,included_by_v0_7_whitelist,False
+unclassified,109,5536.797268573353,0.0069331782535039625,included_by_v0_7_whitelist,False
+cycleway,110,2783.4925168591944,0.0034854896884551714,included_by_v0_7_whitelist,False
+primary_link,226,2663.019320223548,0.0033346331360967736,included_by_v0_7_whitelist,False
+steps,93,1178.2528956909498,0.001475408427882976,included_by_v0_7_whitelist,False
+track,12,584.03381523405,0.0007313272187289265,included_by_v0_7_whitelist,False
+secondary_link,39,479.1601545336299,0.00060000440727969,included_by_v0_7_whitelist,False
+tertiary_link,13,92.73580296195095,0.00011612378442432919,included_by_v0_7_whitelist,False

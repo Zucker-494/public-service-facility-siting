@@ -1,0 +1,26 @@
+{
+  "facilities_all_83_connector_cost_retained": true,
+  "n_facilities": 83,
+  "snap_distance_median_m": 16.28,
+  "snap_distance_p90_m": 64.52,
+  "snap_distance_p95_m": 82.52,
+  "empirical_count_within_60m_posthoc": 73,
+  "empirical_count_outside_60m_posthoc": 10,
+  "sixty_meter_recommendation": "No empirical elbow/causal standard established; retained only as a descriptive sensitivity reference, never a base filter.",
+  "n_hypothetical_sites": 1149,
+  "n_facility_service_cells": 36,
+  "n_service_threshold_cells": 108,
+  "n_policy_comparisons": 27,
+  "accessibility_range": [
+    0.0,
+    1.0
+  ],
+  "tests": [
+    "source count agreement",
+    "monotonic time budgets",
+    "no negative gains",
+    "coverage 0..1",
+    "regret >=0",
+    "facilities no 60 m cap"
+  ]
+}

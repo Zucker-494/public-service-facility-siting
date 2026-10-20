@@ -1,0 +1,16 @@
+{
+  "version": "0.6-osm-address-sensitivity",
+  "official_inventory_records": 89,
+  "missing_facility_sites": 6,
+  "address_context_matched": 6,
+  "exact_osm_house_number_locations_verified": 0,
+  "network_inference_candidate_facilities": 6,
+  "sampled_osm_network_access_candidates": 83,
+  "total_planning_experimental_candidates": 1132,
+  "official_planning_parcel_legal_buildability_confirmed": 0,
+  "official_parcel_vectors_downloaded": false,
+  "raw_osm_landuse_only": true,
+  "existing_83_primary_sites_unchanged": true,
+  "source_geofabrik_osm_sha256": "a71e7d6e428419e133ba15bd1ee389e17317740dd14eae57526bc46a8dffeeab",
+  "caution": "These nodes represent plausible walking-network access locations, not parcel-centroid or surveyed facility positions. Main results remain 83-site until scenario uncertainty reanalysis."
+}

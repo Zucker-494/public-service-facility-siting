@@ -1,0 +1,11 @@
+{
+  "site_scenarios": 5,
+  "top_three_candidate_records": 270,
+  "distinct_site_candidates_prioritized": 40,
+  "legal_buildability_of_shortlist_confirmed": 0,
+  "comparisons": 135,
+  "priority_changes": 45,
+  "culture_comparisons": 45,
+  "culture_priority_changes": 45,
+  "caution": "Old 83-source analysis uses supply from 83 sites, inferred scenarios use all 89 supply but hypothesized road-access locations; differences mix supply-restoration and location uncertainty"
+}

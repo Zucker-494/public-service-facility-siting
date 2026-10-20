@@ -1,0 +1,33 @@
+{
+  "database": {
+    "clean_spatial_db": "data/processed/p06_refined_clean.gpkg",
+    "layers": [
+      {
+        "layer": "osm_node_identity_edges",
+        "count": 106698
+      },
+      {
+        "layer": "study_subdistricts",
+        "count": 12
+      },
+      {
+        "layer": "facility_inherited_coordinates",
+        "count": 83
+      },
+      {
+        "layer": "hypothetical_candidate_nodes_240m",
+        "count": 1132
+      }
+    ]
+  },
+  "figures": [
+    "05_tie_aware_regret_decomposition.pdf",
+    "05_tie_aware_regret_decomposition.png",
+    "06_objective_definition_sensitivity.pdf",
+    "06_objective_definition_sensitivity.png",
+    "07_corrected_candidate_grid_sensitivity.pdf",
+    "07_corrected_candidate_grid_sensitivity.png",
+    "08_facility_coordinate_completeness.pdf",
+    "08_facility_coordinate_completeness.png"
+  ]
+}

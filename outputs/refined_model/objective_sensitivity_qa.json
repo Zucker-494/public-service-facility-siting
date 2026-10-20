@@ -1,0 +1,8 @@
+{
+  "n_compared_policy_cells": 81,
+  "oracle_street_changed_all_grids": 72,
+  "main_grid_oracle_street_changed": 24,
+  "max_abs_regret_fraction_difference": 0.3330880206539126,
+  "equal_street_objective": "Mean of the 12 subdistrict network-coverage improvements in percentage points; every street receives equal evaluation weight.",
+  "target_street_objective": "Within the site-selected street, local network-coverage percentage-point improvement; ignores spillover to other streets."
+}

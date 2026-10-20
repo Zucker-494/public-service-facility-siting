@@ -1,0 +1,14 @@
+{
+  "matched_settings": 90,
+  "pop_area_identical_settings": 90,
+  "network_priority_nonzero_regret_difference": 60,
+  "min_difference_pp": -6.913078034010855,
+  "max_difference_pp": 1.7650175435905746,
+  "figures_written": 4,
+  "figure_names": [
+    "01_proxy_recommendation_agreement",
+    "02_incremental_decision_regret",
+    "03_objective_sensitivity_optimal_street",
+    "04_regret_decomposition"
+  ]
+}

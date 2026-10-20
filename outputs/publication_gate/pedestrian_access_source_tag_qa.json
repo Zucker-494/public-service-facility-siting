@@ -1,0 +1,20 @@
+{
+  "source_osm_way_tags_read": 21615,
+  "study_unique_osm_ways": 4820,
+  "pedestrian_network_approx_km": 798.594,
+  "way_tags_incomplete_for_survey_grade_access": true,
+  "distribution": {
+    "higher_order_pedestrian_tags_not_explicit": {
+      "length_km": 283.415,
+      "pct_network_length": 35.49
+    },
+    "included_nonpedestrian_class_individual_access_unverified": {
+      "length_km": 363.062,
+      "pct_network_length": 45.46
+    },
+    "pedestrian_designated_class": {
+      "length_km": 152.118,
+      "pct_network_length": 19.05
+    }
+  }
+}

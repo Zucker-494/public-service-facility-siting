@@ -1,0 +1,12 @@
+test_atgrade_exception_documented (test_core_invariants.TestData.test_atgrade_exception_documented) ... ok
+test_candidate_sensitivity_results (test_core_invariants.TestData.test_candidate_sensitivity_results) ... ok
+test_excluded_six_and_source_universe (test_core_invariants.TestData.test_excluded_six_and_source_universe) ... ok
+test_monotonic_accessibility (test_core_invariants.TestData.test_monotonic_accessibility) ... ok
+test_no_base_60m_cutoff (test_core_invariants.TestData.test_no_base_60m_cutoff) ... ok
+test_parser_varints_and_delta (test_core_invariants.TestData.test_parser_varints_and_delta) ... ok
+test_policy_regret_nonnegative (test_core_invariants.TestData.test_policy_regret_nonnegative) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.019s
+
+OK

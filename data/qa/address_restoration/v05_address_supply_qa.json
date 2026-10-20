@@ -1,0 +1,21 @@
+{
+  "version": "0.5-address-audit",
+  "official_inventory_records": 89,
+  "inherited_spatial_points": 83,
+  "address_verified_records_among_six": 5,
+  "missing_positions": 6,
+  "provisional_address_geocoder_coordinates": 3,
+  "geocoder_candidates_in_primary": 0,
+  "policy_priority_changes_grid240m": 9,
+  "total_comparisons_grid240m": 27,
+  "primary_accessibility_still_from_83": true,
+  "address_only_Osm_POI_snap_accepted": 0,
+  "input_legacy_gpkg_sha256": "a4d642837009fc55613884e973f95042bf5ed5237b7d34e6515094be4aa366f4",
+  "clean_network_gpkg_sha256": "1bca8a8e592f151d3a7286b152a83f7e169a6bf83301587d6cbfe0ee28becd34",
+  "limitations": [
+    "six coordinates not independently confirmed",
+    "historical population/facilities/OSM year discrepancy",
+    "fixed candidate-network feasibility unknown",
+    "83 inherited locations unverified independently"
+  ]
+}

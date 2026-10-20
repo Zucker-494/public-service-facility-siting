@@ -1,0 +1,18 @@
+{
+  "scenarios": 15,
+  "inherited_sites": 83,
+  "address_inferred_scenario_sites": 6,
+  "services_with_scenario": [
+    "elderly_care",
+    "culture"
+  ],
+  "main_observed_coverage_still_83": true,
+  "scenario_conditional_on_plausible_OSM_network_access_location": true,
+  "baseline_network_graph_vertices": 94638,
+  "baseline_routing_graph_sources": 83,
+  "new_entrance_connector_cost": "assumed_zero_for_sensitivity_only",
+  "max_coverage_change_pp": 69.26665262102617,
+  "mean_coverage_change_pp": 5.595504316911983,
+  "scenario_not_proof_of_true_locations": true,
+  "next_step": "Repeat one-facility decision-regret simulations if official parcel polygons and address-level entrance evidence are obtainable."
+}

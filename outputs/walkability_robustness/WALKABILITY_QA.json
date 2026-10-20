@@ -1,0 +1,13 @@
+{
+  "rows_each": 14400,
+  "exact_match_first_original": 40,
+  "exact_match_first_strict": 60,
+  "first_step_total_each": 270,
+  "best_proxy_agreement": 0.7755555555555556,
+  "best_proxy_agreement_15min": 0.5291666666666667,
+  "strict_to_original_gain_15min_40": {
+    "culture": 1.0214251849882756,
+    "elderly_care": 1.6194042306967882,
+    "healthcare": 0.9756152902076562
+  }
+}

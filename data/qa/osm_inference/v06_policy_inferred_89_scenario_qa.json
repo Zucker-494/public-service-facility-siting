@@ -1,0 +1,29 @@
+{
+  "scenarios": 5,
+  "candidate_count": 1132,
+  "site_count_under_scenario": 89,
+  "street_priority_uses_full_89_official_inventory": true,
+  "coverage_includes_6_OSM_inferred_access_nodes": true,
+  "unverified_site_entrances_assumed_zero_m_to_graph": true,
+  "hypothetical_planning_candidates_not_certified_buildable": true,
+  "scenario_policy_rows": 270,
+  "relative_street_choice_regret_min": 0.0,
+  "relative_street_choice_regret_max": 0.6308742937379401,
+  "culture_scenario_regret_range": {
+    "facilities_per_100km_network": [
+      0.0737,
+      0.2122
+    ],
+    "facilities_per_10k": [
+      0.0,
+      0.0666
+    ],
+    "facilities_per_km2": [
+      0.0,
+      0.0666
+    ]
+  },
+  "observed_network_baseline_validation": "PASS_exact_v04_83",
+  "elapsed_seconds": 16.4,
+  "interpretation": "deterministic inferred-site scenario results, not confirmed observed 89-site result"
+}

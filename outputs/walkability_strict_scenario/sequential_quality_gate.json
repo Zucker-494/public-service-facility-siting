@@ -1,0 +1,19 @@
+{
+  "validation_direct_network_distance_samples": 15,
+  "one_site_independent_oracle_check_rows": 0,
+  "official_existing_records": 89,
+  "existing_inherited_coordinates": 83,
+  "existing_address_imputations": 6,
+  "separate_hypothetical_new_candidate_locations": 1132,
+  "new_site_budgets": 10,
+  "scenario_variants": 5,
+  "algorithm": "greedy_marginal_coverage_per_step_with_exact_edge_coverage",
+  "global_multiple_site_optimality": "NOT_CLAIMED",
+  "local_siting_for_proxy": "BEST_NETWORK_MARGINAL_GAIN_AMONG_MIN_SUPPLY_STREETS",
+  "baseline_missing_points_not_new_sites": true,
+  "scenario_estimates_are_confidence_intervals": false,
+  "decision_results_contain_actual_buildability_validation": false,
+  "maximum_abs_marginal_addition_discrepancy": 1.4551915228366852e-10,
+  "elapsed_sec": 17.7,
+  "result_rows": 3600
+}

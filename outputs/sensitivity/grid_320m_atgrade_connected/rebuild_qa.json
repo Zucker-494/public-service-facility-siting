@@ -1,0 +1,51 @@
+{
+  "input_pbf_sha256": "c1b58056366f31e6bc8e49e130bcb4076bbbd04810f6b696ae88677ebddea192",
+  "legacy_gpkg_sha256": "a4d642837009fc55613884e973f95042bf5ed5237b7d34e6515094be4aa366f4",
+  "reported_study_subdistricts": 12,
+  "raw_osm_nodes_seen": 2724101,
+  "raw_osm_ways_seen": 450999,
+  "routing_osm_ways_retained": 21615,
+  "routing_graph_nodes": 94155,
+  "routing_graph_edges": 106700,
+  "edge_grade_crossings_retained_disconnected": 440,
+  "network_topology_policy": "OSM IDs + one unverified at-grade crossing (sensitivity ONLY)",
+  "legacy_facility_coordinates_included_pending_external_validation": 83,
+  "facility_coordinates_excluded": 6,
+  "snap_distance_no_hard_cap": true,
+  "routing_threshold_m": {
+    "5": 360.0,
+    "10": 720.0,
+    "15": 1080.0
+  },
+  "walking_speed_m_per_s": 1.2,
+  "network_components": {
+    "components": 144,
+    "largest_node_share": 0.9843131007381446,
+    "largest_length_share": 0.9922340757066449,
+    "all_length_km": 3476.24913514774,
+    "district_length_km": 798.5943915079795
+  },
+  "exclusion_by_way_tag": {
+    "nonpedestrian_type": 253927,
+    "foot_or_access_restricted": 4643,
+    "cycleway_not_foot_explicit": 1594,
+    "motorroad": 9
+  },
+  "site_candidate_assumption": "pedestrian-network nodes; actual buildability unknown",
+  "coverage_measure": "length of reachable pedestrian edges inside subdistrict; no population coverage inference",
+  "candidate_sites": 738,
+  "candidate_count_by_subdistrict": {
+    "五角场街道": 92,
+    "四平路街道": 39,
+    "大桥街道": 53,
+    "定海路街道": 65,
+    "平凉路街道": 39,
+    "延吉新村街道": 30,
+    "控江路街道": 33,
+    "新江湾城街道": 111,
+    "殷行街道": 90,
+    "江浦路街道": 36,
+    "长海路街道": 109,
+    "长白新村街道": 41
+  }
+}

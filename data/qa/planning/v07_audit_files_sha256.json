@@ -1,0 +1,8 @@
+{
+  "data/qa/planning/priority40_official_parcel_matching_audit.csv": "33811e18b8fe36738a26da2b1fd30409a099fb79ce0662217dce0ead16500a81",
+  "data/qa/planning/all1132_parcel_readiness.csv": "3d48a66d8393829fddc1300c34f59a7cec7c4f0d57e8dc14a4e83a277d4b5119",
+  "data/qa/planning/v07_parcel_audit_summary.json": "243bf8198e91cc074c512253a210e327e4de34a19fb35f7d7a5ce78c670052b0",
+  "outputs/planning_audit/osm_context_screen_45_optima_comparison.csv": "fdde6dbdf2335fea526c1c35b47a6354f9a06aa9a8774345462566d0c49d8a37",
+  "docs/V07_STATUTORY_PARCEL_VERIFICATION.md": "fcefbf596c926a1901770da26b435316baa77e119ef4225f8cfc6d499e98b60d",
+  "src/16_statutory_parcel_evidence_audit.py": "d3d04b4af0c1e9551d207b0f1300a39e813cf9ed7bb3437b9cac5b0ec659058d"
+}

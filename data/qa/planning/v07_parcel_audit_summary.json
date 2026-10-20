@@ -1,0 +1,19 @@
+{
+  "date_checked": "2026-10-16",
+  "candidate_total": 1132,
+  "priority_candidates": 40,
+  "priority_with_osm_residential_context": 8,
+  "priority_without_osm_landuse": 32,
+  "official_parcel_id_confirmed": 0,
+  "official_landuse_confirmed": 0,
+  "official_buildability_confirmed": 0,
+  "candidate_without_osm_landuse": 905,
+  "candidate_excluded_osm_context_stress": 62,
+  "candidate_remain_osm_context_stress": 1070,
+  "scenario_count": 45,
+  "changed_optima_after_osm_context_stress": 0,
+  "planning_validation": "NOT_PASSED",
+  "scope": "hypothetical pedestrian-network location decisions only",
+  "source_plan_viewer": "https://shanghai.tianditu.gov.cn/xg/map.html",
+  "cannot_infer": "legal buildability, land right, zoning or approved site from road node or OSM landuse"
+}

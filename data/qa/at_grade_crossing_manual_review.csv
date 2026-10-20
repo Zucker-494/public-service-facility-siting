@@ -1,0 +1,2 @@
+lon,lat,way1,way2,way1_highway,way2_highway,status,connection_in_primary_graph
+121.50321175550712,31.31604774526643,225995002,1324895009,footway,residential,unresolved: primary model retains OSM node identity; connected alternative quantified; physical ground truth not independently checked,False

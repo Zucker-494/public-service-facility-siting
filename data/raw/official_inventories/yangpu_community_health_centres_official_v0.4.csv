@@ -1,0 +1,13 @@
+﻿source_record_id,facility_name,address,subdistrict_name,capacity,capacity_type,capacity_reference_date,source_note,facility_type,subtype,source,geometry_status,capacity_unit
+1,上海市杨浦区定海社区卫生服务中心,爱国路77号,定海路街道,65,licensed_beds,2022,official centre page + official recruitment profile,healthcare,community_health_service_centre,Yangpu District Government / Yangpu District Health Commission,not_geocoded,beds
+2,上海市杨浦区大桥社区卫生服务中心,黄兴路300号,大桥街道,99,licensed_beds,2024-02-28,official centre page,healthcare,community_health_service_centre,Yangpu District Government / Yangpu District Health Commission,not_geocoded,beds
+3,上海市杨浦区平凉社区卫生服务中心,霍山路890号,平凉路街道,68,licensed_beds,2026-09-22,official centre page,healthcare,community_health_service_centre,Yangpu District Government / Yangpu District Health Commission,not_geocoded,beds
+4,杨浦区江浦社区卫生服务中心,许昌路1482号,江浦路街道,66,licensed_beds,2022,official centre page + official recruitment profile,healthcare,community_health_service_centre,Yangpu District Government / Yangpu District Health Commission,not_geocoded,beds
+5,杨浦区控江社区卫生服务中心,延吉西路100号,控江路街道,65,licensed_beds,2022,official centre page + official recruitment profile,healthcare,community_health_service_centre,Yangpu District Government / Yangpu District Health Commission,not_geocoded,beds
+6,上海市杨浦区延吉社区卫生服务中心,水丰路383号,延吉新村街道,65,licensed_beds,2024,official budget/final-account source + official service page,healthcare,community_health_service_centre,Yangpu District Government / Yangpu District Health Commission,not_geocoded,beds
+7,杨浦区长白社区卫生服务中心,松花江路15号,长白新村街道,,licensed_beds,,official centre page,healthcare,community_health_service_centre,Yangpu District Government / Yangpu District Health Commission,not_geocoded,beds
+8,杨浦区四平社区卫生服务中心,铁岭路39号,四平路街道,60,licensed_beds,2024,official 2024 final accounts,healthcare,community_health_service_centre,Yangpu District Government / Yangpu District Health Commission,not_geocoded,beds
+9,杨浦区殷行社区卫生服务中心,殷行路429号,殷行街道,50,licensed_beds,2024,official 2024 final accounts,healthcare,community_health_service_centre,Yangpu District Government / Yangpu District Health Commission,not_geocoded,beds
+10,杨浦区五角场社区卫生服务中心,武东路9号,五角场街道,110,licensed_beds,2025-04-02,official 2025 Health Commission approval,healthcare,community_health_service_centre,Yangpu District Government / Yangpu District Health Commission,not_geocoded,beds
+11,杨浦区长海社区卫生服务中心,营口路760号,长海路街道,60,licensed_beds,2026-09-22,official centre page,healthcare,community_health_service_centre,Yangpu District Government / Yangpu District Health Commission,not_geocoded,beds
+12,杨浦区新江湾城社区卫生服务中心,政和路107号,新江湾城街道,47,licensed_beds,2026-09-22,official centre page,healthcare,community_health_service_centre,Yangpu District Government / Yangpu District Health Commission,not_geocoded,beds

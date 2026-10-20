@@ -1,0 +1,30 @@
+{
+  "existing_official_facilities": 89,
+  "baseline_inherited_coordinates": 83,
+  "baseline_address_inferred_existing": 6,
+  "baseline_facility_counts_by_service": {
+    "healthcare": 12,
+    "elderly_care": 65,
+    "culture": 12
+  },
+  "new_sites_are_independent_candidates": true,
+  "new_site_budget_range": [
+    1,
+    40
+  ],
+  "range_is_administrative_policy_target": false,
+  "purpose_of_budget_extension": "Explore diminishing gains across a common controlled computational range; no inferred build target",
+  "scenario_variants": 5,
+  "scenario_ranges_are_confidence_intervals": false,
+  "network_greedy_is_global_multisite_optimum": false,
+  "results_rows": 14400,
+  "plot_data_rows": 2880,
+  "figure_count": 9,
+  "full_thresholds_in_supplement": [
+    5,
+    10,
+    15
+  ],
+  "figure_checks": "all five scenarios present for every combination; source values directly aggregated",
+  "source_table": "outputs/sequential_investment/sequential_addition_trajectories.csv"
+}
