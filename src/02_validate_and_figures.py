@@ -6,7 +6,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from scipy.stats import spearmanr
 ROOT=Path(__file__).resolve().parents[1]
-T=ROOT/'outputs/tables';F=ROOT/'outputs/figures';F.mkdir(parents=True,exist_ok=True)
+T=ROOT/'outputs/tables';F=ROOT/'outputs/figures/all_figures_png';F.mkdir(parents=True,exist_ok=True)
 Q=ROOT/'data/qa'
 
 def validate():
@@ -60,7 +60,7 @@ def main():
  # Figure 1: observed empirical snap distribution; 60 m shown after empirical audit, post-hoc only.
  fig,ax=plt.subplots(figsize=(7.5,4.5));a=np.sort(snap.snap_distance_m.to_numpy());y=np.arange(1,len(a)+1)/len(a)
  ax.step(a,y,where='post',lw=2,label='Empirical connector distances (n=83)')
- ax.axvline(np.median(a),linestyle='--',label='Median = 16.3 m')
+ ax.axvline(np.median(a),linestyle='--',label=f'Median = {np.median(a):.1f} m')
  ax.axvline(60,linestyle=':',label='60 m post-hoc reference')
  ax.set(xlabel='Facility-to-network connector distance (m)',ylabel='Cumulative share of facilities',ylim=(0,1.03),xlim=(0,max(155,a.max()+10)))
  ax.legend(loc='lower right');ax.grid(alpha=.2)

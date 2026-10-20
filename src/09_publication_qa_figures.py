@@ -3,6 +3,7 @@
 Only source-cleaning of repeated IDENTICAL rows; coordinate accuracy itself is not asserted.
 """
 from pathlib import Path
+import argparse
 import json
 import numpy as np
 import pandas as pd
@@ -10,12 +11,11 @@ import geopandas as gpd
 import matplotlib.pyplot as plt
 from matplotlib.ticker import PercentFormatter
 ROOT=Path(__file__).resolve().parents[1]
-BASE=ROOT/'outputs/refined_model';FIG=ROOT/'outputs/figures/refined';FIG.mkdir(parents=True,exist_ok=True)
+BASE=ROOT/'outputs/refined_model';FIG=ROOT/'outputs/figures/all_figures_png';FIG.mkdir(parents=True,exist_ok=True)
 
 
 def save(name):
  plt.savefig(FIG/(name+'.png'),dpi=200,bbox_inches='tight')
- plt.savefig(FIG/(name+'.pdf'),bbox_inches='tight')
  plt.close()
 
 
@@ -71,7 +71,7 @@ def figures():
    a.bar(x,tmp.street_choice_regret_fraction,width=.21,label='Street choice' if i==0 and p==0 else None,color='C0',edgecolor='white',linewidth=.5)
    a.bar(x,tmp.within_street_siting_regret_fraction,bottom=tmp.street_choice_regret_fraction,width=.21,
          label='Within-street siting' if i==0 and p==0 else None,color='C1',edgecolor='white',linewidth=.5)
-  a.set_title(service.replace('_',' ').title()+(' (incomplete culture coordinates)' if service=='culture' else ''),loc='left',fontsize=10)
+  a.set_title(service.replace('_',' ').title(),loc='left',fontsize=10)
   a.set_ylim(0,1);a.set_ylabel('Regret / oracle gain')
   a.grid(axis='y',alpha=.2)
  ax[0].legend(ncol=2,loc='upper right')
@@ -122,15 +122,20 @@ def figures():
  ax.bar(x-.18,count.source_inventory_count,width=.34,label='Official inventory')
  ax.bar(x+.18,count.count_verified,width=.34,label='Coordinate-included subset')
  ax.set_xticks(x,['Healthcare','Elderly care','Culture']);ax.set_ylabel('Facilities');ax.legend();ax.grid(axis='y',alpha=.2)
- ax.set_title('Source facilities versus included inherited coordinates (6 unresolved)',loc='left',fontsize=12)
+ ax.set_title('Official facility inventory and inherited coordinate coverage',loc='left',fontsize=12)
  save('08_facility_coordinate_completeness')
  return sorted(x.name for x in FIG.iterdir())
 
 
 def main():
- database=clean_gpkg()
+ parser=argparse.ArgumentParser(description='Generate publication QA figures from existing analytical outputs.')
+ parser.add_argument('--rebuild-spatial-db',action='store_true',help='Explicitly reconstruct the processed GeoPackage before drawing figures.')
+ args=parser.parse_args()
+ database=clean_gpkg() if args.rebuild_spatial_db else None
  imgs=figures()
- qa={'database':database,'figures':imgs}
- (ROOT/'data/qa/v04_clean_delivery_audit.json').write_text(json.dumps(qa,ensure_ascii=False,indent=2),encoding='utf8')
+ qa={'figures':imgs}
+ if database is not None:
+  qa['database']=database
+  (ROOT/'data/qa/v04_clean_delivery_audit.json').write_text(json.dumps(qa,ensure_ascii=False,indent=2),encoding='utf8')
  print(json.dumps(qa,ensure_ascii=False,indent=2))
 if __name__=='__main__':main()
