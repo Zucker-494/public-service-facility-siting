@@ -10,7 +10,8 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle, Circle, FancyBboxPatch, FancyArrowPatch
 from matplotlib.lines import Line2D
 
-O=Path(__file__).resolve().parent
+O=Path(__file__).resolve().parents[1]/'outputs/figures/all_figures_png'
+O.mkdir(parents=True,exist_ok=True)
 plt.rcParams.update({'font.family':'DejaVu Sans','pdf.fonttype':42,'svg.fonttype':'none','font.size':10})
 NAVY='#203549'; MUTED='#5d6973'; ROAD='#c4cbd0'; BORDER='#a6b4bd'; A='#187ca3'; B='#b65d32'; OLD='#2b3d4b'; LIGHT='#f4f7f9'
 fig=plt.figure(figsize=(12.7,7.05),facecolor='white')
@@ -92,7 +93,7 @@ arrow(89,21.4,89,15.7,B)
 txt(3,4.8,'Repeat after each addition (1–40 facilities): update covered roads and remaining candidates; A also updates street supply.',9.4,NAVY)
 txt(3,2.1,'SCHEMATIC ONLY — street cells, road segments and placement choices are illustrative, not Yangpu geospatial observations.',8.4,MUTED)
 
-for ext in ('svg','pdf','png'):
+for ext in ('png'):
  fig.savefig(O/('Facility_Location_Strategies.'+ext),dpi=300,bbox_inches='tight',pad_inches=.15,facecolor='white')
 plt.close(fig)
 print('Saved figure formats')
