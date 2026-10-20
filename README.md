@@ -67,4 +67,4 @@ The comparisons document the modeling choice; they do not prove that 240 m is un
 
 ## Supplementary results hosted in the repository
 
-The plots of differences from the greedy reference, 5/10/15-minute threshold comparisons, pedestrian tagging evidence, and alternative walking-network scenarios are available under `outputs/figures/final_manuscript_and_supplement_set/` and the corresponding `outputs/` data folders. There is **no separate journal supplementary-material submission**.
+The plots of differences from the greedy reference, 5/10/15-minute threshold comparisons, pedestrian tagging evidence, and alternative walking-network scenarios are available under `outputs/figures/final_manuscript_and_supplement_set/` and the corresponding `outputs/` data folders. There is 
