@@ -94,4 +94,4 @@ The analysis uses OpenStreetMap network data, Yangpu District public service inv
 
 Source references, spatial assumptions, and redistribution conditions are described in [`docs/DATA_SOURCES.md`](docs/DATA_SOURCES.md). OpenStreetMap data are attributed to © OpenStreetMap contributors under the Open Database License.
 
-The source-code licence is provided in [`LICENSE-CODE.txt`](LICENSE-CODE.txt).
+The source-code licence is provided in [`LICENSE.txt`](LICENSE.txt).
