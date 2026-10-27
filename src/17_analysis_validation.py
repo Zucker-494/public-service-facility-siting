@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import geopandas as gpd
 ROOT=Path(__file__).resolve().parents[1]
-DEST=ROOT/'outputs/publication_gate';DEST.mkdir(parents=True,exist_ok=True)
+DEST=ROOT/'outputs/validation';DEST.mkdir(parents=True,exist_ok=True)
 R=ROOT/'data/curated/official_facility_registry_89_address_audited.csv'
 reg=pd.read_csv(R,encoding='utf-8-sig')
 assert len(reg)==89
