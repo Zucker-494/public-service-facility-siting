@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'outputs/figures/all_figures_png'
 OUT.mkdir(parents=True, exist_ok=True)
 ROBUST = ROOT / 'outputs/walkability_robustness'
-TAG = ROOT / 'outputs/publication_gate/pedestrian_access_source_tag_quality_by_class.csv'
+TAG = ROOT / 'outputs/validation/pedestrian_access_source_tag_quality_by_class.csv'
 SERVICES = ['healthcare', 'elderly_care', 'culture']
 SERVICE_NAMES = ['Healthcare', 'Elderly care', 'Culture']
 RULES = ['network_greedy','facilities_per_10k','facilities_per_km2','facilities_per_100km_network']
@@ -70,7 +70,7 @@ def network_comparison():
 
 
 def network_loss():
-    # The historical figure compares ORIGINAL versus STRICT at the 12-site budget.
+    # Compare the original and restricted networks at the 12-site budget.
     df = pd.read_csv(ROBUST/'walkability_policy_comparison_summary.csv')
     df = df[(df.objective == 'district_gain_m') & (df.new_sites == 12)]
     rules=RULES[1:]

@@ -37,7 +37,7 @@ for way,grp in sub.groupby('osm_way_id'):
  else:status='included_nonpedestrian_class_individual_access_unverified'
  rows.append(dict(osm_way_id=wid,highway=highway,district_midpoint_length_m=length,district_edges=len(grp),foot_tag=tags.get('foot',''),access_tag=tags.get('access',''),sidewalk_tag=tags.get('sidewalk',''),sidewalk_left=tags.get('sidewalk:left',''),sidewalk_right=tags.get('sidewalk:right',''),explicit_foot=explicit_foot,sidewalk_evidence=sidewalk_present,sidewalk_no=sidewalk_absent,review_class=status))
 df=pd.DataFrame(rows); assert abs(df.district_midpoint_length_m.sum()-sub.length_m.sum())<.001
-out=ROOT/'outputs/publication_gate';out.mkdir(exist_ok=True)
+out=ROOT/'outputs/validation';out.mkdir(exist_ok=True)
 df.sort_values('district_midpoint_length_m',ascending=False).to_csv(out/'osm_source_way_pedestrian_access_evidence.csv',index=False)
 agg=df.groupby('review_class',as_index=False).agg(study_length_m=('district_midpoint_length_m','sum'),way_count=('osm_way_id','size'),edge_count=('district_edges','sum'))
 agg['pct_length']=agg.study_length_m/df.district_midpoint_length_m.sum()*100

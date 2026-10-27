@@ -24,7 +24,7 @@ def clean_gpkg():
  edges=gpd.read_file(old,layer='osm_node_identity_edges')
  bounds=gpd.read_file(old,layer='study_subdistricts')
  fac=gpd.read_file(old,layer='verified_facilities')
- # All repetitions must match in sequence AND exact geometry; never silently drop differences.
+ # Repeated batches must match in sequence and geometry before deduplication.
  def one_batch(layer,size):
   assert len(layer)%size==0
   ref=layer.iloc[:size].reset_index(drop=True)
@@ -40,7 +40,7 @@ def clean_gpkg():
  cand=gpd.GeoDataFrame(candidates,geometry=gpd.points_from_xy(candidates.x,candidates.y),crs=edges.crs)
  fac=fac.rename(columns={'zone':'subdistrict_index'})
  fac['coordinate_status']='inherited_geocode_pending_independent_spatial_confirmation'
- # Use writer with new path, then add uniquely named layers. Existing layer never appended.
+ # Write each layer to a new GeoPackage.
  edges.to_file(new,layer='osm_node_identity_edges',driver='GPKG')
  bounds.to_file(new,layer='study_subdistricts',driver='GPKG')
  fac.to_file(new,layer='facility_inherited_coordinates',driver='GPKG')
@@ -126,8 +126,8 @@ def figures():
 
 
 def main():
- parser=argparse.ArgumentParser(description='Generate publication QA figures from existing analytical outputs.')
- parser.add_argument('--rebuild-spatial-db',action='store_true',help='Explicitly reconstruct the processed GeoPackage before drawing figures.')
+ parser=argparse.ArgumentParser(description='Generate validation figures from existing analytical outputs.')
+ parser.add_argument('--rebuild-spatial-db',action='store_true',help='Reconstruct the processed GeoPackage before drawing figures.')
  args=parser.parse_args()
  database=clean_gpkg() if args.rebuild_spatial_db else None
  imgs=figures()

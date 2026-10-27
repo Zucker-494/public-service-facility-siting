@@ -30,7 +30,7 @@ def save(fig,path):
 
 
 def load(root):
-    f=root/'outputs/publication_gate/official_89_scenario_policy_independent_recalculation.csv'
+    f=root/'outputs/validation/official_89_scenario_policy_independent_recalculation.csv'
     a=pd.read_csv(f,encoding='utf-8-sig')
     assert len(a)==270
     expected=pd.MultiIndex.from_product([a.scenario.unique(),SERVICE,TIME,OBJECTIVES,PKEY],names=['scenario','service','threshold_min','objective','proxy'])
@@ -57,7 +57,7 @@ def figure_choices(a,figdir):
             name=cdict[(service,proxy)]
             ax.text(pidx,sidx,name,ha='center',va='center',fontsize=11,weight='semibold' if pidx==2 else 'normal')
             ax.plot([pidx-.42,pidx+.42],[sidx+.43,sidx+.43],lw=.6,alpha=.25)
-    # highlight road-based choices where they differ
+    # Highlight road-based choices where they differ.
     for y,service in enumerate(SERVICE):
         if cdict[(service,PKEY[0])]!=cdict[(service,PKEY[2])]:
             ax.plot([1.58,2.42],[y+.27,y+.27],lw=2.0,color='C0',solid_capstyle='round')
@@ -71,7 +71,7 @@ def figure_choices(a,figdir):
 def figure_incremental_regret(a,figdir):
     keys=['scenario','service','threshold_min','objective']
     p=a.pivot(index=keys,columns='proxy',values='total_regret_fraction').reset_index()
-    assert np.allclose(p[PKEY[0]],p[PKEY[1]],atol=1e-12)  # exact decision equivalence
+    assert np.allclose(p[PKEY[0]],p[PKEY[1]],atol=1e-12)
     p['delta_pp']=(p[PKEY[2]]-p[PKEY[0]])*100
     fig,axes=plt.subplots(3,2,figsize=(11.5,8.2),sharex=True,sharey=True,layout='constrained')
     fig.set_facecolor('white')
@@ -83,7 +83,7 @@ def figure_incremental_regret(a,figdir):
             for t in TIME:
                 values=ss[ss.threshold_min==t].sort_values('scenario').delta_pp.to_numpy()
                 assert len(values)==5
-                # Five deterministic values drawn at same threshold with small visual-only horizontal offset
+                # Five deterministic values are displayed with a small horizontal offset.
                 xx += list(t+np.linspace(-.36,.36,5))
                 yy += list(values)
                 ax.plot([t,t],[values.min(),values.max()],lw=3,alpha=.65,color='C0')
@@ -126,7 +126,7 @@ def figure_objective_switch(root,figdir):
                             changed=a.subdistrict!=b.subdistrict))
     df=pd.DataFrame(records)
     assert len(df)==45,(len(df),source)
-    # Reconstruct directly from retained candidate-level values; no extra input CSV needed.
+    # Reconstruct the comparison directly from retained candidate-level values.
     (root/'outputs/figures').mkdir(parents=True,exist_ok=True)
     fig,axes=plt.subplots(3,3,figsize=(13.0,8.5),sharex=True,sharey=True,layout='constrained')
     fig.set_facecolor('white')
@@ -158,7 +158,7 @@ def figure_components(a,figdir):
     fig,axes=plt.subplots(3,2,figsize=(11.5,8.1),sharex=True,sharey=True)
     fig.subplots_adjust(left=.10,right=.985,bottom=.19,top=.905,hspace=.18,wspace=.09)
     fig.set_facecolor('white')
-    # Retain two unique decision rules: population/area pooled, network density
+    # Compare population/area and network-density decision rules.
     rule=[PKEY[0],PKEY[2]]
     for r,service in enumerate(SERVICE):
         for c,obj in enumerate(OBJECTIVES):
@@ -173,7 +173,7 @@ def figure_components(a,figdir):
                     ax.bar(xx,street,width=.30,color='C0',edgecolor='white',lw=.4)
                     ax.bar(xx,local,bottom=street,width=.30,color='C1',edgecolor='white',lw=.4)
                     if j==1:
-                        # A hatch distinguishes network-rule bars without consuming a third color
+                        # A hatch distinguishes the network-density rule.
                         ax.bar(xx,total,width=.30,color='none',edgecolor='.35',lw=.8,hatch='//')
             ax.set_xticks(range(3),[f'{t} min' for t in TIME]);ax.set_ylim(0,1)
             ax.grid(axis='y',alpha=.17);ax.set_axisbelow(True)
