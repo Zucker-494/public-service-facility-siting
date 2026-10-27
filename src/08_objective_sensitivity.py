@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""Compare decision regrets under equal-street benefit versus total street-network length.
-Policy cannot use objective values; only oracle and evaluation outcome change.
-"""
+"""Compare facility placement outcomes under alternative coverage objectives."""
 from pathlib import Path
 import json
 import numpy as np

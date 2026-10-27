@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Recompute 240m network candidate gains under three inferred-89 site scenarios.
-Primary v0.4 policy output is *not* overwritten; these runs test how incomplete
-site coordinates can distort decision regret. Candidate local search uses same
-hypothetical 1,132 OSM at-grade network nodes, identical across scenarios.
-"""
+"""Compare initial siting outcomes across existing facility location scenarios."""
 from __future__ import annotations
 import sys,importlib.util,json,time,math
 from pathlib import Path

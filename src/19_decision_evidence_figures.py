@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Reproducible decision-evidence figures. Uses the 270 independently checked policy rows.
-
-Inputs are prior computed outputs. No facility/location/network recalculation occurs.
-Five deterministic scenarios are ranges, never confidence intervals.
-"""
+"""Plot facility priority decisions and their coverage outcomes."""
 from pathlib import Path
 import argparse
 import numpy as np

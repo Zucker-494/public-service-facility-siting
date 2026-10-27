@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""Reproducible schematic illustration for P06 facility location strategies.
-Visual conventions follow academic-figure-skill and scientific-visualization.
-No empirical geography, facility locations, or measured benefits are implied.
-"""
+"""Draw a schematic comparison of facility siting rules."""
 from pathlib import Path
 import matplotlib
 matplotlib.use('Agg')

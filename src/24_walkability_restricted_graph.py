@@ -1,12 +1,5 @@
 #!/usr/bin/env python3
-"""Publication-strength refinement of v0.3: real facility access vertices, exact boundary partition,
-and exhaustive hypothetical one-site marginal gains on a common undirected OSM graph.
-
-Uses the SHA-pinned v0.3 OSM-derived segment layer. Run `01_rebuild_and_experiment.py`
-first if the raw PBF or upstream source is replaced. No 60-m facility filter.
-
-Candidates remain *hypothetical street vertices*, not certified land parcels.
-"""
+"""Build the restricted road network and calculate candidate coverage gains."""
 from __future__ import annotations
 import argparse, json, hashlib, math, time
 from collections import defaultdict

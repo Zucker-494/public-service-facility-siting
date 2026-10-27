@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""Original OSM PBF ways -> attributes audit, avoids invented walking permissions.
-
-Flags uncertain higher-order routes in graph without assigning any pass/fail to real-world walkability.
-"""
+"""Summarize pedestrian access attributes from the source OSM roads."""
 from pathlib import Path
 import sys,json
 import pandas as pd

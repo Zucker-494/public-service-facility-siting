@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""Quantify the single at-grade unshared crossing in the study area.
-Counterfactual only: source OSM node topology remains primary.
-"""
+"""Evaluate the effect of connecting an unresolved road crossing."""
 from pathlib import Path
 import networkx as nx,numpy as np,pandas as pd,geopandas as gpd
 from pyproj import Transformer

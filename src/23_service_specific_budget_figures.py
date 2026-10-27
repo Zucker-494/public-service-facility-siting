@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""Publication graphics and transparent diagnostics for 1..40 independent NEW-site budgets.
-
-Reads frozen sequential_addition_trajectories.csv. No interpolation, smoothing,
-non-observed points, or stochastic confidence intervals. Existing 89 records (including
-6 address-inferred baseline facilities) remain distinct from all newly added sites.
-The network-greedy reference is a sequential heuristic and can be beaten at some k.
-"""
+"""Plot coverage gains across services, investment budgets and walking times."""
 from pathlib import Path
 import json
 import numpy as np

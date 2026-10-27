@@ -1,23 +1,5 @@
 #!/usr/bin/env python3
-"""Sequential additions of NEW hypothetical sites. The six imputed existing sites are baseline-only.
-
-A fixed 89-facility official registry supplies street counts for healthcare, elderly care,
-and culture. 83 inherited coordinates plus 6 independently labelled address-inference
-scenario coordinates form the *existing* service baseline. Only IDs from the separate
-1,132-node hypothetical CANDIDATE registry may be selected as new facilities.
-
-The network benchmark maximises marginal coverage greedily at every step. It is an
-algorithmic benchmark, not a certified global multi-facility optimum. Proxy policies
-choose the lowest updated per-capita/area/network facility supply street and then
-use the same network-gain criterion to choose a candidate within that street.
-This comparison isolates a street-priority rule conditional on network-assisted
-local placement. Ties permit candidates in any of the equally lowest streets.
-
-Each step recomputes shortest-distance-based edge coverage with all previously
-selected sites; gains are NOT summed from one-site marginal gain tables.
-No 60-m cutoff. No buildability assertion. Scenario variation is deterministic,
-NOT a statistical confidence interval.
-"""
+"""Simulate sequential facility additions using supply and network coverage rules."""
 from __future__ import annotations
 import argparse
 import importlib.util

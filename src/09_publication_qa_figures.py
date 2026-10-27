@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""Sanitize spatial output, archive checkable manuscript figures and audit metadata.
-Only source-cleaning of repeated IDENTICAL rows; coordinate accuracy itself is not asserted.
-"""
+"""Validate spatial outputs and generate manuscript figures."""
 from pathlib import Path
 import argparse
 import json

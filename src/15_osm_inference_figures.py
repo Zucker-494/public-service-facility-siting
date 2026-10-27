@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fixed-scale research maps and clearly marked scenario-only chart."""
+"""Draw maps of inferred facility locations and coverage sensitivity."""
 from pathlib import Path
 import geopandas as gpd,pandas as pd,numpy as np
 import matplotlib

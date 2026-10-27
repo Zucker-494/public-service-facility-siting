@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""Publication integrity audit: validates claims independently from existing outputs.
-
-Input: v0.7 frozen sources and derived tables. Does not change published source data.
-Output: reproducible tables in outputs/publication_gate/ and QA JSON.
-Never interprets OSMLanduse null as spatial coordinate error; 2024 inventory points
-and 2026 graph are not contemporaneous observations.
-"""
+"""Check facility records, network attributes and derived analysis results."""
 from pathlib import Path
 import json, math
 import numpy as np

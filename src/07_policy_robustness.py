@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Tie-aware, fully enumerated one-site decision-regret and ranking validity audit.
-
-Every result is descriptive for the finite candidate frame. Quantiles are exact quantiles
-of hypothetical candidate gains, NOT sampling-based confidence intervals.
-"""
+"""Evaluate facility priority rankings across candidate grid resolutions."""
 from pathlib import Path
 import json
 import numpy as np

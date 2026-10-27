@@ -1,8 +1,4 @@
-"""Minimal self-contained OSM PBF reader: dense nodes, nodes, ways and tags.
-No external binary/parser required. Supports zlib blobs and OSM PBF primitives.
-OSM node identity is retained, so geometric crossings NEVER become graph junctions
-unless an original OSM node is shared.
-"""
+"""Read nodes, ways and attributes from OpenStreetMap PBF files."""
 import struct,zlib
 from pathlib import Path
 

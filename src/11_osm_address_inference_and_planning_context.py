@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""Auditable **provisional** street-address OSM inference for six missing sites.
-
-Uses official address strings + original Geofabrik road/landuse geometries and
-original OSM network vertices. No building/entrance address is invented.
-The six candidates are scenario-only; the accepted 83 remain unchanged.
-For parcel screening OSM landuse is context only, never a legal buildability class.
-"""
+"""Generate possible network locations for facilities without verified coordinates."""
 from __future__ import annotations
 import json, math, re, shutil, tempfile, zipfile, hashlib
 from pathlib import Path

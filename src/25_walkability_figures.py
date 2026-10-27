@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""Recreate three walkability sensitivity figures from repository result tables.
-
-Run: python src/25_walkability_figures.py
-Output: outputs/figures/all_figures_png/
-
-All estimates are derived from stored P06 outputs; no geospatial model is rerun.
-"""
+"""Plot pedestrian network sensitivity and coverage results."""
 from pathlib import Path
 import numpy as np
 import pandas as pd

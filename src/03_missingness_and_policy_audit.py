@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""Inventory-vs-coordinate deletion audit. No missing facility positions are imputed.
-Tests whether policy decisions change if 6 documented facilities count as official supply
-but remain absent from network accessibility (diagnostic only, not a primary scenario).
-"""
+"""Compare facility inventory counts with the spatial records used for coverage analysis."""
 from pathlib import Path
 import numpy as np,pandas as pd,geopandas as gpd
 ROOT=Path(__file__).resolve().parents[1]

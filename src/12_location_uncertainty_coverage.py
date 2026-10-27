@@ -1,12 +1,5 @@
 #!/usr/bin/env python3
-"""Network-length coverage scenario envelope for six address-inferred facilities.
-
-No random 'confidence interval': rotates deterministic OSM plausible access vertices
-around six address-defined candidate corridors; 83 inherited sites unchanged.
-Output values are conditional scenarios, not reconstructed observed truth.
-Missing-site walking connectors are set to zero from network vertices, hence
-an optimistic network-access assumption explicitly tracked in the QA report.
-"""
+"""Calculate network coverage under alternative existing facility locations."""
 from __future__ import annotations
 import importlib.util,sys,json,time
 from pathlib import Path

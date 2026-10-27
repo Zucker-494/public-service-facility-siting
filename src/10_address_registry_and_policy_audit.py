@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""Restore authoritative addresses and audit supply-policy missingness.
-
-Reproduction: python src/10_address_registry_and_policy_audit.py
-The 89-source inventory is separate from 83 inherited spatial positions.
-Archived low-quality address-geocoder responses are PROVISIONAL and excluded from
-all final/official network coverage estimates. No OSM POI/name centroid is used.
-"""
+"""Compile facility address records and assess their effects on supply measures."""
 from __future__ import annotations
 import hashlib,json,math
 from pathlib import Path

@@ -1,10 +1,4 @@
-"""Rebuild the source-limited v0.7 planning-candidate QA from frozen local files.
-
-This script does NOT query the interactive Shanghai statutory planning portal and
-MUST NOT transform OSM land-use tags into legal buildability. Official parcel
-matching remains unverified until a georeferenced statutory parcel ID/geometry
-and dated documentary evidence can be attached to each candidate.
-"""
+"""Summarize parcel information available for hypothetical facility sites."""
 from pathlib import Path
 import json
 import numpy as np

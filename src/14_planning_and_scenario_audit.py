@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""Prepare parcel-verification priority shortlist and 83/89 scenario comparison.
-Do not conflate OSM landuse with statutory detailed-plan parcel attributes.
-"""
+"""Prepare candidate site summaries for planning verification."""
 from pathlib import Path
 import numpy as np
 import pandas as pd

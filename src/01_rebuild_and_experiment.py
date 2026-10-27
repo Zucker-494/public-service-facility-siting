@@ -1,15 +1,5 @@
 #!/usr/bin/env python3
-"""Reconstruct P06 using OSM node-identity graph and auditable facility records.
-
-Usage: python src/01_rebuild_and_experiment.py --pbf data/raw/shanghai-260929.osm.pbf \
-  --legacy-gpkg data/raw/p06_yangpu_original.gpkg
-
-Facility coordinates from the previously reviewed facility_accessibility_ready layer;
-six missing geometries are kept as excluded records in QA tables. No 60m cap.
-No new land parcels or population grids are invented. Decision evaluation uses
-network LENGTH and hypothetical network-node additions, not resident exposure
-or real-world permitted development sites.
-"""
+"""Build the pedestrian network and calculate baseline coverage and candidate site gains."""
 from __future__ import annotations
 import argparse,sys,json,time,hashlib,math
 from collections import defaultdict

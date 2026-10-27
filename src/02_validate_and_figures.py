@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate QA results and figures only from completed analytical outputs."""
+"""Validate model outputs and generate diagnostic figures."""
 from pathlib import Path
 import json,numpy as np,pandas as pd,geopandas as gpd,matplotlib
 matplotlib.use('Agg')

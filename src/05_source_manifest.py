@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write a SHA-256 inventory for the source files supplied with the project."""
+"""Create a SHA256 inventory of the source datasets."""
 import hashlib
 from pathlib import Path
 

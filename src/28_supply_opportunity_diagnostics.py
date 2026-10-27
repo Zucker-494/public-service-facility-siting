@@ -1,3 +1,4 @@
+"""Compare supply rankings with available coverage gains and sequential investment results."""
 from pathlib import Path
 import numpy as np
 import pandas as pd
