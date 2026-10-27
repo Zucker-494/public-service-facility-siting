@@ -44,7 +44,11 @@ Run the sequential allocation experiment:
 python src/20_sequential_investment_experiment.py --max-sites 40 --benchmark-sample-check 20
 ```
 
+<<<<<<< HEAD
 Regenerate the existing figure set:
+=======
+Regenerate the project figures using the following scripts:
+>>>>>>> b2bd95b7c5c8c5048f056f8e06fcb9f63fa53cf2
 
 ```bash
 python src/02_validate_and_figures.py
@@ -56,6 +60,7 @@ python src/25_walkability_figures.py
 python src/draw_decision_comparison.py
 ```
 
+<<<<<<< HEAD
 Regenerate the supply-opportunity analysis tables and three additional figures:
 
 ```bash
@@ -78,6 +83,9 @@ The three corresponding figures are:
 - `outputs/figures/all_figures_png/sequential_opportunity_costs.png`
 
 Run computational checks:
+=======
+These scripts generate the 27 project figures in outputs/figures/all_figures_png/ using the repository's analytical outputs. Run the computational checks using:
+>>>>>>> b2bd95b7c5c8c5048f056f8e06fcb9f63fa53cf2
 
 ```bash
 python -m pytest -q tests
