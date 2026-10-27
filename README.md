@@ -1,38 +1,43 @@
 # Public Service Facility Siting in Yangpu District, Shanghai
 
-This repository contains Python code, spatial datasets, and modelled results examining whether subdistrict-level service provision predicts the pedestrian-network coverage opportunity of new public facilities.
+This repository contains the spatial data, Python scripts, simulation outputs and figures for a study of public service facility allocation in Shanghai's Yangpu District. It examines the relationship between administrative supply measures and potential gains in pedestrian-network coverage, including their consequences for sequential facility investment.
 
 ## Study design
 
-The study covers 12 subdistricts in Shanghai's Yangpu District and three facility types: healthcare (12 existing facilities), elderly care (65), and culture (12). The official inventory contains 89 facilities; six locations are represented through five deterministic address-based scenarios. The main analysis uses 1,132 candidate network nodes at 240 m spacing, with 180 m and 320 m candidate grids for sensitivity checks.
+The study covers 12 subdistricts and three public services: healthcare (12 existing facilities), elderly care (65) and culture (12). The official inventory contains 89 facilities. Six locations with uncertain coordinates are represented by five deterministic address-based scenarios.
 
-Three supply indicators measure facilities per 10,000 residents, per square kilometre, and per 100 km of road. The opportunity analysis compares each subdistrict's supply rank with its best available marginal pedestrian-network coverage gain. The allocation experiment selects new facilities within the lowest-supply subdistrict or, for the network-greedy reference, across all district candidates.
+The principal candidate set contains 1,132 pedestrian-network nodes sampled at 240 m spacing. Candidate sets at 180 m and 320 m support sensitivity analysis. Network coverage is evaluated at 5-, 10- and 15-minute walking thresholds.
 
-Each service is simulated separately for 1–40 additions, with 5, 10, and 15 minute walking thresholds. The planning objectives are additional district-wide road length covered and the equal-weight mean subdistrict coverage improvement. The study also examines network filtering, candidate spacing, and uncertain facility locations.
+Three administrative supply measures are evaluated: facilities per 10,000 residents, per square kilometre and per 100 km of road. The analysis first compares supply scarcity with the highest available marginal coverage gain in each subdistrict. It then evaluates four sequential allocation rules: three supply-based rules that select the best candidate within the priority subdistrict, and a network-greedy reference that selects the best candidate across the district.
 
-## Main findings
+Each rule adds 1–40 facilities. The two evaluation objectives are additional district-wide covered road length and the equal-weight mean coverage improvement across subdistricts. The study also examines sensitivity to facility locations, candidate spacing and pedestrian-network filtering.
 
-Supply scarcity shows different spatial associations with achievable coverage gains under the two planning objectives. Across 45 service–scenario–walking-threshold settings, the median Spearman rank correlations between supply scarcity and available gains are 0.46, 0.76, and 0.87 under the district-length objective for the population-, area-, and road-normalised indicators, respectively. The corresponding medians under the equal-subdistrict objective are 0.00, −0.24, and −0.40.
+## Results
 
-The sequential experiment quantifies how these differences affect accumulated coverage across 1–40 additions. In 270 first-step comparisons, 14.8% of supply-priority choices matched the network-greedy candidate. These results describe deterministic modelling outcomes for the Yangpu case study.
+The supply-opportunity analysis produces 540 subdistrict-level records and 270 rank-correlation comparisons. The sequential experiment contains 14,400 scenario–rule–investment-step records. These are deterministic model outputs across related scenarios and steps.
 
-## Repository structure
+Supply scarcity has different associations with available coverage gains under the two planning objectives. The sequential results show how the coverage outcomes of supply-based allocation compare with the network-greedy reference as the investment budget increases.
 
-| Directory | Contents |
+## Repository contents
+
+| Location | Contents |
 |---|---|
-| `src/` | Data preparation, network analysis, simulations, and figure generation |
-| `data/raw/` | Source spatial data and facility inventories |
-| `data/curated/` | Consolidated facility records |
-| `data/processed/` | Network and candidate-node data |
-| `data/qa/` | Data provenance and spatial diagnostics |
-| `outputs/sequential_investment/` | Sequential simulation and supply-opportunity analysis tables |
-| `outputs/figures/all_figures_png/` | 30 figures in PNG format |
+| `src/` | Spatial processing, allocation experiments, diagnostics and plotting scripts |
+| `data/raw/` | Source data |
+| `data/curated/` | Facility inventory |
+| `data/processed/` | Processed spatial datasets |
+| `data/qa/` | Data checks and provenance |
+| `outputs/sequential_investment/` | Sequential allocation results and supply-opportunity analysis |
+| `outputs/refined_model/` | Candidate-grid comparisons and sensitivity outputs |
+| `outputs/figures/all_figures_png/` | 30 PNG figures |
 | `tests/` | Computational checks |
-| `docs/` | Methods, data provenance, and field definitions |
+| `docs/` | Methods, data sources and field definitions |
 
-## Running the code
+## Reproducing the analysis
 
-Use Python 3.11 or later. Install dependencies from the repository root:
+Use Python 3.11 or later. Run these commands from the repository root.
+
+Install dependencies:
 
 ```bash
 python -m pip install -r requirements.txt
@@ -44,11 +49,34 @@ Run the sequential allocation experiment:
 python src/20_sequential_investment_experiment.py --max-sites 40 --benchmark-sample-check 20
 ```
 
-<<<<<<< HEAD
-Regenerate the existing figure set:
-=======
-Regenerate the project figures using the following scripts:
->>>>>>> b2bd95b7c5c8c5048f056f8e06fcb9f63fa53cf2
+Generate the supply-opportunity tables and the three associated figures from the stored candidate-level and sequential results:
+
+```bash
+python src/28_supply_opportunity_diagnostics.py
+```
+
+This script reads:
+
+- `outputs/osm_inference/inferred_89_candidate_gains_5_scenarios_240m.csv`
+- `outputs/address_restoration/full_official_supply_240m_with_partial_accessibility.csv`
+- `outputs/sequential_investment/sequential_addition_trajectories.csv`
+
+It writes six tables to `outputs/sequential_investment/`:
+
+- `street_opportunity_540.csv`
+- `supply_opportunity_rank_correlations.csv`
+- `supply_priority_opportunity_audit.csv`
+- `spatial_structure_correlations.csv`
+- `paired_objective_correlations.csv`
+- `sequential_median_shortfalls.csv`
+
+The corresponding figures are saved in `outputs/figures/all_figures_png/`:
+
+- `supply_opportunity_rank_validity.png`
+- `supply_priority_opportunity.png`
+- `sequential_opportunity_costs.png`
+
+Other figure scripts are retained in `src/`:
 
 ```bash
 python src/02_validate_and_figures.py
@@ -60,43 +88,16 @@ python src/25_walkability_figures.py
 python src/draw_decision_comparison.py
 ```
 
-<<<<<<< HEAD
-Regenerate the supply-opportunity analysis tables and three additional figures:
-
-```bash
-python src/28_supply_opportunity_diagnostics.py
-```
-
-The new analysis outputs are:
-
-- `outputs/sequential_investment/street_opportunity_540.csv`
-- `outputs/sequential_investment/supply_opportunity_rank_correlations.csv`
-- `outputs/sequential_investment/supply_priority_opportunity_audit.csv`
-- `outputs/sequential_investment/spatial_structure_correlations.csv`
-- `outputs/sequential_investment/paired_objective_correlations.csv`
-- `outputs/sequential_investment/sequential_median_shortfalls.csv`
-
-The three corresponding figures are:
-
-- `outputs/figures/all_figures_png/supply_opportunity_rank_validity.png`
-- `outputs/figures/all_figures_png/supply_priority_opportunity.png`
-- `outputs/figures/all_figures_png/sequential_opportunity_costs.png`
-
-Run computational checks:
-=======
-These scripts generate the 27 project figures in outputs/figures/all_figures_png/ using the repository's analytical outputs. Run the computational checks using:
->>>>>>> b2bd95b7c5c8c5048f056f8e06fcb9f63fa53cf2
+Run the tests:
 
 ```bash
 python -m pytest -q tests
 ```
 
-The main sequential simulation file is `outputs/sequential_investment/sequential_addition_trajectories.csv`. Candidate-grid comparisons are stored under `outputs/refined_model/grid_180m/`, `grid_240m/`, and `grid_320m/`; cross-grid summaries include `outputs/refined_model/policy_robustness_all_grids.csv` and `outputs/refined_model/proxy_ranking_validity_all_grids.csv`.
-
-## Documentation and attribution
+## Documentation and licensing
 
 - [Methodology](docs/METHODOLOGY.md)
 - [Data sources](docs/DATA_SOURCES.md)
 - [Data dictionary](docs/DATA_DICTIONARY.md)
 
-Road-network data include OpenStreetMap contributions (© OpenStreetMap contributors, ODbL). See [Data sources](docs/DATA_SOURCES.md) for provenance and redistribution conditions. Original project code is licensed under the [MIT License](LICENSE.txt); third-party data retain their respective licence terms.
+Road-network data include OpenStreetMap contributions (© OpenStreetMap contributors, ODbL). Original project code is distributed under the [MIT License](LICENSE.txt). Third-party data retain their respective licensing terms; see the [data sources](docs/DATA_SOURCES.md) for details.
