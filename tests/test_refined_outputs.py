@@ -1,4 +1,4 @@
-"""Auditable gates for refined spatial database, exact routing and finite decision experiments."""
+"""Validate refined spatial data, network calculations and allocation results."""
 import sys,json,unittest
 from pathlib import Path
 import numpy as np

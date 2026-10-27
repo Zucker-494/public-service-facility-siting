@@ -1,4 +1,4 @@
-"""Non-negotiable statutory planning evidence gates; no invented parcel matching."""
+"""Validate planning information associated with hypothetical candidate sites."""
 from pathlib import Path
 import json
 import unittest

@@ -1,4 +1,4 @@
-"""Fast non-circular archive acceptance checks for inferred-site scenarios."""
+"""Validate facility location scenarios derived from OSM address evidence."""
 import unittest
 from pathlib import Path
 import pandas as pd

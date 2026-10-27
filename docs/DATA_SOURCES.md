@@ -33,7 +33,7 @@ An English companion field may contain a translated label or romanised identifie
 
 OpenStreetMap-derived data are subject to the Open Database License (ODbL), including attribution and potentially applicable share-alike requirements. Public availability of a government document does not by itself establish unrestricted redistribution rights for every extracted or joined dataset. Some inherited geocoding coordinates also have uncertain upstream redistribution permissions.
 
-Before changing the GitHub repository from private to public, review whether raw archives, inherited geocodes and derived spatial layers can be redistributed. If a dataset cannot be released, provide its provenance and an acquisition or reconstruction route without presenting restricted data as freely licensed.
+Repository files remain subject to their original source licences and attribution requirements. Where upstream redistribution rights are unclear, the documentation records provenance and the route used to obtain or reconstruct the input rather than asserting unrestricted reuse.
 
 Relevant source portals include:
 
