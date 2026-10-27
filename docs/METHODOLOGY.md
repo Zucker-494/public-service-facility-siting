@@ -44,7 +44,7 @@ Four decision rules are compared:
 
 For each of the three supply-based rules, after identifying the lowest-supply subdistrict (or tied subdistricts), the algorithm selects the remaining candidate that yields the **highest marginal network-coverage gain within that selection set**. Candidate choice is not random. Each planning objective is evaluated separately.
 
-The network-greedy reference maximises the **current step's** gain over the available candidate set. It is not claimed to solve the globally optimal multi-facility placement problem.
+The network-greedy reference maximises the current step's gain over the available candidate set and serves as a stepwise benchmark rather than a joint multi-facility optimiser.
 
 The principal trajectories are stored in `outputs/sequential_investment/sequential_addition_trajectories.csv`, including the service, scenario, walking threshold, objective, rule, step, selected site, marginal gain, and cumulative gain.
 
@@ -60,7 +60,7 @@ The project includes:
 
 The main sequential experiment contains 14,400 rows (five location scenarios × three services × three thresholds × two objectives × four rules × 40 steps). The restricted-road experiment is stored separately in `outputs/walkability_robustness/walkability_robustness_14400_rows.csv`.
 
-The five location scenarios are deterministic sensitivity settings, not independent observations or statistical confidence samples.
+The five location scenarios are deterministic sensitivity settings and are summarised descriptively.
 
 ## Interpretation and reproducibility
 
