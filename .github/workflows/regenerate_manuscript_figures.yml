@@ -1,0 +1,42 @@
+name: Regenerate manuscript figures
+
+on:
+  push:
+    paths:
+      - "src/draw_decision_comparison.py"
+      - "src/23_service_specific_budget_figures.py"
+      - "src/25_walkability_figures.py"
+      - ".github/workflows/regenerate_manuscript_figures.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install plotting dependencies
+        run: python -m pip install --upgrade pip pandas numpy matplotlib
+      - name: Regenerate manuscript figures
+        run: |
+          python src/draw_decision_comparison.py
+          python src/23_service_specific_budget_figures.py
+          python src/25_walkability_figures.py
+      - name: Commit regenerated PNGs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add             outputs/figures/all_figures_png/Facility_Location_Strategies.png             outputs/figures/all_figures_png/healthcare_01_cumulative_gain.png             outputs/figures/all_figures_png/elderly_care_01_cumulative_gain.png             outputs/figures/all_figures_png/culture_01_cumulative_gain.png             outputs/figures/all_figures_png/walkability_comparison.png
+          if git diff --cached --quiet; then
+            echo "No figure changes to commit."
+          else
+            git commit -m "Regenerate manuscript figures after terminology revision"
+            git push
+          fi
