@@ -21,13 +21,13 @@ def rounded(x,y,w,h,fill='white',stroke=BORDER,r=1.1):
 def arrow(x,y,xx,yy,col=NAVY):
  ax.add_patch(FancyArrowPatch((x,y),(xx,yy),arrowstyle='-|>',mutation_scale=12,lw=1.5,color=col))
 
-txt(2,67,'How street-priority rules change facility placement',17,weight='bold')
+txt(2,67,'How subdistrict-priority rules change facility placement',17,weight='bold')
 txt(2,63.6,'Same facilities, road network, candidate sites and coverage objective; different search spaces',10.2,MUTED)
 
 # Shared spatial schematic, drawn identically except restricted street and highlighted marginal road segments.
 def network(x0, y0, restricted=False):
  width=52; height=27; sep=width/3
- # streets as conceptual districts: 3 columns x 2 rows
+ # subdistricts as conceptual cells: 3 columns x 2 rows
  for iy in range(2):
   for ix in range(3):
    is_restricted = (ix==0 and iy==0)
@@ -58,7 +58,7 @@ def network(x0, y0, restricted=False):
  for (x1,y1),(x2,y2) in roads:
   ax.plot([x1,x2],[y1,y2],c=col,lw=4.0,solid_capstyle='round',zorder=3)
  ax.scatter(*p,s=220,marker='*',c=col,edgecolors='white',linewidths=.9,zorder=6)
- # selected street border only left
+ # selected subdistrict border only left
  if restricted:
   ax.add_patch(Rectangle((x0,y0),sep,height/2,fill=False,ec=A,lw=2.6,ls=(0,(4,2)),zorder=7))
  return p
@@ -67,7 +67,7 @@ rounded(2,21.5,56,37.5,'white','#ced9df')
 rounded(62,21.5,56,37.5,'white','#ced9df')
 txt(5,56.5,'A   Three supply-proxy strategies',12.4,A,'bold')
 txt(65,56.5,'B   District-wide greedy reference',12.4,B,'bold')
-txt(5,53.3,'Choose the lowest-supply street first',9.7,MUTED)
+txt(5,53.3,'Choose the lowest-supply subdistrict first',9.7,MUTED)
 txt(65,53.3,'Compare every remaining site in the district',9.7,MUTED)
 network(4,23.7,restricted=True)
 network(64,23.7,restricted=False)
@@ -84,11 +84,10 @@ txt(80,18.3,'Illustrative newly covered roads',8.8)
 
 rounded(2,8.3,116,7.1,LIGHT,'#d1dbe1')
 txt(5,13,'Common selection principle: maximize the CURRENT marginal coverage gain',10.3,NAVY,'bold')
-txt(5,10.2,'A: maximize within lowest-supply street(s)    |    B: maximize across all district candidate sites',9.8)
+txt(5,10.2,'A: maximize within lowest-supply subdistrict(s)    |    B: maximize across all district candidate sites',9.8)
 arrow(31.0,21.4,31,15.7,A)
 arrow(89,21.4,89,15.7,B)
-txt(3,4.8,'Repeat after each addition (1–40 facilities): update covered roads and remaining candidates; A also updates street supply.',9.4,NAVY)
-txt(3,2.1,'SCHEMATIC ONLY — street cells, road segments and placement choices are illustrative, not Yangpu geospatial observations.',8.4,MUTED)
+txt(3,4.8,'Repeat after each addition (1–40 facilities): update covered roads and remaining candidates; A also updates subdistrict supply.',9.4,NAVY)
 
 for ext in ('png',):
  fig.savefig(O/('Facility_Location_Strategies.'+ext),dpi=300,bbox_inches='tight',pad_inches=.15,facecolor='white')
