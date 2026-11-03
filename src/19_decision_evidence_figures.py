@@ -14,7 +14,7 @@ SLABEL={'healthcare':'Healthcare','elderly_care':'Elderly care','culture':'Cultu
 PKEY=['facilities_per_10k','facilities_per_km2','facilities_per_100km_network']
 PLABEL=['Facilities / 10,000 residents','Facilities / km²','Facilities / 100 km network']
 OBJECTIVES=['district_gain_m','gain_equal_street_mean_pp']
-OLABEL=['District-wide network gain','Equal-street coverage gain']
+OLABEL=['District-wide network gain','Equal-subdistrict coverage gain']
 TIME=[5,10,15]
 ROMAN={'殷行街道':'Yinhang','新江湾城街道':'Xinjiangwancheng','延吉新村街道':'Yanji Xincun','江浦路街道':'Jiangpu Road','长白新村街道':'Changbai Xincun','长海路街道':'Changhai Road','控江路街道':'Kongjiang Road','五角场街道':'Wujiaochang','定海路街道':'Dinghai Road','大桥街道':'Daqiao','四平路街道':'Siping Road','平凉路街道':'Pingliang Road'}
 
@@ -62,8 +62,8 @@ def figure_choices(a,figdir):
         if cdict[(service,PKEY[0])]!=cdict[(service,PKEY[2])]:
             ax.plot([1.58,2.42],[y+.27,y+.27],lw=2.0,color='C0',solid_capstyle='round')
     ax.spines[:].set_visible(False)
-    ax.set_title('Which street does each supply proxy select?',fontsize=13,pad=36,loc='left')
-    fig.text(.5,.01,'Population-rate and area-density rules agree for all services; blue underline marks a different street recommendation.',ha='center',fontsize=9)
+    ax.set_title('Which subdistrict does each supply proxy select?',fontsize=13,pad=36,loc='left')
+    fig.text(.5,.01,'Population-rate and area-density rules agree for all services; blue underline marks a different subdistrict recommendation.',ha='center',fontsize=9)
     save(fig,figdir/'01_proxy_recommendation_agreement')
     return cdict
 
@@ -149,7 +149,7 @@ def figure_objective_switch(root,figdir):
             for spine in ax.spines.values():spine.set_alpha(.17)
             if r==0:ax.set_title(f'{t}-minute',fontsize=11)
             if c==0:ax.set_ylabel(SLABEL[service],fontsize=11,labelpad=9)
-    fig.suptitle(f'Planning objective changes the selected street in {int(df.changed.sum())} of {len(df)} scenarios',fontsize=14)
+    fig.suptitle(f'Planning objective changes the selected subdistrict in {int(df.changed.sum())} of {len(df)} scenarios',fontsize=14)
     fig.text(.5,-.025,'Counts indicate the number of deterministic missing-site scenarios selecting each street.\nSame network and candidate set; only the planning objective differs.',ha='center',va='top',fontsize=9)
     save(fig,figdir/'03_objective_sensitivity_optimal_street')
 
@@ -181,7 +181,7 @@ def figure_components(a,figdir):
             if r==0:ax.set_title(OLABEL[c])
             if c==0:ax.set_ylabel(SLABEL[service]+'\nNormalized regret')
     fig.suptitle('Where does decision regret arise? Two-stage decomposition',fontsize=14,y=.975)
-    fig.legend(handles=[Patch(facecolor='C0',label='Street-selection loss'),Patch(facecolor='C1',label='Within-street siting loss'),Patch(facecolor='white',edgecolor='.35',hatch='//',label='Network-density rule; plain = population/area rule')],
+    fig.legend(handles=[Patch(facecolor='C0',label='Subdistrict-selection loss'),Patch(facecolor='C1',label='Within-subdistrict siting loss'),Patch(facecolor='white',edgecolor='.35',hatch='//',label='Network-density rule; plain = population/area rule')],
                loc='lower center',bbox_to_anchor=(.5,.105),ncol=3,frameon=False,fontsize=9)
     fig.text(.5,.050,'Each bar equals the median total regret; within-street segment = median total − median street loss.',ha='center',fontsize=9)
     save(fig,figdir/'04_regret_decomposition')

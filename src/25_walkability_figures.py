@@ -57,7 +57,7 @@ def network_comparison():
                     raise ValueError(f'Expected 40 steps: {service}, {rule}, {network}')
                 ax.plot(np.r_[0,d.index.to_numpy()], np.r_[0,d.to_numpy()/1000],
                         color=color,linestyle=linestyle,linewidth=1.8,label=label)
-            ax.set_title(f'{SERVICE_NAMES[col]} | {"Original" if row==0 else "Restricted"} network',fontsize=10)
+            ax.set_title(f'{SERVICE_NAMES[col]} | {"Baseline" if row==0 else "Strictly filtered"} network',fontsize=10)
             ax.set_xlim(0,40)
             ax.set_ylim(bottom=0)
             if col==0:ax.set_ylabel('Additional covered network (km)')
@@ -93,7 +93,7 @@ def network_loss():
         ax.set_ylim(bottom=0)
         ax.grid(axis='x',visible=False)
     axes[0].set_ylabel('Shortfall vs same-network greedy (%)')
-    fig.text(.5,.015,'Within each rule, left = original network and right = restricted network; 12 added facilities, 15-minute threshold',
+    fig.text(.5,.015,'Within each rule, left = baseline network and right = strictly filtered network; 12 added facilities, 15-minute threshold',
              ha='center',fontsize=9,color='#4b5563')
     fig.tight_layout(rect=(0,.06,1,1))
     fig.savefig(OUT/'walkability_loss_comparison.png',dpi=200,bbox_inches='tight')

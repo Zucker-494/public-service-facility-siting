@@ -66,22 +66,22 @@ def figures():
   for p,proxy in enumerate(legend_proxy):
    tmp=sub[sub.proxy==proxy].set_index('threshold_min').loc[times]
    x=np.arange(3)+(p-1)*.23
-   a.bar(x,tmp.street_choice_regret_fraction,width=.21,label='Street choice' if i==0 and p==0 else None,color='C0',edgecolor='white',linewidth=.5)
+   a.bar(x,tmp.street_choice_regret_fraction,width=.21,label='Subdistrict choice' if i==0 and p==0 else None,color='C0',edgecolor='white',linewidth=.5)
    a.bar(x,tmp.within_street_siting_regret_fraction,bottom=tmp.street_choice_regret_fraction,width=.21,
-         label='Within-street siting' if i==0 and p==0 else None,color='C1',edgecolor='white',linewidth=.5)
+         label='Within-subdistrict siting' if i==0 and p==0 else None,color='C1',edgecolor='white',linewidth=.5)
   a.set_title(service.replace('_',' ').title(),loc='left',fontsize=10)
   a.set_ylim(0,1);a.set_ylabel('Regret / oracle gain')
   a.grid(axis='y',alpha=.2)
  ax[0].legend(ncol=2,loc='upper right')
  ticks=[j+(p-1)*.23 for j in range(3) for p in range(3)]
  ax[2].set_xticks(ticks,[f'{t}m\n{pr}' for t in times for pr in ['Pop','Area','Road']],fontsize=8)
- fig.suptitle('Policy regret: street choice versus hypothetical local siting (240 m)',fontsize=12)
+ fig.suptitle('Policy regret: subdistrict choice versus hypothetical local siting (240 m)',fontsize=12)
  save('05_tie_aware_regret_decomposition')
  # 06: criterion sensitivity. Compare same policy under three objective definitions.
  obj=pd.read_csv(BASE/'objective_sensitivity_all.csv');obj=obj[obj.grid_m.eq(240)]
  fig,ax=plt.subplots(3,1,figsize=(12,9),sharey=True,layout='constrained')
  objective_keys=['absolute_network_length','equal_street_percentage_point_gain','target_street_percentage_point_gain']
- lab=['District total length','Equal-street mean coverage','Local street coverage']
+ lab=['District total length','Equal-subdistrict mean coverage','Local street coverage']
  for i,service in enumerate(services):
   a=ax[i];z=obj[obj.service==service]
   xx=np.arange(9)
