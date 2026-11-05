@@ -51,12 +51,33 @@ def save(fig, name):
 def panel(ax, s):
     ax.text(-0.10, 1.04, s, transform=ax.transAxes, fontsize=11.5, fontweight='bold', va='bottom')
 
+def attach_zones_to_boundaries(bound, cand):
+    """Attach candidate-zone IDs to boundary polygons without relying on layer field names."""
+    if 'zone' in bound.columns:
+        out=bound.copy()
+        out['zone']=out['zone'].astype(int)
+        return out
+    pts=gpd.GeoDataFrame(cand[['zone']].copy(), geometry=gpd.points_from_xy(cand.x,cand.y), crs=bound.crs)
+    bb=bound.reset_index(drop=True).reset_index().rename(columns={'index':'poly_idx'})
+    joined=gpd.sjoin(pts, bb[['poly_idx','geometry']], predicate='within', how='left')
+    if joined.poly_idx.isna().any():
+        raise ValueError(f"{int(joined.poly_idx.isna().sum())} candidate points did not map to a study boundary")
+    mapping=joined.groupby('poly_idx').zone.agg(lambda s: int(s.mode().iloc[0]))
+    out=bb.set_index('poly_idx').copy()
+    out['zone']=out.index.map(mapping)
+    expected=int(cand.zone.nunique())
+    if out.zone.isna().any() or int(out.zone.nunique()) != expected:
+        raise ValueError(f"Could not map all candidate zones to study boundaries: polygons={len(out)}, mapped_zones={out.zone.nunique()}, expected={expected}")
+    out['zone']=out.zone.astype(int)
+    return out.reset_index(drop=True)
+
 def fig1_study_framework():
     gpkg = ROOT/'data/processed/p06_refined_clean.gpkg'
     bound = gpd.read_file(gpkg, layer='study_subdistricts')
     edges = gpd.read_file(gpkg, layer='osm_node_identity_edges')
     edges = edges[edges['zone'] >= 0]
     cand = pd.read_csv(ROOT/'data/processed/hypothetical_candidate_nodes.csv', encoding='utf-8-sig')
+    bound = attach_zones_to_boundaries(bound, cand)
     reg = pd.read_csv(ROOT/'data/curated/official_facility_registry_89_address_audited.csv', encoding='utf-8-sig')
     reg = reg[reg.wgs84_lon.notna() & reg.wgs84_lat.notna()].copy()
     fac = gpd.GeoDataFrame(reg, geometry=gpd.points_from_xy(reg.wgs84_lon, reg.wgs84_lat), crs='EPSG:4326').to_crs(edges.crs)
@@ -72,12 +93,11 @@ def fig1_study_framework():
         q=fac[fac.facility_type==svc]
         q.plot(ax=ax,color=COL[svc],marker=markers[svc],markersize=23,edgecolor='white',linewidth=.4,label=f'{SLAB[svc]} ({len(q)} mapped)')
     zone_name=cand[['zone','subdistrict_en']].drop_duplicates().set_index('zone').subdistrict_en.to_dict()
-    if 'zone' in bound.columns:
-        for r in bound.itertuples():
-            z=getattr(r,'zone',None)
-            if z in zone_name:
-                p=r.geometry.representative_point()
-                ax.text(p.x,p.y,zone_name[z].replace(' Subdistrict',''),fontsize=6.4,ha='center',va='center',color='#444444')
+    for r in bound.itertuples():
+        z=getattr(r,'zone',None)
+        if z in zone_name:
+            p=r.geometry.representative_point()
+            ax.text(p.x,p.y,zone_name[z].replace(' Subdistrict',''),fontsize=6.4,ha='center',va='center',color='#444444')
     ax.set_axis_off()
     ax.set_title('A  Spatial setting', loc='left', fontweight='semibold')
     ax.legend(frameon=False, loc='lower left', fontsize=7.5)
@@ -133,14 +153,13 @@ def fig3_spatial_mismatch():
     gpkg=ROOT/'data/processed/p06_refined_clean.gpkg'
     bound=gpd.read_file(gpkg,layer='study_subdistricts')
     cand=pd.read_csv(ROOT/'data/processed/hypothetical_candidate_nodes.csv',encoding='utf-8-sig')
+    bound=attach_zones_to_boundaries(bound,cand)
     zone_map=cand[['zone','subdistrict']].drop_duplicates().set_index('subdistrict').zone.to_dict()
     d=pd.read_csv(SEQ/'street_opportunity_540.csv')
     q=d[(d.site_scenario=='INFERRED_89_01')&(d.service=='culture')&(d.threshold_min==10)].copy()
     q['zone']=q.subdistrict.map(zone_map)
     vals=q.set_index('zone')
     b=bound.copy()
-    if 'zone' not in b.columns:
-        raise ValueError('study_subdistricts must contain zone')
     fig,axes=plt.subplots(1,3,figsize=(12.3,4.8),layout='constrained')
     specs=[('facilities_per_10k','A  Supply scarcity: per 10,000 residents','magma_r','min'),
            ('facilities_per_100km_network','B  Supply scarcity: per 100 km roads','magma_r','min'),
