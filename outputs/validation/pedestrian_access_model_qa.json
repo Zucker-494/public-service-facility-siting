@@ -1,0 +1,15 @@
+{
+  "ruleset": "mainland_china_osm_default_access_plus_explicit_overrides_v1",
+  "study_unique_osm_ways": 4820,
+  "study_network_km": 798.5943915079795,
+  "rule_supported_network_km": 798.5943915079795,
+  "rule_supported_network_pct": 100.0,
+  "rule_denied_way_count": 0,
+  "rule_denied_network_km": 0.0,
+  "explicit_foot_denied_way_count": 0,
+  "explicit_access_denied_way_count": 0,
+  "motorroad_denied_way_count": 0,
+  "field_validation_performed": false,
+  "routing_rule_gate": "PASS",
+  "interpretation": "PASS means every road used by the main model is pedestrian-routable under the documented OSM rule set; it does not mean field-survey validation."
+}
