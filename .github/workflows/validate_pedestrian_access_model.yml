@@ -1,0 +1,57 @@
+name: Validate pedestrian access model
+
+on:
+  push:
+    branches:
+      - walkability-rule-validation
+    paths:
+      - "src/pedestrian_access_rules.py"
+      - "src/31_validate_pedestrian_access_model.py"
+      - "src/32_walkability_contribution_robustness.py"
+      - "tests/test_v13_walkability_rule_validation.py"
+      - ".github/workflows/validate_pedestrian_access_model.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out validation branch
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install project dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+
+      - name: Validate OSM pedestrian access model
+        run: python src/31_validate_pedestrian_access_model.py
+
+      - name: Summarise road-network robustness
+        run: python src/32_walkability_contribution_robustness.py
+
+      - name: Run targeted tests
+        run: python -m pytest -q tests/test_v13_walkability_rule_validation.py
+
+      - name: Commit validated outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            outputs/validation/pedestrian_access_rule_by_way.csv \
+            outputs/validation/pedestrian_access_rule_summary.csv \
+            outputs/validation/pedestrian_access_rule_by_highway.csv \
+            outputs/validation/pedestrian_access_model_qa.json \
+            outputs/walkability_robustness/walkability_contribution_robustness.csv \
+            outputs/walkability_robustness/walkability_contribution_robustness_qa.json
+          if git diff --cached --quiet; then
+            echo "No output changes to commit."
+          else
+            git commit -m "Add validated pedestrian access and robustness outputs"
+            git push
+          fi
