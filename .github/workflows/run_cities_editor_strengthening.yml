@@ -1,0 +1,80 @@
+name: Run Cities editor-strengthening analyses
+
+on:
+  push:
+    branches:
+      - cities-editor-strengthening
+    paths:
+      - "src/36_population_weighted_sensitivity.py"
+      - "src/37_failure_condition_multivariable.py"
+      - ".github/workflows/run_cities_editor_strengthening.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  analyse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out strengthening branch
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+
+      - name: Run multivariable boundary-condition analysis
+        run: python src/37_failure_condition_multivariable.py
+
+      - name: Run population-weighted sequential sensitivity
+        run: python src/36_population_weighted_sensitivity.py --max-sites 40
+
+      - name: Validate outputs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import pandas as pd
+
+          root=Path("outputs")
+          m=root/"failure_condition_multivariable"
+          p=root/"population_weighted_sensitivity"
+
+          coef=pd.read_csv(m/"selected_boundary_condition_coefficients.csv")
+          assert set(coef.model)=={"pooled","district_only","equal_subdistrict_only"}
+          assert len(coef)==18
+          mq=json.loads((m/"multivariable_quality_gate.json").read_text())
+          assert mq["inferential_p_values_reported"] is False
+
+          traj=pd.read_csv(p/"population_weighted_trajectories.csv")
+          first=pd.read_csv(p/"population_weighted_first_step_summary.csv")
+          budget=pd.read_csv(p/"population_weighted_budget_summary.csv")
+          pq=json.loads((p/"population_weighted_quality_gate.json").read_text())
+          assert len(traj)==7200
+          assert len(first)==3
+          assert set(first.rule)=={
+              "facilities_per_10k",
+              "facilities_per_km2",
+              "facilities_per_100km_network",
+          }
+          assert set(budget.new_sites)=={1,5,12,20,30,40}
+          assert pq["person_level_accessibility_claimed"] is False
+          assert pq["direct_dijkstra_validation_candidates"]==12
+          print("editor-strengthening analyses validated")
+          PY
+
+      - name: Commit validated outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add outputs/failure_condition_multivariable outputs/population_weighted_sensitivity
+          if git diff --cached --quiet; then
+            echo "No output changes to commit."
+          else
+            git commit -m "Add validated editor-strengthening analyses"
+            git push
+          fi
