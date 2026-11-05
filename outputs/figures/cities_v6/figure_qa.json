@@ -1,0 +1,15 @@
+{
+  "figure_count": 10,
+  "all_vector_pdf": true,
+  "png_previews": true,
+  "results_mapping": {
+    "first_step": "fig03",
+    "spatial_mismatch": "fig04",
+    "failure_conditions": "fig05",
+    "absolute_coverage": "fig06",
+    "investment_scale": "fig07",
+    "population_weighted": "fig08",
+    "service_threshold_heterogeneity": "fig09",
+    "road_network_robustness": "fig10"
+  }
+}
