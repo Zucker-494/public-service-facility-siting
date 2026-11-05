@@ -9,8 +9,9 @@
       "n_scenarios": 5,
       "r_squared": 0.9184277492949001,
       "matrix_rank": 11,
-      "design_columns": 12,
-      "condition_number": 5544523151383844.0,
+      "design_columns": 11,
+      "condition_number": 32.48045015632748,
+      "full_rank": true,
       "inferential_p_values_reported": false,
       "scenario_settings_treated_as_independent_samples": false
     },
@@ -20,8 +21,9 @@
       "n_scenarios": 5,
       "r_squared": 0.6011007170780639,
       "matrix_rank": 10,
-      "design_columns": 11,
-      "condition_number": 1.4701503442107124e+16,
+      "design_columns": 10,
+      "condition_number": 59.02518001214235,
+      "full_rank": true,
       "inferential_p_values_reported": false,
       "scenario_settings_treated_as_independent_samples": false
     },
@@ -29,10 +31,11 @@
       "model": "equal_subdistrict_only",
       "n_rows": 135,
       "n_scenarios": 5,
-      "r_squared": 0.9163108700010935,
+      "r_squared": 0.9163108700010933,
       "matrix_rank": 10,
-      "design_columns": 11,
-      "condition_number": 1.1650055823904076e+16,
+      "design_columns": 10,
+      "condition_number": 31.888717481852712,
+      "full_rank": true,
       "inferential_p_values_reported": false,
       "scenario_settings_treated_as_independent_samples": false
     }
@@ -42,9 +45,10 @@
     "opportunity_top_share",
     "supply_cv",
     "priority_population_share",
-    "priority_candidate_share",
     "threshold_min"
   ],
+  "excluded_collinear_predictor": "priority_candidate_share",
+  "exclusion_reason": "perfect inverse Spearman correlation with priority_population_share",
   "categorical_controls": [
     "objective",
     "proxy",
@@ -75,10 +79,6 @@
         "mean": 0.09630344975588816,
         "sd": 0.04522762098382
       },
-      "priority_candidate_share": {
-        "mean": 0.1388888888888888,
-        "sd": 0.005706494642225652
-      },
       "threshold_min": {
         "mean": 10.0,
         "sd": 4.08248290463863
@@ -101,10 +101,6 @@
         "mean": 0.09630344975588817,
         "sd": 0.04522762098382
       },
-      "priority_candidate_share": {
-        "mean": 0.1388888888888888,
-        "sd": 0.005706494642225652
-      },
       "threshold_min": {
         "mean": 10.0,
         "sd": 4.08248290463863
@@ -126,10 +122,6 @@
       "priority_population_share": {
         "mean": 0.09630344975588817,
         "sd": 0.04522762098382
-      },
-      "priority_candidate_share": {
-        "mean": 0.1388888888888888,
-        "sd": 0.005706494642225652
       },
       "threshold_min": {
         "mean": 10.0,
