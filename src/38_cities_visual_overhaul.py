@@ -174,41 +174,41 @@ def fig01_study_area():
     save(fig, "fig01_study_area")
 
 def fig02_framework():
-    fig, ax = plt.subplots(figsize=(11.0, 4.8), layout="constrained")
+    fig, ax = plt.subplots(figsize=(11.0, 4.25), layout="constrained")
     ax.set_axis_off(); ax.set_xlim(0, 1); ax.set_ylim(0, 1)
 
     def box(x, y, w, h, title, body, fc):
         p = FancyBboxPatch(
             (x, y), w, h, boxstyle="round,pad=0.012,rounding_size=0.018",
-            facecolor=fc, edgecolor="#5E6368", linewidth=0.95
+            facecolor=fc, edgecolor="#5E6368", linewidth=1.0
         )
         ax.add_patch(p)
         ax.text(x+w/2, y+h*0.66, title, ha="center", va="center",
-                fontsize=10.5, fontweight="semibold")
-        ax.text(x+w/2, y+h*0.36, body, ha="center", va="center", fontsize=9.2)
+                fontsize=11.2, fontweight="semibold")
+        ax.text(x+w/2, y+h*0.34, body, ha="center", va="center", fontsize=9.8)
 
     def arrow(x1, y1, x2, y2):
         ax.add_patch(FancyArrowPatch(
-            (x1,y1),(x2,y2), arrowstyle="-|>", mutation_scale=13,
-            linewidth=1.0, color="#6A6E73"
+            (x1,y1),(x2,y2), arrowstyle="-|>", mutation_scale=14,
+            linewidth=1.05, color="#6A6E73"
         ))
 
-    box(0.04, 0.66, 0.27, 0.19, "Existing provision", "89 facilities + pedestrian network", "#EEF2F4")
-    box(0.365,0.66, 0.27, 0.19, "Supply-based rule", "Lowest-supply subdistrict", "#F7E8D5")
-    box(0.69, 0.66, 0.27, 0.19, "Network-greedy reference", "Best available candidate", "#E1ECE9")
-    box(0.20, 0.34, 0.27, 0.19, "Sequential update", "Recalculate after each addition", "#ECE6F2")
-    box(0.53, 0.34, 0.27, 0.19, "Planning objectives", "District-wide | equal-subdistrict", "#EEF1F5")
-    box(0.365,0.06, 0.27, 0.17, "Decision validity", "Shortfall | scale | robustness", "#F3EFE7")
-    arrow(0.31,0.755,0.365,0.755)
-    arrow(0.635,0.755,0.69,0.755)
-    arrow(0.50,0.66,0.38,0.53)
-    arrow(0.82,0.66,0.67,0.53)
-    arrow(0.335,0.34,0.47,0.23)
-    arrow(0.665,0.34,0.53,0.23)
-    ax.text(0.50, 0.94, "Three supply indicators: per 10,000 residents | per km² | per 100 km roads",
-            ha="center", va="center", fontsize=10.2, color="#43484D")
-    ax.text(0.50, 0.89, "Three services | 5/10/15 min thresholds | 1-40 additions",
-            ha="center", va="center", fontsize=9.6, color="#62676C")
+    box(0.025,0.61,0.29,0.22,"Existing provision","89 facilities + pedestrian network","#EEF2F4")
+    box(0.355,0.61,0.29,0.22,"Supply-based rule","Lowest-supply subdistrict","#F7E8D5")
+    box(0.685,0.61,0.29,0.22,"Network-greedy reference","Best available candidate","#E1ECE9")
+    box(0.185,0.31,0.29,0.21,"Sequential update","Recalculate after each addition","#ECE6F2")
+    box(0.525,0.31,0.29,0.21,"Planning objectives","District-wide | equal-subdistrict","#EEF1F5")
+    box(0.355,0.035,0.29,0.18,"Decision validity","Shortfall | scale | robustness","#F3EFE7")
+    arrow(0.315,0.72,0.355,0.72)
+    arrow(0.645,0.72,0.685,0.72)
+    arrow(0.50,0.61,0.33,0.52)
+    arrow(0.83,0.61,0.67,0.52)
+    arrow(0.33,0.31,0.45,0.215)
+    arrow(0.67,0.31,0.55,0.215)
+    ax.text(0.50,0.94,"Three supply indicators: per 10,000 residents | per km² | per 100 km roads",
+            ha="center",va="center",fontsize=10.8,color="#43484D")
+    ax.text(0.50,0.885,"Three services | 5/10/15 min thresholds | 1-40 additions",
+            ha="center",va="center",fontsize=10.1,color="#62676C")
     save(fig, "fig02_decision_framework")
 
 def fig03_first_step():
@@ -221,8 +221,7 @@ def fig03_first_step():
     }
     panels = []
     for obj, title in [("district", "District-wide coverage"), ("equal", "Equal-subdistrict coverage")]:
-        q = primary[primary.objective == obj].copy()
-        q = q.set_index("proxy").loc[PROXY].reset_index()
+        q = primary[primary.objective == obj].copy().set_index("proxy").loc[PROXY].reset_index()
         panels.append((title, q["proxy"].tolist(),
                        q["median_first_step_shortfall_pct"].to_numpy(),
                        q["q25_first_step_shortfall_pct"].to_numpy(),
@@ -236,28 +235,24 @@ def fig03_first_step():
                    pop["q75_shortfall_pct"].to_numpy(),
                    pop["exact_first_step_match_rate_pct"].to_numpy()))
 
-    fig, axes = plt.subplots(1, 3, figsize=(12.0, 4.6), sharex=True, layout="constrained")
+    fig, axes = plt.subplots(3, 1, figsize=(10.7, 6.15), sharex=True, layout="constrained")
     xmax = 72
     for j, (ax, dat) in enumerate(zip(axes, panels)):
         title, proxies, med, q25, q75, match = dat
         y = np.arange(3)
         for i, p in enumerate(proxies):
-            c = COL[p]
-            ax.hlines(y[i], q25[i], q75[i], lw=8, color=c, alpha=0.22)
-            ax.plot(med[i], y[i], "o", ms=8.5, color=c, mec="white", mew=0.8, zorder=3)
-            ax.text(xmax-1.2, y[i], f"{match[i]:.1f}% match", ha="right", va="center",
-                    fontsize=9.0, color="#4D5358")
-        ax.set_title(title, pad=8, fontweight="semibold")
+            cc = COL[p]
+            ax.hlines(y[i], q25[i], q75[i], lw=9, color=cc, alpha=0.22)
+            ax.plot(med[i], y[i], "o", ms=9, color=cc, mec="white", mew=0.8, zorder=3)
+            ax.text(xmax-1.0, y[i], f"{match[i]:.1f}% match", ha="right", va="center",
+                    fontsize=9.7, color="#4D5358")
+        ax.set_title(title, loc="left", pad=5, fontweight="semibold")
         ax.set_xlim(0, xmax)
-        ax.set_xlabel("First-step shortfall (%)")
         ax.grid(axis="x")
-        ax.set_yticks(y)
-        if j == 0:
-            ax.set_yticklabels([PLAB[p] for p in proxies])
-        else:
-            ax.set_yticklabels([])
+        ax.set_yticks(y, [PLAB[p] for p in proxies])
         ax.invert_yaxis()
         panel(ax, chr(ord("A")+j))
+    axes[-1].set_xlabel("First-step shortfall from best available gain (%)")
     save(fig, "fig03_first_step_validity")
 
 def fig04_spatial_mismatch():
@@ -271,8 +266,8 @@ def fig04_spatial_mismatch():
 
     fig, axd = plt.subplot_mosaic(
         [["A","B"],["C","C"]],
-        figsize=(11.2, 8.0),
-        gridspec_kw={"height_ratios":[1.0,1.08]},
+        figsize=(11.2, 10.2),
+        gridspec_kw={"height_ratios":[1.0,1.12]},
         layout="constrained"
     )
     specs = {
@@ -284,22 +279,22 @@ def fig04_spatial_mismatch():
         field, title, cmap, mode, cblab = specs[key]
         m = bound.merge(vals[[field]], left_on="zone", right_index=True, how="left")
         norm = Normalize(vmin=float(m[field].min()), vmax=float(m[field].max()))
-        m.plot(column=field, ax=ax, cmap=cmap, norm=norm, edgecolor="white", linewidth=1.15)
+        m.plot(column=field, ax=ax, cmap=cmap, norm=norm, edgecolor="white", linewidth=1.25)
         best = q.loc[q[field].idxmin() if mode=="min" else q[field].idxmax(), "zone"]
-        bound[bound.zone==best].boundary.plot(ax=ax, color="#111111", linewidth=2.7)
+        bound[bound.zone==best].boundary.plot(ax=ax, color="#111111", linewidth=2.9)
         for r in m.itertuples():
             p = r.geometry.representative_point()
             ax.text(
                 p.x, p.y, names[r.zone].replace(" Subdistrict",""),
-                fontsize=7.8, ha="center", va="center", color="#222222",
-                bbox=dict(facecolor="white", alpha=0.66, edgecolor="none", pad=0.55)
+                fontsize=8.8, ha="center", va="center", color="#222222",
+                bbox=dict(facecolor="white", alpha=0.70, edgecolor="none", pad=0.65)
             )
-        ax.set_title(f"{key}  {title}", loc="left", fontweight="semibold", pad=6)
+        ax.set_title(f"{key}  {title}", loc="left", fontweight="semibold", pad=7, fontsize=11.5)
         ax.set_axis_off()
         sm = ScalarMappable(norm=norm, cmap=cmap); sm.set_array([])
-        cb = fig.colorbar(sm, ax=ax, orientation="horizontal", fraction=0.046, pad=0.025, shrink=0.78)
-        cb.set_label(cblab, fontsize=9.2)
-        cb.ax.tick_params(labelsize=8.5)
+        cb = fig.colorbar(sm, ax=ax, orientation="horizontal", fraction=0.042, pad=0.018, shrink=0.72)
+        cb.set_label(cblab, fontsize=9.8)
+        cb.ax.tick_params(labelsize=9.1)
     save(fig, "fig04_spatial_mismatch")
 
 def fig05_boundary_conditions():
@@ -355,23 +350,22 @@ def fig06_cumulative_coverage():
     label = {"network_greedy":"Network-greedy reference", **{k:PLAB[k] for k in RULE}}
     ls = {"network_greedy":"-", "facilities_per_10k":"-", "facilities_per_km2":"--", "facilities_per_100km_network":"-."}
 
-    fig, axes = plt.subplots(1,3,figsize=(12.0,4.4),layout="constrained")
+    fig, axes = plt.subplots(3,1,figsize=(10.7,6.9),sharex=True,layout="constrained")
     for j, (ax, svc) in enumerate(zip(axes, ["healthcare","elderly_care","culture"])):
         for rule in rules:
             q = d[(d.service==svc) & (d.rule==rule)].sort_values("new_sites")
             x = np.r_[0, q.new_sites.to_numpy()]
             y = np.r_[0, q.gain_median.to_numpy()/1000.0]
             ax.plot(x, y, color=color[rule], ls=ls[rule],
-                    lw=2.5 if rule=="network_greedy" else 2.0,
+                    lw=2.7 if rule=="network_greedy" else 2.15,
                     label=label[rule])
-        ax.set_title(SLAB[svc], fontweight="semibold")
-        ax.set_xlabel("Added facilities")
+        ax.set_title(SLAB[svc], loc="left", fontweight="semibold", pad=4)
+        ax.set_ylabel("Additional coverage (km)")
         ax.grid(axis="y")
         panel(ax, chr(ord("A")+j))
-        if j == 0:
-            ax.set_ylabel("Additional covered road network (km)")
+    axes[-1].set_xlabel("Added facilities")
     handles, labels = axes[0].get_legend_handles_labels()
-    fig.legend(handles, labels, frameon=False, ncol=2, loc="upper center", bbox_to_anchor=(0.5,1.08))
+    fig.legend(handles, labels, frameon=False, ncol=2, loc="upper center", bbox_to_anchor=(0.5,1.045))
     save(fig, "fig06_cumulative_coverage")
 
 def fig07_investment_scale():
