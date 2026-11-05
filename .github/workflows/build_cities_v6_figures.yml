@@ -1,0 +1,58 @@
+name: Build Cities v6 figures
+
+on:
+  push:
+    branches:
+      - cities-v6-visual-overhaul
+    paths:
+      - "src/38_cities_visual_overhaul.py"
+      - ".github/workflows/build_cities_v6_figures.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Build v6 figures
+        run: python src/38_cities_visual_overhaul.py
+      - name: Validate outputs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          root=Path("outputs/figures/cities_v6")
+          q=json.loads((root/"figure_qa.json").read_text())
+          assert q["figure_count"]==10
+          for i in range(1,11):
+              stem=f"fig{i:02d}_"
+              pdfs=list(root.glob(stem+"*.pdf"))
+              pngs=list(root.glob(stem+"*.png"))
+              assert len(pdfs)==1, (stem,pdfs)
+              assert len(pngs)==1, (stem,pngs)
+              assert pdfs[0].stat().st_size>10000
+              assert pngs[0].stat().st_size>10000
+          print("v6 figure validation passed")
+          PY
+      - name: Commit validated figure outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add outputs/figures/cities_v6
+          if git diff --cached --quiet; then
+            echo "No figure changes to commit."
+          else
+            git commit -m "Add validated Cities v6 figures"
+            git push
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cities-v6-figures
+          path: outputs/figures/cities_v6
