@@ -19,12 +19,14 @@ SRC = ROOT / "outputs" / "sequential_investment" / "indicator_failure_conditions
 OUT = ROOT / "outputs" / "failure_condition_multivariable"
 OUT.mkdir(parents=True, exist_ok=True)
 
+# Keep one priority-area size variable only. Candidate share was removed because
+# it is perfectly inversely correlated with priority population share in this
+# experiment, which made the earlier descriptive model rank-deficient.
 CONTINUOUS = [
     "supply_opportunity_rho",
     "opportunity_top_share",
     "supply_cv",
     "priority_population_share",
-    "priority_candidate_share",
     "threshold_min",
 ]
 CATEGORICAL = ["objective", "proxy", "service"]
@@ -41,15 +43,12 @@ def prepare(df: pd.DataFrame):
         stats[col] = {"mean": mean, "sd": sd}
 
     pieces = [pd.Series(1.0, index=work.index, name="intercept")]
-    names = ["intercept"]
     for col in CONTINUOUS:
         pieces.append(work[col + "_z"].rename(col))
-        names.append(col)
 
     dummies = pd.get_dummies(work[CATEGORICAL], prefix=CATEGORICAL, drop_first=True, dtype=float)
     for col in dummies.columns:
         pieces.append(dummies[col])
-        names.append(col)
 
     X = pd.concat(pieces, axis=1).astype(float)
     y = work["first_step_shortfall_pct"].astype(float)
@@ -66,6 +65,8 @@ def fit(X: pd.DataFrame, y: pd.Series):
     sst = float(np.sum((target - target.mean()) ** 2))
     r2 = 1.0 - sse / sst
     condition_number = float(singular.max() / singular.min())
+    assert int(rank) == int(X.shape[1]), (rank, X.shape)
+    assert condition_number < 100.0, condition_number
     return beta, pred, r2, int(rank), condition_number
 
 
@@ -107,6 +108,7 @@ def model_for_subset(df: pd.DataFrame, model_name: str):
         "matrix_rank": int(rank),
         "design_columns": int(X.shape[1]),
         "condition_number": float(cond),
+        "full_rank": bool(rank == X.shape[1]),
         "inferential_p_values_reported": False,
         "scenario_settings_treated_as_independent_samples": False,
     }
@@ -135,22 +137,15 @@ def main():
     coef = pd.concat(all_results, ignore_index=True)
     coef.to_csv(OUT / "standardized_descriptive_coefficients.csv", index=False)
 
-    selected_terms = [
-        "supply_opportunity_rho",
-        "opportunity_top_share",
-        "supply_cv",
-        "priority_population_share",
-        "priority_candidate_share",
-        "threshold_min",
-    ]
+    selected_terms = CONTINUOUS.copy()
     selected = coef[coef.term.isin(selected_terms)].copy()
     selected.to_csv(OUT / "selected_boundary_condition_coefficients.csv", index=False)
 
-    # Pairwise correlations are included to make collinearity transparent.
-    corr = df[CONTINUOUS + ["first_step_shortfall_pct"]].corr(method="spearman")
+    # Pairwise correlations are retained to document the predictor-screening step.
+    screening_cols = CONTINUOUS + ["priority_candidate_share", "first_step_shortfall_pct"]
+    corr = df[screening_cols].corr(method="spearman")
     corr.to_csv(OUT / "predictor_spearman_matrix.csv")
 
-    # Simple agreement analysis between population- and area-based supply rules.
     paired = (
         df[df.proxy.isin(["per_10k", "per_km2"])]
         .pivot_table(
@@ -189,6 +184,8 @@ def main():
         "deterministic_location_scenarios": 5,
         "models": diagnostics,
         "continuous_predictors": CONTINUOUS,
+        "excluded_collinear_predictor": "priority_candidate_share",
+        "exclusion_reason": "perfect inverse Spearman correlation with priority_population_share",
         "categorical_controls": CATEGORICAL,
         "inferential_p_values_reported": False,
         "causal_interpretation": False,
