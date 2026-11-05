@@ -1,0 +1,46 @@
+name: Build Cities layout fixes
+
+on:
+  push:
+    branches:
+      - cities-layout-fix
+    paths:
+      - "src/35_cities_layout_fix_figures.py"
+      - ".github/workflows/build_cities_layout_fix.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Generate revised figures
+        run: python src/35_cities_layout_fix_figures.py
+      - name: Validate outputs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path("manuscript/cities/figures")
+          for stem in ["fig1_study_area","fig2_decision_framework","fig4_spatial_mismatch"]:
+              for ext in [".png",".pdf"]:
+                  f=p/(stem+ext)
+                  assert f.exists() and f.stat().st_size>10000, f
+          print("layout-fix figures validated")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cities-layout-fix-figures
+          path: |
+            manuscript/cities/figures/fig1_study_area.png
+            manuscript/cities/figures/fig1_study_area.pdf
+            manuscript/cities/figures/fig2_decision_framework.png
+            manuscript/cities/figures/fig2_decision_framework.pdf
+            manuscript/cities/figures/fig4_spatial_mismatch.png
+            manuscript/cities/figures/fig4_spatial_mismatch.pdf
