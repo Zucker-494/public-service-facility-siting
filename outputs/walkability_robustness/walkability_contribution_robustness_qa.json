@@ -1,0 +1,11 @@
+{
+  "best_proxy_agreement_all_budgets": 0.7755555555555556,
+  "best_proxy_agreement_15min": 0.5291666666666667,
+  "first_step_exact_match_original": 0.14814814814814814,
+  "first_step_exact_match_strict": 0.2222222222222222,
+  "median_network_loss_rank_correlation": 0.6333333333333333,
+  "minimum_network_loss_rank_correlation": -0.5263157894736842,
+  "median_abs_loss_difference_pp": 9.501191950361346,
+  "all_main_budget_groups_show_declining_median_relative_difference": true,
+  "interpretation": "Road-network filtering changes some proxy rankings, but this table quantifies whether the magnitude/order of allocation shortfalls remains structurally similar."
+}

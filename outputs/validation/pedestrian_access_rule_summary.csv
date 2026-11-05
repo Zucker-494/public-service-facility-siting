@@ -1,0 +1,5 @@
+pedestrian_allowed_by_rules,access_basis,study_length_m,way_count,edge_count,pct_study_length
+True,china_default_foot_allowed,506506.8928855505,2475,13426,63.42479965694694
+True,explicit_foot_allow,75207.9317003454,618,4305,9.417538177087728
+True,pedestrian_semantic_class,1068.0527022639985,59,87,0.13374157314668877
+True,worldwide_fallback_foot_allowed,215811.51421981954,1668,7705,27.023920592818634
