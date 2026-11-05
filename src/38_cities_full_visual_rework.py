@@ -101,8 +101,8 @@ def fig1_study_area():
     fac = gpd.GeoDataFrame(reg, geometry=gpd.points_from_xy(reg.wgs84_lon, reg.wgs84_lat), crs="EPSG:4326").to_crs(edges.crs)
     cg = gpd.GeoDataFrame(cand, geometry=gpd.points_from_xy(cand.x, cand.y), crs=edges.crs)
 
-    fig = plt.figure(figsize=(10.8,5.8), layout="constrained")
-    gs = fig.add_gridspec(1,2,width_ratios=[4.3,1.7])
+    fig = plt.figure(figsize=(11.4,6.5), layout="constrained")
+    gs = fig.add_gridspec(1,2,width_ratios=[4.8,1.4])
     ax = fig.add_subplot(gs[0,0])
     lax = fig.add_subplot(gs[0,1])
     bound.plot(ax=ax, facecolor="#F5F2EA", edgecolor="#60666B", linewidth=0.9)
@@ -136,7 +136,7 @@ def fig1_study_area():
     save(fig,"fig1_study_area")
 
 def fig2_framework():
-    fig, ax = plt.subplots(figsize=(10.8,5.4), layout="constrained")
+    fig, ax = plt.subplots(figsize=(10.8,6.6), layout="constrained")
     ax.set_axis_off(); ax.set_xlim(0,1); ax.set_ylim(0,1)
     def box(x,y,w,h,text,fc,fs=10,weight="normal"):
         p=FancyBboxPatch((x,y),w,h,boxstyle="round,pad=0.012,rounding_size=0.018",facecolor=fc,edgecolor="#5D6368",linewidth=.95)
@@ -158,7 +158,7 @@ def fig2_framework():
 
 def fig3_primary_first_step():
     d=pd.read_csv(SEQ/"indicator_failure_summary.csv")
-    fig,axes=plt.subplots(1,2,figsize=(10.8,4.8),sharex=True,layout="constrained")
+    fig,axes=plt.subplots(1,2,figsize=(10.8,5.6),sharex=True,layout="constrained")
     xmax=68
     for ax,obj,lbl in zip(axes,["district","equal"],["A","B"]):
         q=d[d.objective==obj].set_index("proxy").loc[PROXY].reset_index()
@@ -218,7 +218,7 @@ def fig5_boundary_conditions():
         "priority_population_share":"Priority-subdistrict population share",
         "threshold_min":"Walking threshold",
     }
-    fig,ax=plt.subplots(figsize=(10.8,5.2),layout="constrained")
+    fig,ax=plt.subplots(figsize=(10.8,6.1),layout="constrained")
     y=np.arange(len(terms))
     offsets={"district_only":-.14,"equal_subdistrict_only":.14}
     colors={"district_only":COL["district"],"equal_subdistrict_only":COL["equal"]}
@@ -243,7 +243,7 @@ def fig6_absolute_coverage():
     color={"network_greedy":COL["greedy"],"facilities_per_10k":COL["per_10k"],"facilities_per_km2":COL["per_km2"],"facilities_per_100km_network":COL["per_100km"]}
     ls={"network_greedy":"-","facilities_per_10k":"-","facilities_per_km2":"--","facilities_per_100km_network":"-."}
     labels={"network_greedy":"Network-greedy",**{r:PLAB[r] for r in RULES}}
-    fig,axes=plt.subplots(1,3,figsize=(11.2,4.4),layout="constrained")
+    fig,axes=plt.subplots(1,3,figsize=(11.2,5.8),layout="constrained")
     for ax,svc,lbl in zip(axes,["healthcare","elderly_care","culture"],["A","B","C"]):
         for rule in rulelist:
             q=d[(d.service==svc)&(d.rule==rule)].sort_values("new_sites")
@@ -297,7 +297,7 @@ def fig9_heterogeneity():
     d=pd.read_csv(SEQ/"indicator_failure_conditions.csv")
     agg=d.groupby(["objective","service","threshold_min","proxy"],as_index=False).first_step_shortfall_pct.median()
     rows=[(s,t) for s in ["healthcare","elderly_care","culture"] for t in [5,10,15]]
-    fig,axes=plt.subplots(1,2,figsize=(11.2,6.2),layout="constrained")
+    fig,axes=plt.subplots(1,2,figsize=(11.2,7.1),layout="constrained")
     vmax=float(agg.first_step_shortfall_pct.max())
     for ax,obj,lbl in zip(axes,["district","equal"],["A","B"]):
         arr=np.array([[float(agg[(agg.objective==obj)&(agg.service==s)&(agg.threshold_min==t)&(agg.proxy==p)].first_step_shortfall_pct.iloc[0]) for p in PROXY] for s,t in rows])
@@ -313,7 +313,7 @@ def fig9_heterogeneity():
 
 def fig10_robustness():
     d=pd.read_csv(ROB/"walkability_contribution_robustness.csv")
-    fig,axes=plt.subplots(1,2,figsize=(10.8,4.6),layout="constrained")
+    fig,axes=plt.subplots(1,2,figsize=(10.8,5.3),layout="constrained")
     for obj,c in [("district_gain_m",COL["district"]),("gain_equal_street_mean_pp",COL["equal"])]:
         q=d[d.objective==obj].sort_values("new_sites")
         axes[0].plot(q.new_sites,q.spearman_original_vs_strict_loss,marker="o",ms=6,lw=2.0,color=c,label=OLAB[obj])
