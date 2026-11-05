@@ -1,0 +1,16 @@
+{
+  "objective": "population_weighted_network_coverage",
+  "interpretation": "covered road length weighted by subdistrict population per evaluated road metre",
+  "person_level_accessibility_claimed": false,
+  "within_subdistrict_population_distribution_assumption": "uniform_over_evaluated_road_network",
+  "existing_facilities": 89,
+  "candidate_sites": 1132,
+  "scenario_variants": 5,
+  "services": 3,
+  "walking_thresholds": 3,
+  "new_site_budgets": 40,
+  "direct_dijkstra_validation_candidates": 12,
+  "result_rows": 7200,
+  "global_multiple_site_optimality": "NOT_CLAIMED",
+  "elapsed_sec": 78.9
+}

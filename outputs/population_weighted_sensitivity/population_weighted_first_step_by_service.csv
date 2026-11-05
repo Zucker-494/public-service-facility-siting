@@ -1,0 +1,10 @@
+service,rule,exact_first_step_match_rate_pct,median_shortfall_pct
+culture,facilities_per_100km_network,0.0,37.635754092726806
+culture,facilities_per_10k,66.66666666666666,0.0
+culture,facilities_per_km2,66.66666666666666,0.0
+elderly_care,facilities_per_100km_network,0.0,41.37273575010464
+elderly_care,facilities_per_10k,0.0,41.37273575010464
+elderly_care,facilities_per_km2,0.0,41.37273575010464
+healthcare,facilities_per_100km_network,0.0,40.73282968559323
+healthcare,facilities_per_10k,66.66666666666666,0.0
+healthcare,facilities_per_km2,66.66666666666666,0.0

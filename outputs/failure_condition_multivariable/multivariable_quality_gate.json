@@ -1,0 +1,140 @@
+{
+  "analysis_type": "descriptive_standardized_linear_models_with_leave_one_scenario_out_stability",
+  "rows": 270,
+  "deterministic_location_scenarios": 5,
+  "models": [
+    {
+      "model": "pooled",
+      "n_rows": 270,
+      "n_scenarios": 5,
+      "r_squared": 0.9184277492949001,
+      "matrix_rank": 11,
+      "design_columns": 12,
+      "condition_number": 5544523151383844.0,
+      "inferential_p_values_reported": false,
+      "scenario_settings_treated_as_independent_samples": false
+    },
+    {
+      "model": "district_only",
+      "n_rows": 135,
+      "n_scenarios": 5,
+      "r_squared": 0.6011007170780639,
+      "matrix_rank": 10,
+      "design_columns": 11,
+      "condition_number": 1.4701503442107124e+16,
+      "inferential_p_values_reported": false,
+      "scenario_settings_treated_as_independent_samples": false
+    },
+    {
+      "model": "equal_subdistrict_only",
+      "n_rows": 135,
+      "n_scenarios": 5,
+      "r_squared": 0.9163108700010935,
+      "matrix_rank": 10,
+      "design_columns": 11,
+      "condition_number": 1.1650055823904076e+16,
+      "inferential_p_values_reported": false,
+      "scenario_settings_treated_as_independent_samples": false
+    }
+  ],
+  "continuous_predictors": [
+    "supply_opportunity_rho",
+    "opportunity_top_share",
+    "supply_cv",
+    "priority_population_share",
+    "priority_candidate_share",
+    "threshold_min"
+  ],
+  "categorical_controls": [
+    "objective",
+    "proxy",
+    "service"
+  ],
+  "inferential_p_values_reported": false,
+  "causal_interpretation": false,
+  "population_area_rule_agreement": {
+    "n_paired_cases": 90,
+    "same_first_step_performance_rate_pct": 100.0,
+    "median_absolute_shortfall_difference_pp": 0.0
+  },
+  "scaling": {
+    "pooled": {
+      "supply_opportunity_rho": {
+        "mean": 0.26138306138306144,
+        "sd": 0.5635946307014094
+      },
+      "opportunity_top_share": {
+        "mean": 0.1343118498581072,
+        "sd": 0.016963282548945698
+      },
+      "supply_cv": {
+        "mean": 0.5345805062196795,
+        "sd": 0.13808903681915177
+      },
+      "priority_population_share": {
+        "mean": 0.09630344975588816,
+        "sd": 0.04522762098382
+      },
+      "priority_candidate_share": {
+        "mean": 0.1388888888888888,
+        "sd": 0.005706494642225652
+      },
+      "threshold_min": {
+        "mean": 10.0,
+        "sd": 4.08248290463863
+      }
+    },
+    "district_only": {
+      "supply_opportunity_rho": {
+        "mean": 0.6973840973840973,
+        "sd": 0.16221147968667934
+      },
+      "opportunity_top_share": {
+        "mean": 0.14434229652955652,
+        "sd": 0.013453648893731704
+      },
+      "supply_cv": {
+        "mean": 0.5345805062196797,
+        "sd": 0.13808903681915177
+      },
+      "priority_population_share": {
+        "mean": 0.09630344975588817,
+        "sd": 0.04522762098382
+      },
+      "priority_candidate_share": {
+        "mean": 0.1388888888888888,
+        "sd": 0.005706494642225652
+      },
+      "threshold_min": {
+        "mean": 10.0,
+        "sd": 4.08248290463863
+      }
+    },
+    "equal_subdistrict_only": {
+      "supply_opportunity_rho": {
+        "mean": -0.17461797461797468,
+        "sd": 0.4783005797412548
+      },
+      "opportunity_top_share": {
+        "mean": 0.12428140318665787,
+        "sd": 0.013902716290615477
+      },
+      "supply_cv": {
+        "mean": 0.5345805062196797,
+        "sd": 0.13808903681915177
+      },
+      "priority_population_share": {
+        "mean": 0.09630344975588817,
+        "sd": 0.04522762098382
+      },
+      "priority_candidate_share": {
+        "mean": 0.1388888888888888,
+        "sd": 0.005706494642225652
+      },
+      "threshold_min": {
+        "mean": 10.0,
+        "sd": 4.08248290463863
+      }
+    }
+  }
+}
