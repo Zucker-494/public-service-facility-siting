@@ -11,7 +11,6 @@
   "district_midpoint_eligible_network_km": 798.5943915079795,
   "modelled_higher_order_vehicle_road_length_pct": 35.489,
   "modelled_motorized_or_ambiguous_road_length_pct": 80.952,
-  "walking_permission_explicitly_verified_by_road_type": false,
   "recomputed_policy_rows": 270,
   "scenario_policy_source_rows": 270,
   "scenarios": 5,
@@ -19,9 +18,13 @@
   "scenario_proxy_comparisons_disagree": 60,
   "culture_proxy_comparisons_disagree": 30,
   "publication_gate_facility_location": "FAIL_unverified",
-  "publication_gate_network_walkability": "FAIL_not_independently_validated",
+  "publication_gate_network_walkability": "PASS_OSM_RULE_BASED_NOT_FIELD_SURVEYED",
   "publication_gate_statutory_site_feasibility": "NOT_IN_SCOPE_hypothetical_sites",
   "publication_gate_computational_arithmetic": "PASS_270_rows_independent",
   "can_claim_observed_89_site_regret": false,
-  "uncertainty_interpretation": "Five deterministic scenario values, not confidence intervals"
+  "uncertainty_interpretation": "Five deterministic scenario values, not confidence intervals",
+  "walking_permission_modelled_from_osm_rules": true,
+  "walking_permission_field_verified": false,
+  "network_access_rule_supported_pct": 100,
+  "network_walkability_status": "OSM_rule_validated_not_field_surveyed"
 }
