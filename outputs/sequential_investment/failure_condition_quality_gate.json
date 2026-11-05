@@ -1,0 +1,16 @@
+{
+  "source_street_opportunity_rows": 540,
+  "source_rank_correlation_rows": 270,
+  "source_priority_audit_rows": 270,
+  "source_sequential_rows": 14400,
+  "failure_condition_rows": 270,
+  "failure_condition_correlation_rows": 144,
+  "failure_summary_rows": 6,
+  "budget_trend_rows": 270,
+  "budget_phase_summary_rows": 18,
+  "budget_trajectory_summary_rows": 240,
+  "deterministic_location_scenarios_are_independent_samples": false,
+  "inferential_p_values_reported": false,
+  "network_simulation_rerun": false,
+  "analysis_role": "descriptive_condition_and_budget_sensitivity_analysis"
+}
