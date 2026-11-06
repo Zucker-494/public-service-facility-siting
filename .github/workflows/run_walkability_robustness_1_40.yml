@@ -1,0 +1,75 @@
+name: Run full 1-40 walkability robustness
+
+on:
+  push:
+    branches:
+      - walkability-robustness-1-40
+    paths:
+      - "src/39_walkability_robustness_full_budget.py"
+      - ".github/workflows/run_walkability_robustness_1_40.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+
+      - name: Re-run strict pedestrian network sequential experiment for 1-40 sites
+        run: python src/23_walkability_restricted_sequential.py --max-sites 40
+
+      - name: Compute full-budget robustness trajectories
+        run: python src/39_walkability_robustness_full_budget.py
+
+      - name: Validate full outputs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import pandas as pd
+
+          strict = Path("outputs/walkability_strict_scenario")
+          robust = Path("outputs/walkability_robustness")
+
+          sq = json.loads((strict/"sequential_quality_gate.json").read_text())
+          assert sq["new_site_budgets"] == 40, sq
+          assert sq["result_rows"] == 14400, sq
+          s = pd.read_csv(strict/"sequential_addition_trajectories.csv")
+          assert len(s) == 14400
+          assert set(s.new_sites.unique()) == set(range(1,41))
+
+          c = pd.read_csv(robust/"walkability_contribution_robustness_1_40.csv")
+          assert len(c) == 80
+          assert set(c.new_sites.unique()) == set(range(1,41))
+          assert c.groupby("objective").new_sites.nunique().eq(40).all()
+
+          qa = json.loads((robust/"walkability_contribution_robustness_1_40_qa.json").read_text())
+          assert qa["interpolation_used"] is False
+          assert qa["budget_count"] == 40
+          assert qa["strict_rows_used"] == 5400
+          assert qa["baseline_rows_used"] == 5400
+          print("Full 1-40 robustness validation passed")
+          PY
+
+      - name: Commit validated outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add outputs/walkability_strict_scenario outputs/walkability_robustness/walkability_policy_comparison_summary_1_40.csv outputs/walkability_robustness/walkability_contribution_robustness_1_40.csv outputs/walkability_robustness/walkability_pairwise_losses_15min_1_40.csv outputs/walkability_robustness/walkability_contribution_robustness_1_40_qa.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Add full 1-40 road-network robustness results"
+            git push
+          fi
