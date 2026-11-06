@@ -76,13 +76,20 @@ def fig3_primary_ecdf():
     ):
         qobj = d[d.objective == obj]
         xmax = rounded_upper(qobj.first_step_shortfall_pct, step=10)
-        for proxy in ["per_10k","per_km2","per_100km"]:
-            q = qobj[qobj.proxy == proxy].first_step_shortfall_pct.to_numpy(dtype=float)
-            assert len(q) == 45
-            x, y = ecdf(q)
-            med = float(np.median(q))
-            ax.step(x, 100*y, where="post", color=COL[proxy], lw=2.2,
-                    label=f"{PLAB[proxy]} (median {med:.1f}%)")
+        q_pop = qobj[qobj.proxy == "per_10k"].first_step_shortfall_pct.to_numpy(dtype=float)
+        q_area = qobj[qobj.proxy == "per_km2"].first_step_shortfall_pct.to_numpy(dtype=float)
+        assert len(q_pop) == 45 and len(q_area) == 45
+        np.testing.assert_allclose(np.sort(q_pop), np.sort(q_area), rtol=1e-12, atol=1e-12)
+        x, y = ecdf(q_pop)
+        med = float(np.median(q_pop))
+        ax.step(x, 100*y, where="post", color=COL["per_km2"], lw=2.4,
+                label=f"Per 10,000 residents = Per km² (median {med:.1f}%)")
+        q_road = qobj[qobj.proxy == "per_100km"].first_step_shortfall_pct.to_numpy(dtype=float)
+        assert len(q_road) == 45
+        x, y = ecdf(q_road)
+        med = float(np.median(q_road))
+        ax.step(x, 100*y, where="post", color=COL["per_100km"], lw=2.4,
+                label=f"{PLAB['per_100km']} (median {med:.1f}%)")
         ax.set_xlim(0, xmax)
         ax.set_ylim(0, 100)
         ax.set_xlabel("First-step shortfall from best available gain (%)")
@@ -102,14 +109,20 @@ def fig8_population_weighted_ecdf():
 
     ax = axes[0]
     xmax = rounded_upper(first.relative_shortfall_pct, step=10)
-    for rule in ["facilities_per_10k","facilities_per_km2","facilities_per_100km_network"]:
-        q = first[first.rule == rule].relative_shortfall_pct.to_numpy(dtype=float)
-        assert len(q) == 45
-        proxy = RULE_TO_PROXY[rule]
-        x, y = ecdf(q)
-        med = float(np.median(q))
-        ax.step(x, 100*y, where="post", color=COL[proxy], lw=2.2,
-                label=f"{PLAB[rule]} (median {med:.1f}%)")
+    q_pop = first[first.rule == "facilities_per_10k"].relative_shortfall_pct.to_numpy(dtype=float)
+    q_area = first[first.rule == "facilities_per_km2"].relative_shortfall_pct.to_numpy(dtype=float)
+    assert len(q_pop) == 45 and len(q_area) == 45
+    np.testing.assert_allclose(np.sort(q_pop), np.sort(q_area), rtol=1e-12, atol=1e-12)
+    x, y = ecdf(q_pop)
+    med = float(np.median(q_pop))
+    ax.step(x, 100*y, where="post", color=COL["per_km2"], lw=2.4,
+            label=f"Per 10,000 residents = Per km² (median {med:.1f}%)")
+    q_road = first[first.rule == "facilities_per_100km_network"].relative_shortfall_pct.to_numpy(dtype=float)
+    assert len(q_road) == 45
+    x, y = ecdf(q_road)
+    med = float(np.median(q_road))
+    ax.step(x, 100*y, where="post", color=COL["per_100km"], lw=2.4,
+            label=f"Per 100 km roads (median {med:.1f}%)")
     ax.set_xlim(0, xmax)
     ax.set_ylim(0,100)
     ax.set_xlabel("Population-weighted first-step shortfall (%)")
