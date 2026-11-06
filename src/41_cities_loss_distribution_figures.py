@@ -33,12 +33,12 @@ RULE_TO_PROXY = {
 }
 plt.rcParams.update({
     "font.family":"DejaVu Sans",
-    "font.size":10.5,
-    "axes.titlesize":11.5,
-    "axes.labelsize":10.5,
-    "xtick.labelsize":9.5,
-    "ytick.labelsize":9.5,
-    "legend.fontsize":9.2,
+    "font.size":13.0,
+    "axes.titlesize":14.0,
+    "axes.labelsize":12.8,
+    "xtick.labelsize":11.5,
+    "ytick.labelsize":11.5,
+    "legend.fontsize":10.4,
     "axes.spines.top":False,
     "axes.spines.right":False,
     "axes.linewidth":0.9,
@@ -95,7 +95,7 @@ def fig3_primary_ecdf():
         ax.set_xlabel("First-step shortfall from best available gain (%)")
         ax.grid(True)
         ax.set_title(title)
-        ax.text(-0.10,1.04,label,transform=ax.transAxes,fontsize=12.5,fontweight="bold",va="bottom")
+        ax.text(-0.10,1.04,label,transform=ax.transAxes,fontsize=15.0,fontweight="bold",va="bottom")
         ax.legend(frameon=False, loc="lower right")
     axes[0].set_ylabel("Share of scenario combinations with shortfall ≤ x (%)")
     save(fig, "fig3_primary_first_step_ecdf")
