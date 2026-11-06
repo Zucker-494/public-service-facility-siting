@@ -1,4 +1,5 @@
 name: Build loss-distribution figures
+# rebuild after ECDF legend clarification
 
 on:
   push:
