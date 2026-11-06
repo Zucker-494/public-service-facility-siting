@@ -157,25 +157,67 @@ def fig2_framework():
     save(fig,"fig2_decision_framework")
 
 def fig3_primary_first_step():
-    d=pd.read_csv(SEQ/"indicator_failure_summary.csv")
-    fig,axes=plt.subplots(1,2,figsize=(10.8,5.6),sharex=True,layout="constrained")
-    xmax=68
-    for ax,obj,lbl in zip(axes,["district","equal"],["A","B"]):
-        q=d[d.objective==obj].set_index("proxy").loc[PROXY].reset_index()
-        y=np.arange(3)
-        for i,r in q.iterrows():
-            c=COL[r.proxy]
-            ax.hlines(y[i],r.q25_first_step_shortfall_pct,r.q75_first_step_shortfall_pct,color=c,lw=8,alpha=.28)
-            ax.plot(r.median_first_step_shortfall_pct,y[i],"o",ms=8.5,color=c,mec="white",mew=.8,zorder=3)
-            ax.text(xmax-1,y[i],f"{r.exact_global_best_rate_pct:.1f}% exact",ha="right",va="center",fontsize=9)
-        ax.set_yticks(y,[PLAB[p] for p in PROXY]); ax.invert_yaxis()
-        ax.set_xlim(0,xmax); ax.grid(axis="x")
-        ax.set_title(OLAB[obj],pad=8)
-        ax.set_xlabel("First-step shortfall from best available gain (%)")
-        panel(ax,lbl)
+    d = pd.read_csv(SEQ/"indicator_failure_conditions.csv")
+    rows = [
+        ("district","per_10k"), ("district","per_km2"), ("district","per_100km"),
+        ("equal","per_10k"), ("equal","per_km2"), ("equal","per_100km"),
+    ]
+    labels = [
+        "District | Per 10,000 residents",
+        "District | Per km²",
+        "District | Per 100 km roads",
+        "Equal-subdistrict | Per 10,000 residents",
+        "Equal-subdistrict | Per km²",
+        "Equal-subdistrict | Per 100 km roads",
+    ]
+    colors = [COL["district"]]*3 + [COL["equal"]]*3
+    y = np.arange(len(rows))
+
+    fig, axes = plt.subplots(1,2,figsize=(11.4,6.0),gridspec_kw={"width_ratios":[0.78,1.55]},layout="constrained")
+
+    # Panel A: exact-match probability is shown as its own metric.
+    exact = []
+    for obj,proxy in rows:
+        q=d[(d.objective==obj)&(d.proxy==proxy)]
+        exact.append(100.0*np.isclose(q.first_step_shortfall_pct,0.0,rtol=1e-11,atol=1e-12).mean())
+    axes[0].barh(y, exact, color=colors, alpha=.82, height=.58)
+    axes[0].set_yticks(y, labels)
+    axes[0].invert_yaxis()
+    axes[0].set_xlim(0,100)
+    axes[0].set_xlabel("Exact best-step match rate (%)")
+    axes[0].grid(axis="x")
+    for yi,val in zip(y,exact):
+        axes[0].text(min(val+2,96),yi,f"{val:.1f}%",va="center",fontsize=9.3)
+    panel(axes[0],"A",x=-.20)
+
+    # Panel B: show the complete 45-case loss distribution, not only an IQR.
+    rng=np.random.default_rng(2026)
+    for yi,((obj,proxy),color) in enumerate(zip(rows,colors)):
+        q=d[(d.objective==obj)&(d.proxy==proxy)].first_step_shortfall_pct.to_numpy(dtype=float)
+        jitter=rng.uniform(-.16,.16,size=len(q))
+        axes[1].scatter(q, np.full(len(q),yi)+jitter, s=18, color=color, alpha=.30, edgecolor="none")
+        med=float(np.median(q))
+        q25=float(np.quantile(q,.25)); q75=float(np.quantile(q,.75))
+        axes[1].hlines(yi,q25,q75,color=color,lw=5.5,alpha=.85)
+        axes[1].plot(med,yi,"D",ms=7,color=color,mec="white",mew=.8,zorder=4)
+        axes[1].text(min(max(q75+1.5,med+2.0),66),yi,f"median {med:.1f}%",va="center",fontsize=8.8,color="#333333")
+    axes[1].set_yticks(y,[""]*len(y))
+    axes[1].invert_yaxis()
+    axes[1].set_xlim(0,70)
+    axes[1].set_xlabel("First-step shortfall from best available gain (%)")
+    axes[1].grid(axis="x")
+    panel(axes[1],"B",x=-.08)
+
+    legend=[
+        Line2D([0],[0],color=COL["district"],lw=6,label="District-wide objective"),
+        Line2D([0],[0],color=COL["equal"],lw=6,label="Equal-subdistrict objective"),
+        Line2D([0],[0],marker="D",color="#444444",markerfacecolor="#444444",lw=0,label="Median"),
+    ]
+    fig.legend(handles=legend,frameon=False,ncol=3,loc="upper center",bbox_to_anchor=(.58,1.035))
     save(fig,"fig3_primary_first_step")
 
 def fig4_spatial_mismatch():
+    import matplotlib.patheffects as pe
     gpkg=ROOT/"data/processed/p06_refined_clean.gpkg"
     bound=gpd.read_file(gpkg,layer="study_subdistricts")
     cand=pd.read_csv(ROOT/"data/processed/hypothetical_candidate_nodes.csv",encoding="utf-8-sig")
@@ -185,7 +227,7 @@ def fig4_spatial_mismatch():
     q=d[(d.site_scenario=="INFERRED_89_01")&(d.service=="culture")&(d.threshold_min==10)].copy()
     q["zone"]=q.subdistrict.map(zone_map)
     vals=q.set_index("zone")
-    fig=plt.figure(figsize=(10.8,8.2),layout="constrained")
+    fig=plt.figure(figsize=(11.3,9.1),layout="constrained")
     gs=fig.add_gridspec(2,2,height_ratios=[1,1.18])
     axes=[fig.add_subplot(gs[0,0]),fig.add_subplot(gs[0,1]),fig.add_subplot(gs[1,:])]
     specs=[
@@ -195,17 +237,18 @@ def fig4_spatial_mismatch():
     ]
     for ax,(field,title,cmap,mode,cblab) in zip(axes,specs):
         m=bound.merge(vals[[field]],left_on="zone",right_index=True,how="left")
-        m.plot(column=field,ax=ax,cmap=cmap,edgecolor="white",linewidth=1.0,legend=True,legend_kwds={"shrink":.74,"label":cblab})
+        m.plot(column=field,ax=ax,cmap=cmap,edgecolor="white",linewidth=1.05,legend=True,
+               legend_kwds={"shrink":.76,"label":cblab})
         best=q.loc[q[field].idxmin() if mode=="min" else q[field].idxmax(),"zone"]
-        bound[bound.zone==best].boundary.plot(ax=ax,color="#111",linewidth=2.6)
+        bound[bound.zone==best].boundary.plot(ax=ax,color="#111111",linewidth=2.8)
         for r in m.itertuples():
             p=r.geometry.representative_point()
             name=cand.loc[cand.zone==r.zone,"subdistrict_en"].iloc[0].replace(" Subdistrict","")
-            ax.text(p.x,p.y,name,fontsize=7.6,ha="center",va="center",
-                    color="white" if field!="max_equal" and getattr(r,field)>=m[field].median() else "#222")
-        ax.set_title(title,loc="left",fontweight="semibold",pad=5)
+            t=ax.text(p.x,p.y,name,fontsize=8.2,ha="center",va="center",color="#202326",fontweight="medium")
+            t.set_path_effects([pe.withStroke(linewidth=2.8,foreground="white",alpha=.95)])
+        ax.set_title(title,loc="left",fontweight="semibold",pad=6)
         ax.set_axis_off()
-    fig.text(.5,.005,"Culture facilities, 10-minute threshold, location scenario 1. Thick outline marks the priority subdistrict.",ha="center",fontsize=9)
+    fig.text(.5,.006,"Culture facilities, 10-minute threshold, location scenario 1. Thick black outline marks the priority subdistrict.",ha="center",fontsize=9.3)
     save(fig,"fig4_spatial_mismatch")
 
 def fig5_boundary_conditions():
@@ -270,27 +313,50 @@ def fig7_primary_budget():
     save(fig,"fig7_primary_budget")
 
 def fig8_population_weighted():
-    first=pd.read_csv(POP/"population_weighted_first_step_summary.csv")
+    traj=pd.read_csv(POP/"population_weighted_trajectories.csv")
+    first=traj[(traj.rule!="population_weighted_greedy")&(traj.new_sites==1)].copy()
     budget=pd.read_csv(POP/"population_weighted_budget_summary.csv")
-    fig,axes=plt.subplots(1,2,figsize=(10.8,4.8),layout="constrained")
-    ax=axes[0]
-    order=RULES
-    q=first.set_index("rule").loc[order].reset_index()
+    rules=RULES
+    labels=[PLAB[r] for r in rules]
+    colors=[COL["per_10k"],COL["per_km2"],COL["per_100km"]]
     y=np.arange(3)
-    for i,r in q.iterrows():
-        c=COL[{"facilities_per_10k":"per_10k","facilities_per_km2":"per_km2","facilities_per_100km_network":"per_100km"}[r.rule]]
-        ax.hlines(y[i],r.q25_shortfall_pct,r.q75_shortfall_pct,color=c,lw=8,alpha=.28)
-        ax.plot(r.median_shortfall_pct,y[i],"o",ms=8.5,color=c,mec="white",mew=.8)
-        ax.text(48,y[i],f"{r.exact_first_step_match_rate_pct:.1f}% exact",ha="right",va="center",fontsize=9)
-    ax.set_yticks(y,[PLAB[r] for r in order]); ax.invert_yaxis(); ax.set_xlim(0,50); ax.grid(axis="x")
-    ax.set_xlabel("Population-weighted first-step shortfall (%)"); panel(ax,"A")
-    ax=axes[1]
-    for rule in RULES:
+
+    fig=plt.figure(figsize=(11.3,8.0),layout="constrained")
+    gs=fig.add_gridspec(2,2,height_ratios=[1,1.15])
+    axA=fig.add_subplot(gs[0,0]); axB=fig.add_subplot(gs[0,1]); axC=fig.add_subplot(gs[1,:])
+
+    # A: exact match is separated from loss magnitude.
+    exact=[]
+    for rule in rules:
+        q=first[first.rule==rule]
+        exact.append(100.0*np.isclose(q.relative_shortfall_pct,0.0,rtol=1e-11,atol=1e-12).mean())
+    axA.barh(y,exact,color=colors,alpha=.82,height=.58)
+    axA.set_yticks(y,labels); axA.invert_yaxis(); axA.set_xlim(0,100)
+    axA.set_xlabel("Exact population-weighted best-step match (%)"); axA.grid(axis="x")
+    for yi,val in zip(y,exact): axA.text(min(val+2,96),yi,f"{val:.1f}%",va="center",fontsize=9.2)
+    panel(axA,"A",x=-.18)
+
+    # B: all 45 first-step shortfalls show the strongly skewed distribution.
+    rng=np.random.default_rng(2027)
+    for yi,(rule,color) in enumerate(zip(rules,colors)):
+        q=first[first.rule==rule].relative_shortfall_pct.to_numpy(dtype=float)
+        jitter=rng.uniform(-.15,.15,size=len(q))
+        axB.scatter(q,np.full(len(q),yi)+jitter,s=19,color=color,alpha=.32,edgecolor="none")
+        med=float(np.median(q)); q25=float(np.quantile(q,.25)); q75=float(np.quantile(q,.75))
+        axB.hlines(yi,q25,q75,color=color,lw=5.5,alpha=.86)
+        axB.plot(med,yi,"D",ms=7,color=color,mec="white",mew=.8,zorder=4)
+        axB.text(min(max(q75+1.0,med+1.8),48),yi,f"median {med:.1f}%",va="center",fontsize=8.8)
+    axB.set_yticks(y,[""]*3); axB.invert_yaxis(); axB.set_xlim(0,50)
+    axB.set_xlabel("Population-weighted first-step shortfall (%)"); axB.grid(axis="x")
+    panel(axB,"B",x=-.08)
+
+    # C: sequential behaviour across the investment scale.
+    for rule,color in zip(rules,colors):
         z=budget[budget.rule==rule].sort_values("new_sites")
-        c=COL[{"facilities_per_10k":"per_10k","facilities_per_km2":"per_km2","facilities_per_100km_network":"per_100km"}[rule]]
-        ax.fill_between(z.new_sites,z.q25_shortfall_pct,z.q75_shortfall_pct,color=c,alpha=.13,lw=0)
-        ax.plot(z.new_sites,z.median_shortfall_pct,color=c,lw=2.0,marker="o",ms=3.7,label=PLAB[rule])
-    ax.set_xlabel("Added facilities"); ax.set_ylabel("Population-weighted shortfall (%)"); ax.grid(True); ax.legend(frameon=False); panel(ax,"B")
+        axC.fill_between(z.new_sites,z.q25_shortfall_pct,z.q75_shortfall_pct,color=color,alpha=.13,lw=0)
+        axC.plot(z.new_sites,z.median_shortfall_pct,color=color,lw=2.1,marker="o",ms=4.5,label=PLAB[rule])
+    axC.set_xlabel("Added facilities"); axC.set_ylabel("Population-weighted shortfall from greedy reference (%)")
+    axC.grid(True); axC.legend(frameon=False,ncol=3,loc="upper right"); panel(axC,"C",x=-.06)
     save(fig,"fig8_population_weighted")
 
 def fig9_heterogeneity():
