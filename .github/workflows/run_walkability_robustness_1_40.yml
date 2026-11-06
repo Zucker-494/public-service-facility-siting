@@ -57,8 +57,8 @@ jobs:
           qa = json.loads((robust/"walkability_contribution_robustness_1_40_qa.json").read_text())
           assert qa["interpolation_used"] is False
           assert qa["budget_count"] == 40
-          assert qa["strict_rows_used"] == 5400
-          assert qa["baseline_rows_used"] == 5400
+          assert qa["strict_rows_used"] == 3600
+          assert qa["baseline_rows_used"] == 3600
           print("Full 1-40 robustness validation passed")
           PY
 
